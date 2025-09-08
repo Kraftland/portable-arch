@@ -1,0 +1,178 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width">
+<title>网易云音乐服务条款</title>
+<!-- 这里css的引入是相对于根路径，直接在浏览器里面打开看样式可能加载不对，在本地起个服务后访问就对了 。这里的引入不能用相对路径，因为页面是通过重写过来的-->
+<!-- <link rel="stylesheet" type="text/css" href="/style/mobile/css/base.css">
+<link rel="stylesheet" type="text/css" href="/style/mobile/css/service.css"> -->
+<script>
+    /* 重定向到新工程 后续该协议由新工程维护 */
+    var iosPattern = /(iphone|ipod|ipad)/i;
+    var macPattern = /Mac OS\s+X\s+([\d+_]+)/i;
+    var musicPattern = /NeteaseMusic\/([\d\.]+)?/i;
+    var ua = window.navigator.userAgent;
+    var isApple = ua.match(iosPattern) || ua.match(macPattern);
+    var inAPP = ua.match(musicPattern);
+    if (isApple && !inAPP) {
+        /* 兼容 AppStore 隐私协议链接错误的问题 */
+        window.location.replace('https://st.music.163.com/official-terms/privacy');
+    } else {
+        window.location.replace('https://st.music.163.com/official-terms/service');
+    }
+</script>
+</head>
+<body>
+<!-- <div class="m-service" id="zh">
+    <h2>网易云音乐服务条款</h2>
+    <p>欢迎使用网易公司为您提供的网易云音乐软件或服务。请您（下列简称为“用户”）仔细阅读以下全部内容<strong>（特别是粗体下划线标注的内容）</strong>。<span class="f-tdu f-fw1">未成年人则应在法定监护人陪同下阅读。如用户使用网易云音乐软件或服务，即表示用户与网易公司已达成协议，自愿接受本服务条款所有内容。</span></p>
+    <h3>1、服务条款的确认和接纳</h3>
+    <p>本条款是用户与网易公司之间关于用户使用网易云音乐软件或服务的条款，内容包括条款正文、
+        <a class="tdu" href="https://reg.163.com/agreement_wap.shtml?20160825" target="_blank">《网易邮箱账号服务条款》</a>、
+        <a class="tdu" href="https://music.163.com/html/web2/privacy.html" target="_blank">《隐私政策》</a>及网易公司已经发布的或将来可能发布的各类规则。所有规则为本条款不可分割的组成部分，与条款正文具有同等法律效力。除另行明确声明外，用户使用网易云音乐软件或服务的行为将受本条款约束。</p>
+    <p>本条款如由于网易云音乐发展需要进行修订的，网易公司将在网易云音乐平台公布。用户可前往查阅最新版协议条款。<span class="f-tdu f-fw1">在网易公司修改上述条款后，如果用户不接受修改后的条款，用户可以选择终止使用网易云音乐软件或服务。用户继续使用的，将被视为已接受了修改后的条款。</span></p>
+    <h3>2、网易云音乐简介</h3>
+    <p>本服务条款所称的“网易云音乐”是指网易公司所有和经营的专注于发现与分享的音乐产品，致力于为用户打造全新的音乐生活服务。</p>
+    <p>用户通过网易云音乐可获取网易云音乐上的音乐等内容并可在登录后享受更为完整的服务，如创建歌单、发表评论等。用户登录账号可以是用户本人的手机号、网易邮箱账号或网易云音乐增加的其他可登录账号。用户应维持密码及账号的机密安全，如果用户未保管好自己的账号和密码而对用户、网易公司或第三方造成损害，用户将负全部责任。用户同意若发现任何非法使用用户账号或安全漏洞的情况，有义务立即通告网易公司。</p>
+    <p>用户在使用网易云音乐服务时填写、登录、使用的账号名称、头像、个人简介等账号信息资料应遵守法律法规、社会主义制度、国家利益、公民合法权益、公共秩序、社会道德风尚和信息真实性等七条底线，不得在账号信息资料中出现违法和不良信息，且用户保证在填写、登录、使用账号信息资料时，不得有以下情形：</p>
+    <p>（1）违反宪法或法律法规规定的；</p>
+    <p>（2）危害国家安全，泄露国家秘密，颠覆国家政权，破坏国家统一的；</p>
+    <p>（3）损害国家荣誉和利益的，损害公共利益的；</p>
+    <p>（4）煽动民族仇恨、民族歧视，破坏民族团结的；</p>
+    <p>（5）破坏国家宗教政策，宣扬邪教和封建迷信的；</p>
+    <p>（6）散布谣言，扰乱社会秩序，破坏社会稳定的；</p>
+    <p>（7）散布淫秽、色情、赌博、暴力、凶杀、恐怖或者教唆犯罪的；</p>
+    <p>（8）侮辱或者诽谤他人，侵害他人合法权益的；</p>
+    <p>（9）含有法律、行政法规禁止的其他内容的。</p>
+    <p>若用户登录、使用账号头像、个人简介等账号信息资料存在违法和不良信息的，网易公司有权采取通知限期改正、暂停使用等措施。对于冒用关联机构或社会名人登录、使用、填写账号名称、头像、个人简介的，网易公司有权取消该账号在网易云音乐上使用，并向政府主管部门进行报告。</p>
+    <h3>3、服务条款的修改</h3>
+    <p>网易公司有权在必要时通过在网易云音乐软件内或网页上发出公告等合理方式修改本条款。用户在使用网易云音乐软件或服务时，应当及时查阅了解修改的内容，并自觉遵守本服务条款的相关内容。用户如继续使用网易云音乐软件或本服务条款涉及的服务，则视为对修改内容的同意，当发生有关争议时，以最新的服务条款为准；用户在不同意修改内容的情况下，有权停止使用本服务条款涉及的软件或服务。</p>
+    <h3>4、服务的变更或中止</h3>
+    <p>网易公司始终在不断变更和改进服务。网易公司根据自身商业决策、政府行为、不可抗力等原因可能会选择中止、中断及终止网易云音乐的部分或全部服务。如有此等情形发生，网易公司会采取公告的形式通知用户，但不承担由此对用户造成的任何损失。除法律法规另有明确规定的情形外，网易云音乐有权不经用户申请，直接向用户退还尚未履行的服务所对应的费用；如用户在网易云音乐产生收益，网易云音乐有权不经用户申请，直接按照相关规则为用户办理收益的提现。</p>
+    <h3>5、用户隐私制度</h3>
+    <p class="str tdu">尊重用户隐私是网易公司的一项基本政策。网易公司将按照网易网站上公布的隐私政策（<a href="https://music.163.com/html/web2/privacy.html" target="_blank">https://music.163.com/html/web2/privacy.html</a>）收集、存储、使用、披露和保护用户的个人信息。请用户完整阅读上述隐私权政策，以帮助用户更好地保护个人信息。</p>
+    <h3>6、不可抗力条款</h3>
+    <p class="str tdu">网易公司对不可抗力导致的损失不承担责任。本服务条款所指不可抗力包括：天灾、法律法规或政府指令的变更，因网络服务特性而特有的原因，例如境内外基础电信运营商的故障、计算机或互联网相关技术缺陷、互联网覆盖范围限制、计算机病毒、黑客攻击等因素，及其他合法范围内的不能预见、不能避免并不能克服的客观情况。</p>
+    <h3>7、禁止服务的商业化</h3>
+    <p>用户承诺，非经网易公司同意，用户不能利用网易云音乐软件或服务进行销售或其他商业用途。如用户有需要将网易云音乐软件或服务用于商业用途，应书面通知网易公司并获得网易公司的明确授权。</p>
+    <h3>8、用户管理</h3>
+    <p>用户独立承担其在网易云音乐所发布内容的责任。用户对网易云音乐软件或服务的使用必须遵守所有适用于服务的地方法律、国家法律和国际法律。</p>
+    <p>用户承诺：</p>
+    <p>（1）用户在网易云音乐上发布信息或者使用网易云音乐的软件或服务时必须符合中国有关法规，不得利用网易云音乐软件或服务制作、复制、发布、传播法律、行政法规禁止的信息。</p>
+    <p>（2）用户在网易云音乐上发布信息或者利用网易云音乐的软件或服务时还必须符合其他有关国家和地区的法律规定以及国际法的有关规定。</p>
+    <p>（3）用户不得利用网易云音乐软件或服务实施以下行为：</p>
+    <p>(a) 通过非网易公司开发、授权或认可的第三方兼容软件、系统登录或使用网易云音乐软件或服务，或针对网易云音乐软件和相关服务使用非网易公司开发、授权或认证的插件；</p>
+    <p>(b) 删除网易云音乐软件及其他副本上所有关于版权的信息、内容；</p>
+    <p>(c) 对网易云音乐软件进行反向工程、反向汇编、反向编译或以其他方式自网易云音乐软件获取源代码等；</p>
+    <p>(d) 对于网易云音乐软件相关信息等，未经网易公司同意，擅自实施包括但不限于下列行为：使用、出租、出借、复制、修改、链接、转载、汇编、发表、出版，建立镜像站点、擅自借助网易云音乐软件发展与之有关的衍生产品、作品、服务、插件、外挂、兼容、互联等；</p>
+    <p>(e) 对使用网易云音乐软件或服务过程中释放到任何计算机或移动终端内存中的数据及软件运行过程中客户端与服务器端的交互数据进行复制、更改、修改。</p>
+    <p>(f) 其他以任何不合法的方式、为任何不合法的目的、或以任何与本条款不一致的方式使用网易云音乐软件和服务。</p>
+    <p>（4）用户不得滥用网易云音乐软件或服务，包括但不限于利用网易云音乐软件或服务进行侵害他人知识产权或者合法利益的其他行为。</p>
+    <p>（5）用户应遵守网易公司的所有其他规定和程序。用户须对自己在使用网易云音乐软件或服务过程中的行为承担法律责任。用户承担法律责任的形式包括但不限于：对受到侵害者进行赔偿，以及在网易公司首先承担了因用户的行为导致的行政处罚或侵权损害赔偿责任后，用户应给予网易公司等额的赔偿。若用户违反以上规定，网易公司有权作出独立判断立即暂停或终止对用户提供部分或全部服务，包括冻结、取消用户的账号的使用权限等措施。</p>
+    <p>用户理解，如果网易公司发现用户在网易云音乐发布的信息明显属于上段第(1)条所述内容，依据中国法律，网易公司有义务立即停止传输，保存有关记录，向国家有关机关报告，并且删除含有该内容的地址、目录或关闭服务器。</p>
+    <h3>9、通知</h3>
+    <p>所有发给用户的通知都可通过电子邮件、常规的信件或在网易云音乐软件或网易网站内显著位置公告的方式进行传送。网易公司将通过上述方法之一将消息传递给用户，告知他们服务条款的修改、服务变更、或其它重要事情。</p>
+    <h3>10、内容、商标所有权</h3>
+    <p>网易云音乐软件或服务提供的内容包括但不限于：音频、视频、歌曲图文资料、歌曲列表、文字表述及其组合、界面设计、版面框架、图标、“网易云音乐<sup>®</sup>”、“歌单<sup>®</sup>”、“云村<sup>®</sup>”、“睡音乐<sup>®</sup>”及“爱乐之战<sup>®</sup>”商标等。除涉及第三方授权的软件、技术及内容外，所有这些内容均属于网易公司，并受中华人民共和国著作权法、商标法、专利法、反不正当竞争法和相应的国际条约以及其他知识产权法律法规的保护。所以，用户只能在网易公司授权下才能使用这些内容，未经网易公司书面同意，用户不能为任何营利或非营利性的目的擅自复制、再造这些内容、或创造与内容有关的派生产品、或以转让、许可的方式授权第三方实施、利用和转让上述知识产权。</p>
+    <p>网易公司有权在服务中或经过服务在网易云音乐软件中投放各种广告和宣传信息。同时云音乐、网易等本文中提及的软件和服务名称有可能为网易公司或其关联公司的商标，未经网易公司事先书面同意，用户不得以任何方式展示或使用或作其他处理，也不得向他人表明用户有权展示、使用、或其他有权处理的行为。</p>
+    <h3>11、信息储存及相关知识产权</h3>
+    <p class="str">网易公司对网易云音乐软件上所有服务将尽力维护其安全性及方便性，但对服务中出现的信息（包括但不限于用户发布的信息、用户自主创立的歌单）删除或储存失败不承担任何责任。另外网易公司有权判定用户的行为是否符合本服务条款的要求，如果用户违背了本服务条款的规定，网易公司有权中止或者终止对提供其网易云音乐服务。</p>
+    <p class="str tdu">网易公司尊重知识产权并注重保护用户享有的各项权利。在网易云音乐软件所含服务中，用户可能需要通过发表评论等各种方式向网易公司提供内容。在此情况下，用户仍然享有此等内容的完整知识产权。用户在提供内容时将授予网易公司一项全球性的免费许可，允许网易公司使用、传播、复制、修改、汇编、改编、再许可、翻译、创建衍生作品、出版、表演及展示此等内容。</p>
+    <h3>12、法律</h3>
+    <p class="str tdu">本条款适用中华人民共和国的法律，并且排除一切冲突法规定的适用。</p>
+    <p class="str tdu">如您在使用本协议项下服务中出现纠纷的，您同意将纠纷交由中国国际经济贸易仲裁委员会仲裁解决，并由3名仲裁员进行审理。仲裁裁决是终局的，对双方都有约束力。仲裁费用由败诉一方承担。</p>
+    <h3>13、其他</h3>
+    <p class="str">用户可通过本服务条款文末列明的客服邮箱投诉、举报各类违法违规行为，网易公司将及时受理和处理用户的投诉举报。</p>
+    <p class="str">网易云音乐中的部分内容为用户自行上传，上传者对所上传的内容自行承担责任。如第三方主张上传的内容侵犯第三方权益的，用户可通过本服务条款文末列明的客服邮箱向网易公司提供以下文件或信息。网易公司会在收到上述文件或信息后经判断决定是否对涉嫌侵权的内容或链接进行处理：</p>
+    <p class="str">（1）要求处理的内容或链接</p>
+    <p class="str">（2）身份证明材料</p>
+    <p class="str">（3）联系方式和地址</p>
+    <p class="str">（4）可证明对内容享有权利的文件。</p>
+    <p>除非另有证明，网易公司储存在其服务器上的数据是用户使用网易云音乐软件或服务的唯一有效证据。</p>
+    <p>本条款自发布之日起实施，并构成用户和网易公司之间的共识。网易公司不行使、未能及时行使或者未充分行使本条款或者按照法律规定所享有的权利，不应被视为放弃该权利，也不影响网易公司在将来行使该权利。</p>
+    <p>如果用户对本条款内容有任何疑问，请发送邮件至我们的客服邮箱：ncm5990@163.com。</p>
+</div>
+<div class="m-service" id="en" style="display:none">
+    <h2>Terms of Service - NetEase Cloud Music</h2>
+    <p>[Note] Thanks for using NetEase Cloud Music software or services provided by NetEase, Inc. (“NetEase”). You (the “User”) must read the following carefully, <strong>especially those bolded and underlined</strong>. Minor users should read with their legal guardian. By using NetEase Cloud Music software or service, you enter into an agreement with NetEase and voluntarily accept all the provisions of these Terms of Service (“Terms”). You shall not raise any form of defense on the grounds of not reading these Terms hereafter.</p>
+    <h3>1. Acknowledgement and acceptance of these Terms.</h3>
+    <p>These Terms are an agreement between the User and NetEase regarding the use of NetEase Cloud Music software or services, comprising the main body set out herein and all rules that have been published or may be published in the future by NetEase. Such rules are an integral part of these Terms and have the same legal effect as the main body. Unless expressly stated otherwise, the User’s use of NetEase Cloud Music software or services is subject to these Terms.</p>
+    <p>Any revision to these Terms due to the development of NetEase Cloud Music will be announced on the NetEase Cloud Music platform, where you can review the latest version of these Terms. You may choose to terminate the use of NetEase Cloud Music software or services if you do not accept the revised Terms. By continuing to use NetEase Cloud Music software or services, you will be deemed to have accepted the revised Terms.</p>
+    <h3>2. Definition of NetEase Cloud Music.</h3>
+    <p>For the purposes of these Terms, any reference to “NetEase Cloud Music” refers to the music products focusing on discovery and sharing which are owned and operated by NetEase, and brand new music life services provided through professional musicians, DJs, friend recommendations and social features.</p>
+    <p>Through NetEase Cloud Music, the User can enjoy music and DJ programs on it, and enjoy more complete services such as creating more song lists, commenting, and sharing music by logging in it. The User account can be the User's mobile phone number, NetEase email account, or other loginable account added by NetEase Cloud Music. The User shall keep its user account and password confidential and safe. The User shall be solely responsible for any damage to the User, NetEase or a third party arising from the User’s improper handling of its account and password. The User accepts that he has the obligation to inform NetEase immediately of any illegal use of user account or security vulnerability found by him.</p>
+    <p>The user account information input, logged in, and used when using NetEase Cloud Music services, including the account name, avatar and personal profile, shall comply with seven very basic principles, i.e., the principles of laws and regulations, socialist system, national interests, citizens’ legal rights, public order, social morality and information authenticity. There should be no illegal or unlawful information in the account data, and the Users shall ensure that account information input, logged in, and used by them will not:</p>
+    <p>(1) violate the provisions of the Constitution or laws and regulations;</p>
+    <p>(2) endanger national security, leak state secrets, subvert state power or undermine national unity;</p>
+    <p>(3) harm the state's honor and interests or the public interests;</p>
+    <p>(4) incite ethnic hatred or ethnic discrimination or undermine ethnic unity;</p>
+    <p>(5) disrupt the state’s religious policy and promote cults and feudal superstitions;</p>
+    <p>(6) spread rumors, disrupt social order and undermine social stability;</p>
+    <p>(7) propagate obscenity, pornography, gambling, violence, homicide, terror or instigate crimes;</p>
+    <p>(8) insulate or slander others and infringe the legal rights and interests of others;</p>
+    <p>(9) contain any other content prohibited by laws and administrative regulations.</p>
+    <p>In the event that the account avatar or personal profile input or used by the User contains any illegal or harmful information, NetEase shall have the right to take measures such as giving a notice of the deadline to correct or suspending account use. NetEase has the right to cancel any account involving fraudulent use of the identity of any affiliate or social celebrity to log in, use, and input account name, avatar, and personal profile, and submit its report to the competent governmental authorities.</p>
+    <h3>3. Revisions.</h3>
+    <p>NetEase reserves the right to revise these Terms in a reasonable manner when necessary, such as by publishing an announcement within the NetEase Cloud Music software or on its website. When using NetEase Cloud Music software or services, the User should check for and get to know the revisions in a timely manner, and comply with them accordingly. By continuing to use NetEase Cloud Music software or services subject to these Terms, the User will be deemed to have accepted the revised Terms. In the event of any dispute, the latest Terms of Service shall prevail. The User has the right to stop using the software or services subject to the revised Terms when he not agree to such revisions.</p>
+    <h3>4. Change or suspension of service.</h3>
+    <p>NetEase is constantly changing and improving its services. NetEase may add or delete some services of NetEase Cloud Music , or suspend or completely terminate the services. The User agrees that NetEase is entitled to exercise the above rights without any liability to the User or any third party.</p>
+    <h3>5. User privacy policy.</h3>
+    <p class="str tdu">The User understands and agrees that, to provide better services to the Users, NetEase will collect and integrate personal information of the Users when the Users voluntarily choose the service or provide such information. When the Users use NetEase's services, the server will automatically record some information, including but not limited to URL, IP address, browser type, language used, date and time of access. To facilitate Users’ login or their use of NetEase's services, NetEase will use cookies and other technologies as necessary, and send the collected information to the corresponding server. The Users can choose to accept or disable cookies. when disabling cookies, the User may not be able to log in or use services or features that rely on cookies. The information collected by NetEase will become part of NetEase's regular business archives, and may be transferred to NetEase's successor or designated party due to its transfer, merger, acquisition or reorganization or other reasons. NetEase agrees to use the collected information in good faith and takes measures to ensure its security.</p>
+    <p class="str tdu">It is a fundamental policy of NetEase to respect the Users' personal privacy. NetEase will not publicize or disclose the User's registration information and non-public data stored on NetEase Cloud Music services, unless NetEase Company believes in good faith that such disclosure is:</p>
+    <p class="str tdu">(1) expressly authorized by the User in prior; or</p>
+    <p class="str tdu">(2) necessary to comply with relevant provisions of laws, including providing User's registration information, what the User posted on the website of NetEase and its posting date, Internet address or domain name when inquired by relevant government agencies; or</p>
+    <p class="str tdu">(3) necessary to safeguard NetEase's intellectual properties and other important rights; or</p>
+    <p class="str tdu">(4) necessary to protect the privacy of Users and the public in an emergency; or</p>
+    <p class="str tdu">(5) in accordance with the relevant provisions of these Terms or otherwise deemed necessary by NetEase.</p>
+    <p class="str tdu">NetEase may cooperate with third parties to provide related NetEase Cloud Music services, in which case, NetEase may provide User information to such third parties when such third party agrees to assume the same responsibility as NetEase’s to protect the User’s privacy.</p>
+    <h3>6. Force majeure.</h3>
+    <p class="str tdu">NetEase shall not be liable for any losses resulting from force majeure events. For the purpose of these Terms, “force majeure" events includes acts of God, changes to laws and regulations or government directives, causes due to the unique nature of network services, such as failures of domestic and foreign basic telecommunication operators, defects in computers or Internet-related technologies, restrictions on Internet coverage, computer viruses or hacking attacks, and other unforeseeable and unavoidable objective circumstances that cannot be overcome legally.</p>
+    <h3>7. Prohibition on the commercialization of services.</h3>
+    <p>The User promises that, without the consent of NetEase, the User cannot use NetEase Cloud Music software or services for sales or other commercial purposes. When there is a need to use NetEase Cloud Music software or services for commercial purposes, the User should notify NetEase in writing and obtain explicit authorization from NetEase.</p>
+    <h3>8. User management.</h3>
+    <p>The User is solely responsible for what he posts on NetEase Cloud Music. The User' use of NetEase Cloud Music software or services must comply with all applicable local, national and international laws.</p>
+    <p>The User promises that,</p>
+    <p>(1) When posting information on NetEase Cloud Music or using NetEase Cloud Music software or services, the User must comply with relevant PRC’s laws and regulations and may not use NetEase Cloud Music software or services to make, copy, publish, or disseminate any information prohibited by laws or administrative regulations;</p>
+    <p>(2) When posting information on NetEase Cloud Music or using NetEase Cloud Music software or services, the User must also comply with the legal provisions of other relevant countries or regions and relevant provisions of international law;</p>
+    <p>(2) When posting information on NetEase Cloud Music or using NetEase Cloud Music software or services, the User must also comply with the legal provisions of other relevant countries or regions and relevant provisions of international law;</p>
+    <p>(a) log in to or use NetEase Cloud Music software or services through third-party compatible software or systems that are not developed, licensed or approved by NetEase, or use plug-ins not developed, licensed or certified by NetEase for NetEase Cloud Music software and related services;</p>
+    <p>(b) delete any copyright information and content in the NetEase Cloud Music software and other copies;</p>
+    <p>(c) reverse engineer, disassemble or decompile NetEase Cloud Music Software or otherwise obtain source code from NetEase Cloud Music Software;</p>
+    <p>(d) deal with NetEase Cloud Music Software related information without the consent of NetEase, including but not limited to, using, renting, lending, copying, modifying, linking, reprinting, compiling, releasing or publishing such information or establishing a mirror site, unauthorized use of NetEase Cloud Music software to develop related derivative products, works, services, plug-ins, add-ons, compatibility, interconnection, etc.;</p>
+    <p>(e) copy, change, and modify data released to the internal storage of any computer or mobile terminal during the use of NetEase Cloud Music Software or services or exchanged between the client and the server during the running of software;</p>
+    <p>(f) use NetEase Cloud Music software and services in any unlawful manner, for any unlawful purpose, or in any manner inconsistent with these Terms.</p>
+    <p>(4) Users shall not misuse NetEase Cloud Music software or services, including but not limited to using NetEase Cloud Music software or services to infringe others’ intellectual property rights or legal interests;</p>
+    <p>(5) Users should comply with NetEase's all other regulations and procedures. Users must be legally responsible for their own acts in the use of NetEase Cloud Music software or services, including but not limited to, compensating the infringed individual/entity or indemnify NetEase against any administrative penalty or damages for infringement which is caused by the User's acts and suffered by NetEase. If the User violates the above provisions, NetEase has the right to, on its discretion, immediately suspend or terminate the provision of part or all of the services to the User, including freezing and canceling the User's account.</p>
+    <p>The User understands that, if NetEase finds that the information published by Users on the NetEase Cloud Music is obviously the information described in (1) of the paragraph above, according to PRC’s laws, NetEase is obliged to stop the transmission immediately, save relevant records and report it to the relevant government authorities, and delete the address and directory containing the content or shut down the server.</p>
+    <h3>9. Notice.</h3>
+    <p>All notifications sent to Users can be sent via e-mail, regular mail, or announcements prominently within the NetEase Cloud Music software or on NetEase website. NetEase will send the message to the User through one of the above methods, informing them of the revisions of these Terms, service changes, or other important matters.</p>
+    <h3>10. The ownership of content and trademarks.</h3>
+    <p>Content provided by NetEase Cloud Music software or services includes, but is not limited to, audio, video, song graphic materials, song lists, text representations or their combinations, interface design, layout framework, icons, "NetEase Cloud Music" and "Song List" trademarks. Except for software, technology and content involving third-party licenses, all of these contents belong to NetEase and are under the protection of PRC’s copyright laws, trademark laws, patent laws, unfair competition prevention laws and relevant international treaties and other intellectual property laws and regulations. Users can use such contents only with the authorization of NetEase. Without NetEase's written consent, Users cannot copy or reproduce such contents for any profit or non-profit purposes, or create derivative products related to such contents, or authorize third parties to exercise, utilize and transfer the above-mentioned intellectual property rights in the form of transfer or license.</p>
+    <p>NetEase reserve the right to place advertising and promotional information in the NetEase Cloud Music software during the service or through the service. At the same time, the names of the software and services referred to in these Terms, such as Cloud Music or NetEase, may be NetEase's or its affiliates' trademarks, which, without the prior written consent of NetEase, the User may not display or use in any manner or deal with otherwise or demonstrate to others that it has the right to display, use, or otherwise deal with.</p>
+    <h3>11. Information storage and related intellectual properties.</h3>
+    <p class="str">NetEase will make every effort to maintain the security and convenience of all the services in NetEase Cloud Music Software, but shall not be responsible for the deletion or storage failure of information (including but not limited to user-posted information, user-created song list) in the service. NetEase also reserve the right to determine whether the User's acts meet the requirements of these Terms and suspend or terminate the provision of its NetEase Cloud Music service to any User who violates the provisions of these Terms.</p>
+    <p class="str">NetEase respects intellectual property rights and attaches great importance to the protection of the rights of Users. In the services included in NetEase Cloud Music Software, Users may need to provide content to NetEase through various ways such as posting comments, in which case, the User still has the full intellectual property of such content. When providing content, the User shall grant a global free license to NetEase to use, distribute, copy, modify, compile, adapt, re-license, translate, create derivative works of, publish, perform and display such content.</p>
+    <h3>12. Governing law.</h3>
+    <p class="str tdu">These Terms shall be governed by the laws of the People's Republic of China without regard to its conflict of law rules</p>
+    <p class="str tdu">In the event of any dispute arising from your use of the services under these Terms, you agree to submit the dispute to the China International Economic and Trade Arbitration Commission for arbitration. The arbitration shall be conducted by three arbitrators and shall be final and binding on both parties. The arbitration fee shall be borne by the losing party.</p>
+    <h3>13. Miscellaneous.</h3>
+    <p class="str">Some music on NetEase Cloud Music and all the contents on video platform and streaming radio programs are uploaded by the Users. The uploaders are solely responsible for the content uploaded by them. If any third party claims that the uploaded content violates laws and regulations or infringes its rights, the relevant User may provide the following documents or information to NetEase through the customer service email address listed at the end of the Terms of Service. After receiving such documents or information, NetEase will determine whether or not to handle the allegedly infringing content or link:</p>
+    <p class="str">(1) requested content or link;</p>
+    <p class="str">(2) identification materials;</p>
+    <p class="str">(3) contact information and address; and</p>
+    <p class="str">(4) documents that can prove rights to relevant content.</p>
+    <p>Unless otherwise proven, the data stored by NetEase on its servers is the only valid evidence about your use of NetEase Cloud Music software or services.</p>
+    <p>These Terms shall take effects upon its publication and constitutes a mutual understanding between the User and NetEase. NetEase's failure to exercise or failure to timely or fully exercise its rights under these Terms or legal provisions shall not be deemed as a waiver of its rights, nor shall it affect NetEase's further exercise of this rights in the future.</p>
+    <p>If you have any questions about the content of these Terms, please send an email to our customer service email: ncm5990@163.com.</p>
+</div>
+<script type="text/javascript">
+    if (location.search.indexOf("lang=en")>-1) {
+        document.getElementById("en").style.display = 'block';
+        document.getElementById("zh").style.display = 'none';
+        document.title='Terms of Service - NetEase Cloud Music';
+    }
+</script> -->
+</body>
+</html>

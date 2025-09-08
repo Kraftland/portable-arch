@@ -1,0 +1,10 @@
+#!/usr/bin/bash
+
+
+export launchTarget="env $1"
+
+if [[ -f "$2" ]]; then
+	export bwBindPar="$2"
+fi
+
+exec portable -- $3

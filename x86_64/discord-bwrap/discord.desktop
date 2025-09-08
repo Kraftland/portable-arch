@@ -1,0 +1,29 @@
+[Desktop Entry]
+Name=Discord
+StartupWMClass=discord
+Comment=All-in-one voice and text chat for gamers that's free, secure, and works on both your desktop and phone.
+GenericName=Internet Messenger
+Exec=Discord %U
+Icon=discord
+Type=Application
+Categories=Network;InstantMessaging;
+X-Flatpak-Tags=proprietary;
+X-Flatpak=com.discord.app
+X-Flatpak-RenamedFrom=discord.desktop;
+Actions=opendir;share;quit;
+MimeType=x-scheme-handler/discord;
+
+[Desktop Action opendir]
+Name=Open Data Home
+Exec=/usr/bin/Discord --actions opendir
+Icon=go-home-symbolic
+
+[Desktop Action share]
+Name=Share files with Discord
+Exec=/usr/bin/Discord --actions share-files
+Icon=insert-image-symbolic
+
+[Desktop Action quit]
+Name=Quit Discord
+Exec=/usr/bin/Discord --actions quit
+Icon=system-log-out-symbolic

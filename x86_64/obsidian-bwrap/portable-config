@@ -1,0 +1,23 @@
+#!/usr/bin/bash
+
+# This is your Application ID, avoid conflict
+appID="md.obsidian.Obsidian"
+
+# This is a friendly name of an application. It should only contain ASCII characters and not spaces.
+friendlyName="Obsidian"
+
+# This is the state directory of your application, which is located under "XDG_DATA_HOME"
+stateDirectory="Obsidian_Data"
+
+# This is the target executable to launch
+launchTarget="electron /usr/lib/obsidian/app.asar --gtk-version=3"
+
+waylandOnly="adaptive"
+
+# Takes boolean value.
+bindInputDevices="false"
+
+# Expose all GPUs. Takes boolean value, usually used in games.
+gameMode="false"
+
+# Below you can set envs that will be imported into the application sandbox
