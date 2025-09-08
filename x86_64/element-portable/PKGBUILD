@@ -1,0 +1,69 @@
+# Maintainer: Kimiblock Moe
+
+# Original PKGBUILD from extra/element.io
+
+# Maintainer: Bruno Pagani <archange@archlinux.org>
+# Contributor: Steef Hegeman <mail@steefhegeman.com>
+# Contributor: Luca Weiss <luca (at) z3ntu (dot) xyz>
+# Contributor: Julian Schacher <jspp@posteo.net>
+
+# Use latest Electron
+_electron=electron
+pkgname=element-portable
+pkgver=1.11.110
+pkgrel=4
+epoch=1
+pkgdesc="Glossy Matrix collaboration client — "
+arch=(x86_64)
+url="https://element.io"
+license=(Apache)
+makedepends=(
+	${_electron}
+	git
+	jq
+	libxcrypt-compat
+	nodejs
+	npm
+	python
+	python-setuptools
+	rust
+	tcl
+	yarn
+	element-web
+	desktop-file-utils
+	element-desktop
+)
+_url="https://github.com/element-hq/element"
+source=(
+        io.element.Element.desktop
+        element-portable.sh
+        portable-config)
+sha256sums=('02245e0619c679f5db78966b963d165eed47546eaf28377de70fb29861f9baa3'
+            '38808c57f5783383a22e68f6ab3a2bdd2edb15decc1f890a950ae50290df97b2'
+            '39d5036fab3c80a79befca0624de180fcbf9a63ed77adeeb4293821d58c0c452')
+
+prepare() {
+	pacman -Ql element-desktop >file.list
+}
+
+package_element-portable() {
+	pkgdesc+="desktop version. Sandboxed by Portable."
+	provides+=("element-desktop")
+	conflicts+=("element-desktop")
+	depends+=('portable' "element-web=${pkgver}" ${_electron} libsecret)
+	backup=('etc/element/config.json')
+
+	while IFS= read -r line; do
+	file="$(echo "$line" | awk '{print $2}')"
+	if [[ -d ${file} ]]; then
+		echo "Omitting Directory"
+	else
+		install -Dm755 "${file}" "${pkgdir}/${file}"
+	fi
+	done < file.list
+	rm -f "${pkgdir}/usr/share/applications"/*
+	rm -f "${pkgdir}/usr/bin"/*
+	install -vDm755 "${srcdir}/portable-config" "${pkgdir}/usr/lib/portable/info/io.element.Element/config"
+	install -vDm644 "${srcdir}/io.element.Element.desktop" -t "${pkgdir}/usr/share/applications"
+	install -vDm755 "${srcdir}/element-portable.sh" "${pkgdir}/usr/bin/element-portable"
+}
