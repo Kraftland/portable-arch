@@ -28,3 +28,7 @@ GenerateSrcinfo
 # Contributing
 
 We are currently only accepting `x86_64` packages. Please place your PKGBUILD under `x86_64/${pkgname}` and create pull requests. If you are in need of other architectures, let me know.
+
+# Background
+
+This repository was created because of AUR's opaque moderation rules, see [An open letter to the AUR community](https://blog.kimiblock.top/2025/09/08/letter-to-aur/).
