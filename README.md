@@ -18,7 +18,6 @@ Edit `/etc/paru.conf`, add the following to include this repository:
 Url = https://github.com/Kraftland/portable-arch.git
 Depth = 10
 SkipReview
-GenerateSrcinfo
 ```
 
 (Note that SkipReview skips the paru review functionality, if you wish to have that please comment it out.)
