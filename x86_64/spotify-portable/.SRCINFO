@@ -1,0 +1,31 @@
+pkgbase = spotify-portable
+	pkgdesc = Music streaming service. Sandboxed by portable with Wayland support.
+	pkgver = 1.2.63.394
+	pkgrel = 1
+	epoch = 1
+	url = https://www.spotify.com
+	arch = x86_64
+	license = custom
+	depends = alsa-lib>=1.0.14
+	depends = gtk3
+	depends = libxss
+	depends = desktop-file-utils
+	depends = openssl
+	depends = nss
+	depends = at-spi2-atk
+	depends = libcurl-gnutls
+	depends = libsm
+	depends = libayatana-appindicator
+	optdepends = ffmpeg4.4: Adds support for playback of local files
+	optdepends = libnotify: Desktop notifications
+	options = !strip
+	source = spotify-portable-1.2.63.394-g126b0d89-x86_64.deb::http://repository.spotify.com/pool/non-free/s/spotify-client/spotify-client_1.2.63.394.g126b0d89_amd64.deb
+	source = spotify.sh
+	source = LICENSE
+	source = portable-config
+	sha512sums = 571533058e96a1e6519d851413ca5528b159f195fb9f8f483799bde087ad24b75b770f529273b3167a81f4bfa1d842523a8c3d56b68d4a29fb51e83583cbd9a2
+	sha512sums = 990ef8d561d596cccc780f1e365e71bc94f561fd05c236828aa0cba1fbb151bc622358c866794303bc5d9daf01299b2fcf9375f1b8d23ca110928f7cdb8bfa78
+	sha512sums = 2e16f7c7b09e9ecefaa11ab38eb7a792c62ae6f33d95ab1ff46d68995316324d8c5287b0d9ce142d1cf15158e61f594e930260abb8155467af8bc25779960615
+	sha512sums = 313ef74414af7acc6d8d586589a6d0ea2dddda6bd363050c1ca89130623309a38269cc8b4eb15a8fdfd164e61634fc52222f4867ab1aa1e7742523035651b2c4
+
+pkgname = spotify-portable

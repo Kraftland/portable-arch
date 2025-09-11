@@ -1,0 +1,20 @@
+pkgbase = thunderbird-portable
+	pkgdesc = Thunderbird sandboxed by portable
+	pkgver = 141.0
+	pkgrel = 1
+	epoch = 1
+	url = https://github.com/Kraftland/portable
+	arch = any
+	license = GPL-3.0-or-later
+	depends = thunderbird
+	depends = portable
+	options = !debug
+	options = !strip
+	source = portable-config
+	source = thunderbird.sh
+	source = thunderbird.desktop
+	md5sums = ea5929c2da88108fa43a4d7a7c566050
+	md5sums = ad98beaed27a3b529c9ceb5038a6e987
+	md5sums = 1d7c12414f01b38e33ebf19a70dcd708
+
+pkgname = thunderbird-portable

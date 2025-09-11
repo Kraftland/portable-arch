@@ -27,7 +27,7 @@ GenerateSrcinfo
 
 # Contributing
 
-We are currently only accepting `x86_64` packages. Please place your PKGBUILD under `x86_64/${pkgname}` and create pull requests. If you are in need of other architectures, let me know.
+We are currently only accepting `x86_64` packages. Please place your PKGBUILD and .SRCINFO under `x86_64/${pkgname}` and create pull requests. If you are in need of other architectures, let me know.
 
 # Background
 

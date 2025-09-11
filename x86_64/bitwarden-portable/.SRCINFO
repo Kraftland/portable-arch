@@ -1,0 +1,23 @@
+pkgbase = bitwarden-portable
+	pkgdesc = Zen Browser sandboxed by portable
+	pkgver = 2025.8.0
+	pkgrel = 1
+	url = https://github.com/Kraftland/portable
+	arch = any
+	license = GPL-3.0-or-later
+	makedepends = git
+	makedepends = bitwarden
+	depends = portable
+	depends = electron
+	provides = bitwarden
+	conflicts = bitwarden
+	options = !debug
+	options = !strip
+	source = portable-config
+	source = start.sh
+	source = desktop.file
+	sha256sums = c2a4000cd5384646e757735e31fbbe3ef6b222939a414119879f5ad0e79b5dd1
+	sha256sums = ea40d1cfc92687162bd430c1daa030e6deefd8a45ccfb5ccc7ce2ccd014f7654
+	sha256sums = e0804985439a2798667326c15d176c79a9c186bda5a4843636a3a61a90a8c366
+
+pkgname = bitwarden-portable
