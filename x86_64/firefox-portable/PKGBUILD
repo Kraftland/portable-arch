@@ -44,7 +44,11 @@ function package() {
 		if [[ -d ${file} ]]; then
 			echo "Omitting Directory"
 		else
-			install -Dm755 "${file}" "${pkgdir}/${file}"
+			if [[ -L "${file}" ]]; then
+				ln -vsf "$(readlink -f "${file}")" "${pkgdir}/${file}"
+			else
+				install -vDm755 "${file}" "${pkgdir}/${file}"
+			fi
 		fi
 	done < file.list
 	rm -f "${pkgdir}/usr/share/applications"/*
