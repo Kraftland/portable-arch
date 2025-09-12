@@ -1,0 +1,10 @@
+#!/usr/bin/bash
+
+git config pull.rebase true
+
+rm *.pkg.tar.zst
+
+if [[ -f PKGBUILD ]]; then
+	echo "Generating SRCINFO"
+	makepkg --printsrcinfo >.SRCINFO
+fi
