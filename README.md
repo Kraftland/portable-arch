@@ -4,7 +4,9 @@ This repository is intended for Arch Linux PKGBUILD scripts.
 
 ---
 
-Usage:
+# Manual
+
+## Installation:
 
 1. moeOS systems already have this enabled on latest updates
 2. Ordinary Arch systems:
@@ -23,6 +25,12 @@ SkipReview
 (Note that SkipReview skips the paru review functionality, if you wish to have that please comment it out.)
 
 - Sync PKGBUILDs: `paru -Syu --pkgbuilds`
+
+## Usage:
+
+- `paru -Syu` upgrades your system as well as Portable packages
+- `paru -Sl portable` to list all packages
+- `paru -S [package name]` to install a package
 
 # Contributing
 
