@@ -13,7 +13,7 @@ stateDirectory="QQ_Data"
 launchTarget="/usr/lib/portable/info/im.qq.app/start-script.sh"
 
 # Takes boolean value. When enabled, do not process XAuth files and forces wayland input method. Generally this should be true when possible.
-waylandOnly="adaptive"
+waylandOnly="false"
 
 # Takes boolean value.
 bindInputDevices="false"
@@ -27,7 +27,9 @@ bindPipewire="false"
 # Expose all GPUs. Takes boolean value, usually used in games.
 gameMode="false"
 
-useZink="true"
+useZink="false"
+
+terminateImmediately="true"
 
 # Below you can set envs that will be imported into the application sandbox
 
