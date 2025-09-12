@@ -34,7 +34,7 @@ SkipReview
 
 # Contributing
 
-We are currently only accepting `x86_64` packages. Please place your PKGBUILD and up-to-date .SRCINFO under `x86_64/${pkgname}` and create pull requests. If you are in need of other architectures, let me know.
+We are currently only accepting `x86_64` and `any` packages. Please place your PKGBUILD and up-to-date .SRCINFO under `x86_64/${pkgname}` or `any/${pkgname}` and create pull requests. Or become a maintainer by sending Kimiblock Moe an email. If you are in need of other architectures, let me know.
 
 # Background
 
