@@ -12,7 +12,7 @@ friendlyName="Heroic"
 stateDirectory="Heroic_Data"
 
 # This is the target executable to launch
-launchTarget="/opt/Heroic/heroic --enable-features=UseOzonePlatform --ozone-platform-hint=auto"
+launchTarget="/opt/Heroic/heroic --ozone-platform-hint=auto --enable-features=AcceleratedVideoEncoder,AcceleratedVideoDecoder,AcceleratedVideoDecodeLinuxGL,VaapiIgnoreDriverChecks  --wayland-text-input-version=3 --enable-wayland-ime --no-suid-sandbox --no-sandbox"
 
 # Enables Network access within the sandbox. Defaults to true.
 bindNetwork="true"

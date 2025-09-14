@@ -26,7 +26,7 @@ source=(
 )
 
 
-md5sums=('0d0e3914e77ee0faf35984b5624afc85'
+md5sums=('044ab507d14e59b9029ef1aaef0ed16f'
          '21e405b16724fb50b0140e26d288773a'
          'c8ad9b12ff79ccb596eccc150376cc92')
 
