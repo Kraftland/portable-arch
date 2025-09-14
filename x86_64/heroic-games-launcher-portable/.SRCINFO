@@ -1,5 +1,5 @@
 pkgbase = heroic-games-launcher-portable
-	pkgdesc = Firefox sandboxed by portable
+	pkgdesc = Heroic sandboxed by portable
 	pkgver = 1
 	pkgrel = 1
 	epoch = 1
