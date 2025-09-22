@@ -58,6 +58,6 @@ function package() {
 		"${srcdir}/desktop.file" \
 		"${pkgdir}/usr/share/applications/com.bitwarden.desktop.desktop"
 }
-sha256sums=('c2a4000cd5384646e757735e31fbbe3ef6b222939a414119879f5ad0e79b5dd1'
+sha256sums=('8d7b3ec1c975cd62529f6d1e76fc2243cae9ccba7767379f6f898020dcc0ad75'
             'ea40d1cfc92687162bd430c1daa030e6deefd8a45ccfb5ccc7ce2ccd014f7654'
             'e0804985439a2798667326c15d176c79a9c186bda5a4843636a3a61a90a8c366')

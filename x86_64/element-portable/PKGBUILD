@@ -40,7 +40,7 @@ source=(
         portable-config)
 sha256sums=('02245e0619c679f5db78966b963d165eed47546eaf28377de70fb29861f9baa3'
             '38808c57f5783383a22e68f6ab3a2bdd2edb15decc1f890a950ae50290df97b2'
-            '39d5036fab3c80a79befca0624de180fcbf9a63ed77adeeb4293821d58c0c452')
+            '2a071f222c72f09f2bcf931b563ee918f326736833b70f57dafe1b08fd934f59')
 
 prepare() {
 	pacman -Ql element-desktop >file.list
