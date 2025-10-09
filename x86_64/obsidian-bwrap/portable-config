@@ -20,4 +20,6 @@ bindInputDevices="false"
 # Expose all GPUs. Takes boolean value, usually used in games.
 gameMode="false"
 
+terminateImmediately="true"
+
 # Below you can set envs that will be imported into the application sandbox
