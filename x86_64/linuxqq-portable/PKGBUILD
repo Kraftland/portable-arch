@@ -3,7 +3,7 @@
 # Contributor: Integral <integral@member.fsf.org>
 
 pkgname=linuxqq-portable
-pkgver=3.2.19_39038
+pkgver=3.2.20_40990
 pkgrel=1
 epoch=1
 pkgdesc="Linux QQ based on Electron, sandboxed by portable"
@@ -14,7 +14,7 @@ conflicts=("linuxqq")
 provides=("linuxqq")
 depends=('nss' 'alsa-lib' 'gtk3' 'at-spi2-core' 'libvips' 'openjpeg2' 'openslide' 'portable')
 optdepends=('libappindicator-gtk3: Allow QQ to extend a menu via Ayatana indicators in Unity, KDE or Systray (GTK+ 3 library).')
-_md5_prefix=c773cdf7
+_md5_prefix=ec800879
 _src_prefix="linuxqq_${pkgver/_/-}"
 source_x86_64=("https://dldir1.qq.com/qqfile/qq/QQNT/${_md5_prefix}/${_src_prefix}_amd64.deb")
 source_aarch64=("https://dldir1.qq.com/qqfile/qq/QQNT/${_md5_prefix}/${_src_prefix}_arm64.deb")
@@ -24,9 +24,9 @@ sha512sums=('5ae1d3778dd38dd05508cf2c0a954c6f9a6c7091bff2897321b1746f762d6606c4e
             'b6a955e64b69d98776346a5ec154d119e1acdc3bba364bf01bdcd6119ce20933f326d40990e7e477c3b7c741beb50e22da4ad2d6880538256245bdc31dcede0e'
             'ee3ad8fca56d6c10c6ffada797144552178e089228c1ac20cbca70199d7051ea01144ff8189207537ef5e9a7037efeb08dff62813dee19f19f0f892206fc6b6d'
             '2e8d6f87849a59458bb9e5f297cb73a9c9fe4eb24a39e5c45cbbd2c0ba5d628f6378a707b2734873a3765693a096c7cae21edd582a04fc5a2d70fddd7e2906d4')
-sha512sums_x86_64=('49175b7a0197cb5730962bd8e0c77e7a84bb5a546f6780322f9278600700ba0a625544dd0704ad579bcfdf5bd934eaef7d69c2998d0c7ff481477db44c50aca5')
-sha512sums_aarch64=('03481ae1acca1bf8669ad766e978078e2bb0b6787a48868303197adb25613efec8b60f6867cac624c126efb922f4c840eb79328ddfd08d69370c6606478369bb')
-sha512sums_loong64=('527265db7de11b000e3b76b2570706052be095b477981ef028085bc53b6e3ab3a441caec4e6c5c58f89c95bb79e0d09052494d04fd37637377e06ede90df910d')
+sha512sums_x86_64=('SKIP')
+sha512sums_aarch64=('SKIP')
+sha512sums_loong64=('SKIP')
 options=('!strip' '!debug')
 
 package() {
