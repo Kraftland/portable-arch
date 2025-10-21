@@ -1,7 +1,7 @@
 pkgbase = element-portable
 	pkgdesc = Glossy Matrix collaboration client —
-	pkgver = 1.11.110
-	pkgrel = 4
+	pkgver = 1.12.1
+	pkgrel = 3
 	epoch = 1
 	url = https://element.io
 	arch = x86_64
@@ -30,9 +30,10 @@ pkgbase = element-portable
 pkgname = element-portable
 	pkgdesc = Glossy Matrix collaboration client — desktop version. Sandboxed by Portable.
 	depends = portable
-	depends = element-web=1.11.110
 	depends = electron
 	depends = libsecret
 	provides = element-desktop
+	provides = element-web
 	conflicts = element-desktop
+	conflicts = element-web
 	backup = etc/element/config.json
