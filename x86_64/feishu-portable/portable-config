@@ -10,7 +10,7 @@ friendlyName="Feishu"
 stateDirectory="Feishu_Data"
 
 # This is the target executable to launch
-launchTarget="/opt/bytedance/feishu/bytedance-feishu --enable-features=VaapiVideoDecodeLinuxGL,VaapiVideoDecoder,WebRTCPipeWireCapturer,TouchpadOverscrollHistoryNavigation --wayland-text-input-version=3 --enable-wayland-ime --no-suid-sandbox"
+launchTarget="env -u WAYLAND_DISPLAY /opt/bytedance/feishu/bytedance-feishu --enable-features=VaapiVideoDecodeLinuxGL,VaapiVideoDecoder,TouchpadOverscrollHistoryNavigation --no-suid-sandbox"
 
 # Takes boolean value. When enabled, do not process XAuth files and enable X access. Generally this should be always false.
 waylandOnly=false
@@ -19,6 +19,6 @@ waylandOnly=false
 bindCameras="true"
 
 # Takes boolean value. Binds PipeWire socket into the sandbox. Required if target application doesn't use Portals.
-bindPipewire="true"
+bindPipewire="false"
 
-dbusWake="true"
+dbusWake="false"

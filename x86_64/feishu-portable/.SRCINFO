@@ -1,6 +1,6 @@
 pkgbase = feishu-portable
 	pkgdesc = Linux client of Feishu (Lark) from Bytedance. Sandboxed by portable.
-	pkgver = 7.46.12
+	pkgver = 7.50.14
 	pkgrel = 1
 	epoch = 1
 	url = https://www.feishu.cn/
@@ -18,13 +18,13 @@ pkgbase = feishu-portable
 	source = portable-config
 	source = com.bytedance.feishu.desktop
 	source = feishu.sh
-	sha256sums = 9b1af79bfa82138525d98b5fc1c6be9fc177b866de13f19bc6580b8be1cca1bd
+	sha256sums = c41a282c27ceaef2c86c66f9207da9d0c1b0250735ed36dccb78ae81e484384f
 	sha256sums = 6c96e320a3203642798d4e52262c01740e8adcd5f7bc613b5bfa2c13b9cb9606
 	sha256sums = c445a576126f6a7b33e9a35b472d33bcb7d2e56bcf2c99de7551b8c48bb52f8d
-	source_x86_64 = https://sf3-cn.feishucdn.com/obj/ee-appcenter/72e0cee3/Feishu-linux_x64-7.46.12.deb
-	sha256sums_x86_64 = a9d696c78bd041626d117fb7c68ea81a9f36b1b96c59bd6307deb0f1d8dcef03
-	source_aarch64 = https://sf3-cn.feishucdn.com/obj/ee-appcenter/ea20b00e/Feishu-linux_arm64-7.46.12.deb
-	sha256sums_aarch64 = ce1eb9faff49591bfadf58500d29cac07d42f08df975d469abc91c9e145ee30a
+	source_x86_64 = https://sf3-cn.feishucdn.com/obj/ee-appcenter/e91d15e2/Feishu-linux_x64-7.50.14.deb
+	sha256sums_x86_64 = 63095fdea8b8ab99d3de00bdaf8ca6b45608ae0f319b16a921f3b6a10a01742f
+	source_aarch64 = https://sf3-cn.feishucdn.com/obj/ee-appcenter/f247fca9/Feishu-linux_arm64-7.50.14.deb
+	sha256sums_aarch64 = 79ca5ac349fa8d1ab585d0d8deb4f346237c0a4dc14cbb7e2b50dcc6b3c8e131
 
 pkgname = feishu-portable
 	depends = ca-certificates
