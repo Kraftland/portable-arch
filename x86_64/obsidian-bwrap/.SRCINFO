@@ -1,7 +1,7 @@
 pkgbase = obsidian-bwrap
 	pkgdesc = A powerful knowledge base that works on top of a local folder of plain text Markdown files. Sandboxed by portable for privacy.
-	pkgver = 1.8.10
-	pkgrel = 2
+	pkgver = 1.10.3
+	pkgrel = 1
 	url = https://obsidian.md
 	arch = x86_64
 	license = custom:Commercial
@@ -15,10 +15,10 @@ pkgbase = obsidian-bwrap
 	source = obsidian.sh
 	source = portable-config
 	source = obsidian.desktop
-	source = https://github.com/obsidianmd/obsidian-releases/releases/download/v1.8.10/obsidian-1.8.10.tar.gz
+	source = https://github.com/obsidianmd/obsidian-releases/releases/download/v1.10.3/obsidian-1.10.3.tar.gz
 	sha256sums = 2c43aa33e989f946c2af48b07c3e7f3683356f91fcefa6d2970ac2531ed197a1
-	sha256sums = dc91534e3e9efcb17b3408b316627f7388c1f031dbc02a7447de765d72bdc54c
+	sha256sums = f214b94550b967f71c44bdb0473c761a23fe8fda3dee43810d3bac4992dc9b20
 	sha256sums = 88504345238b1142b43880d93cf8546993e18bdf1597074b4d4360d0ce22ca41
-	sha256sums = c59a22e19f4930cfc510f7ef8c15c46a0de94ffb891fd76f169f2a1e74c534a1
+	sha256sums = cc8f021211ede952067e1e248f863175fc493c969fee684c567338e5399aa08d
 
 pkgname = obsidian-bwrap
