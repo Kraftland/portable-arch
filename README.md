@@ -22,6 +22,8 @@ Depth = 10
 SkipReview
 ```
 
+And add or uncomment Chroot
+
 (Note that SkipReview skips the paru review functionality, if you wish to have that please comment it out.)
 
 - Sync PKGBUILDs: `paru -Syu --pkgbuilds`
