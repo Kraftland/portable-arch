@@ -1,0 +1,67 @@
+# Maintainer: Kimiblock Moe
+
+pkgname=steam-portable
+pkgver=1.0.0.85
+pkgrel=1
+epoch=1
+pkgdesc="Valve's digital software delivery system sandboxed by portable. Automatically uses discrete GPUs."
+arch=('x86_64')
+url="https://github.com/Kraftland/portable"
+license=('LicenseRef-steam-subscriber-agreement')
+groups=()
+provides=(steam)
+options=(!debug !strip)
+conflicts=("steam")
+
+optdepends=()
+
+makedepends+=(steam coreutils)
+
+checkdepends=()
+
+source=(
+	portable-config
+	steam.sh
+	steam.desktop
+)
+
+
+md5sums=('1a959188d6f88fcb3b820741fbee085d'
+         '5551ceb75a951eeb503ba080c010b7ba'
+         '94c96c66a514972aab5aab36fa3e4932')
+
+function prepare() {
+	pacman -Ql steam >file.list
+}
+
+function package() {
+	depends=("portable")
+	depends+=(bash  coreutils  curl  dbus  desktop-file-utils  diffutils  freetype2  gcc-libs  gdk-pixbuf2  glibc
+                  hicolor-icon-theme  libxcrypt  libxcrypt-compat  libxkbcommon-x11  lsb-release  lsof  nss  python  ttf-font
+                  usbutils  vulkan-driver  vulkan-icd-loader  xdg-user-dirs  xorg-xrandr  xz  zenity  lib32-alsa-plugins
+                  lib32-fontconfig  lib32-gcc-libs  lib32-glibc  lib32-libgl  lib32-libgpg-error  lib32-libnm  lib32-libva
+                  lib32-libx11  lib32-libxcrypt  lib32-libxcrypt-compat  lib32-libxinerama  lib32-libxss  lib32-nss  lib32-pipewire
+                  lib32-systemd  lib32-vulkan-driver  lib32-vulkan-icd-loader)
+	while IFS= read -r line; do
+		file="$(echo "$line" | awk '{print $2}')"
+		if [[ -d ${file} ]]; then
+			echo "Omitting Directory"
+		else
+			if [[ -L "${file}" ]]; then
+				mkdir -p "$(dirname "${pkgdir}/${file}")"
+				ln -vsf "$(readlink -f "${file}")" "${pkgdir}/${file}"
+			else
+				install -vDm755 "${file}" "${pkgdir}/${file}"
+			fi
+		fi
+	done < file.list
+	rm -f "${pkgdir}/usr/share/applications"/*
+	rm -f "${pkgdir}/usr/bin"/*
+	install -vDm755 /usr/bin/steam -t "${pkgdir}/usr/lib/portable/overlay-usr"
+	install -Dm644 portable-config \
+		"${pkgdir}/usr/lib/portable/info/com.steampowered.steam/config"
+	install -Dm755 "steam.sh" \
+		"${pkgdir}/usr/bin/steam"
+	install -Dm644 "steam.desktop" "${pkgdir}/usr/share/applications/com.steampowered.steam.desktop"
+}
+
