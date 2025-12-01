@@ -22,7 +22,9 @@ Depth = 10
 SkipReview
 ```
 
-And add or uncomment Chroot
+**And add or uncomment Chroot**
+
+Warning! Please use chroot to build these packages.
 
 (Note that SkipReview skips the paru review functionality, if you wish to have that please comment it out.)
 
