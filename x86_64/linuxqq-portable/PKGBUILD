@@ -3,7 +3,7 @@
 # Contributor: Integral <integral@member.fsf.org>
 
 pkgname=linuxqq-portable
-pkgver=3.2.21_41857
+pkgver=3.2.22_42941
 pkgrel=1
 epoch=1
 pkgdesc="Linux QQ based on Electron, sandboxed by portable"
@@ -14,7 +14,7 @@ conflicts=("linuxqq")
 provides=("linuxqq")
 depends=('nss' 'alsa-lib' 'gtk3' 'at-spi2-core' 'libvips' 'openjpeg2' 'openslide' 'portable')
 optdepends=('libappindicator-gtk3: Allow QQ to extend a menu via Ayatana indicators in Unity, KDE or Systray (GTK+ 3 library).')
-_md5_prefix=18039323
+_md5_prefix=58276046
 _src_prefix="linuxqq_${pkgver/_/-}"
 source_x86_64=("https://dldir1.qq.com/qqfile/qq/QQNT/${_md5_prefix}/${_src_prefix}_amd64.deb")
 source_aarch64=("https://dldir1.qq.com/qqfile/qq/QQNT/${_md5_prefix}/${_src_prefix}_arm64.deb")
