@@ -1,0 +1,51 @@
+# Maintainer: Kimiblock Moe
+
+pkgname=unifiedpush-troubleshooter-portable
+pkgver=1
+pkgrel=1
+epoch=1
+pkgdesc="UnifiedPush Troubleshooter sandboxed by portable"
+arch=('x86_64')
+url="https://github.com/Kraftland/portable"
+license=('GPL-3.0-or-later')
+groups=()
+provides=(unifiedpush-troubleshooter)
+options=(!debug)
+conflicts=("unifiedpush-troubleshooter")
+
+optdepends=()
+
+makedepends+=(coreutils portable)
+
+checkdepends=()
+
+source=(
+	portable-config
+	up.desktop
+	https://codeberg.org/api/packages/UnifiedPush/generic/flutter-connector/1485e2fb13/flutter-example-linux.zip
+)
+
+
+md5sums=('SKIP'
+         'SKIP'
+         'SKIP')
+
+function package() {
+	depends=("portable" "gtk3" "gtk4")
+	depends+=()
+
+	install -vDm755 up_troubleshoot "${pkgdir}/opt/up-portable/up_troubleshoot"
+	cp -r data/ lib/ "${pkgdir}/opt/up-portable"
+
+	export pkgdir
+	export pkgname
+	export srcdir
+	portable-packer \
+		-v \
+		--distro arch \
+		--mode post \
+		--hash true \
+		--config "${srcdir}/portable-config" \
+		--desktop-file "${srcdir}/up.desktop" \
+		--dbus-activation
+}

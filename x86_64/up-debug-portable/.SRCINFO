@@ -1,0 +1,24 @@
+pkgbase = unifiedpush-troubleshooter-portable
+	pkgdesc = UnifiedPush Troubleshooter sandboxed by portable
+	pkgver = 1
+	pkgrel = 1
+	epoch = 1
+	url = https://github.com/Kraftland/portable
+	arch = x86_64
+	license = GPL-3.0-or-later
+	makedepends = coreutils
+	makedepends = portable
+	provides = unifiedpush-troubleshooter
+	conflicts = unifiedpush-troubleshooter
+	options = !debug
+	source = portable-config
+	source = up.desktop
+	source = https://codeberg.org/api/packages/UnifiedPush/generic/flutter-connector/1485e2fb13/flutter-example-linux.zip
+	md5sums = SKIP
+	md5sums = SKIP
+	md5sums = SKIP
+
+pkgname = unifiedpush-troubleshooter-portable
+	depends = portable
+	depends = gtk3
+	depends = gtk4

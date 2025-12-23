@@ -1,0 +1,11 @@
+[Desktop Entry]
+Version=1.0
+Type=Application
+
+Name=UnifiedPush Troubleshooter
+Comment=Troubleshoot your UnifiedPush setup
+Categories=Utility
+
+Icon=org.unifiedpush.Troubleshooter
+Exec=unifiedpush-troubleshooter-portable
+Terminal=false

@@ -1,0 +1,24 @@
+#!/usr/bin/bash
+
+# This is your Application ID, avoid conflict
+appID="org.unifiedpush.Troubleshooter"
+
+# This is a friendly name of an application. It should only contain ASCII characters and not spaces.
+friendlyName="UP_Troubleshooter"
+
+# This is the state directory of your application, which is located under "XDG_DATA_HOME"
+stateDirectory="UP_Data"
+
+# This is the target executable to launch
+launchTarget="/opt/up-portable/up_troubleshoot"
+busLaunchTarget="env FLUTTER_HEADLESS=1 /opt/up-portable/up_troubleshoot --unifiedpush-bg"
+
+# Takes a boolean value or string "adaptive". When true, do not process XAuth files and forces wayland input method. "adaptive" enables this option on Wayland and vice versa. Generally this should be adaptive when possible.
+waylandOnly="adaptive"
+
+# Takes boolean value.
+bindInputDevices="false"
+
+terminateImmediately="true"
+
+# Below you can set envs that will be imported into the application sandbox
