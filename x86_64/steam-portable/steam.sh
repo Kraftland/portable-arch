@@ -1,4 +1,4 @@
 #!/usr/bin/bash
-export _portableConfig=com.steampowered.steam
+export _portableConfig=com.steampowered
 
 exec portable -- $@

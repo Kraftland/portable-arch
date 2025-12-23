@@ -3,7 +3,7 @@
 ########## Section: General ##########
 
 # This is your Application ID, avoid conflict
-appID="com.steampowered.steam"
+appID="com.steampowered"
 
 # This is a friendly name of an application. It should only contain ASCII characters and not spaces.
 friendlyName="Steam"
