@@ -4,7 +4,7 @@
 
 pkgname=linuxqq-portable
 pkgver=3.2.22_42941
-pkgrel=1
+pkgrel=2
 epoch=1
 pkgdesc="Linux QQ based on Electron, sandboxed by portable"
 arch=('x86_64' 'aarch64' 'loong64')
@@ -20,7 +20,7 @@ source_x86_64=("https://dldir1.qq.com/qqfile/qq/QQNT/${_md5_prefix}/${_src_prefi
 source_aarch64=("https://dldir1.qq.com/qqfile/qq/QQNT/${_md5_prefix}/${_src_prefix}_arm64.deb")
 source_loong64=("https://dldir1.qq.com/qqfile/qq/QQNT/${_md5_prefix}/${_src_prefix}_loongarch64.deb")
 source=("linuxqq.sh" "start.sh" "portable-config" "qq.desktop")
-sha512sums=('5ae1d3778dd38dd05508cf2c0a954c6f9a6c7091bff2897321b1746f762d6606c4ef51af18b31c9fc456a531a2fea56146937e5d2aff9035f7ba8f5eb1e62781'
+sha512sums=('SKIP'
             'b6a955e64b69d98776346a5ec154d119e1acdc3bba364bf01bdcd6119ce20933f326d40990e7e477c3b7c741beb50e22da4ad2d6880538256245bdc31dcede0e'
             'ee3ad8fca56d6c10c6ffada797144552178e089228c1ac20cbca70199d7051ea01144ff8189207537ef5e9a7037efeb08dff62813dee19f19f0f892206fc6b6d'
             '2e8d6f87849a59458bb9e5f297cb73a9c9fe4eb24a39e5c45cbbd2c0ba5d628f6378a707b2734873a3765693a096c7cae21edd582a04fc5a2d70fddd7e2906d4')
