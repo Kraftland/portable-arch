@@ -9,4 +9,4 @@ rm -rf ~/.config/QQ/crash_files/*
 
 #XDG_CONFIG_HOME=${XDG_CONFIG_HOME:-~/.config}
 
-/opt/QQ/qq --disable-setuid-sandbox --ozone-platform-hint=auto --enable-features=WebRTCPipeWireCapturer --wayland-text-input-version=3 --enable-wayland-ime --no-suid-sandbox --disable-sandbox "$@"
+/opt/QQ/qq --no-sandbox --ozone-platform-hint=auto --enable-features=WebRTCPipeWireCapturer --wayland-text-input-version=3 --enable-wayland-ime "$@"
