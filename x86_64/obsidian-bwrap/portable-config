@@ -10,7 +10,7 @@ friendlyName="Obsidian"
 stateDirectory="Obsidian_Data"
 
 # This is the target executable to launch
-launchTarget="electron /usr/lib/obsidian/app.asar --enable-features=AcceleratedVideoEncoder,AcceleratedVideoDecodeLinuxGL --no-suid-sandbox"
+launchTarget="electron /usr/lib/obsidian/app.asar --enable-features=AcceleratedVideoEncoder,AcceleratedVideoDecodeLinuxGL --no-sandbox"
 
 waylandOnly="adaptive"
 
