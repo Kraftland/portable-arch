@@ -32,7 +32,6 @@ package() {
     provides=('wps-office' "wps-office-cn")
 
 	install -vDm755 "/usr/bin/wps" -t "${pkgdir}/usr/lib/portable/overlay-usr"
-	install -vDm755 "${srcdir}/wps-helper" -t "${pkgdir}/usr/bin"
 
 	declare -x -g pkgdir
 	declare -x -g pkgname
@@ -44,4 +43,5 @@ package() {
 		--hash true \
 		--config "${srcdir}/portable-config" \
 		--desktop-file "${srcdir}/wps-office-wps.desktop"
+	install -vDm755 "${srcdir}/wps-helper" -t "${pkgdir}/usr/bin"
 }
