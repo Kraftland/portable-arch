@@ -18,7 +18,7 @@ pkgbase = jellyfin-desktop-portable
 	source = portable-config
 	source = jellyfin-media-player.desktop
 	md5sums = 886c7336ab017afd8d2d9a3acbbb18e8
-	md5sums = d82778df35e3aca815ba3a75a2d267e1
+	md5sums = SKIP
 
 pkgname = jellyfin-desktop-portable
 	depends = portable
