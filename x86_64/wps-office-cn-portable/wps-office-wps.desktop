@@ -1,0 +1,15 @@
+[Desktop Entry]
+Comment=Use WPS to office work.
+Comment[zh_CN]=使用 WPS Office 进行办公
+Exec=/usr/bin/wps-helper %F
+GenericName=WPS
+GenericName[zh_CN]=WPS Office
+Name=WPS Office
+Name[zh_CN]=WPS Office
+StartupNotify=false
+Terminal=false
+Type=Application
+Categories=WordProcessor;Qt;
+Icon=wps-office2023-kprometheus
+InitialPreference=3
+StartupWMClass=wpsoffice

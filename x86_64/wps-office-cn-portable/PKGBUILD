@@ -1,0 +1,46 @@
+# Maintainer: Kimiblock Moe
+
+pkgbase=wps-office-cn-portable
+pkgname=('wps-office-cn-portable')
+pkgver=12.1.2.22570
+pkgrel=1
+pkgdesc="Kingsoft Office (WPS Office) CN version - an office productivity suite"
+makedepends+=(desktop-file-utils wps-office-cn)
+arch=('x86_64')
+license=('LicenseRef-WPS-EULA')
+url="https://linux.wps.cn"
+options=('!emptydirs')
+depends=("portable")
+replaces+=(wps-office-cn-bwrap)
+
+source=("portable-config" "wps-helper" wps-office-wps.desktop)
+sha1sums=('de19eb2efaf516d222defb61117ef2e345afe86c'
+          'e08a76411d5da92f28f45dfccd37949755194821'
+          '255d3f25a25e148c63afac38db623d8c82ac528c')
+
+package_wps-office-cn-portable() {
+    depends+=('fontconfig' 'xorg-mkfontscale' 'libxrender' 'desktop-file-utils' 'shared-mime-info' 'xdg-utils' 'glu' 'sdl2' 'libpulse' 'hicolor-icon-theme' 'libxss' 'sqlite' 'libtool' 'libxslt' 'libjpeg-turbo')
+    optdepends=('cups: Printing support'
+                'libjpeg-turbo: JPEG image codec support'
+                'pango: for complex (right-to-left) text support'
+                'curl: An URL retrieval utility and library'
+                'ttf-wps-fonts: Symbol fonts required by wps-office'
+                'ttf-ms-fonts: Microsft Fonts recommended for wps-office'
+                'wps-office-fonts: FZ TTF fonts provided by wps community'
+                'wps-office-mui-zh-cn: zh_CN support for WPS Office')
+    conflicts=('kingsoft-office' 'wps-office' "wps-office-cn")
+    provides=('wps-office' "wps-office-cn")
+
+	install -vDm755 "/usr/bin/wps" "${pkgdir}/usr/lib//portable/overlay-usr"
+
+	export pkgdir
+	export pkgname
+	export srcdir
+	portable-packer \
+		-v \
+		--distro arch \
+		--mode copy wps-office-cn \
+		--hash true \
+		--config "${srcdir}/portable-config" \
+		--desktop-file "${srcdir}/wps-office-wps.desktop"
+}

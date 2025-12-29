@@ -10,7 +10,7 @@ friendlyName="WPS-Generic"
 stateDirectory="WPS_Office_Data"
 
 # This is the target executable to launch
-#launchTarget="gtk4-demo"
+launchTarget="wps"
 
 # Takes a boolean value or string "adaptive". When true, do not process XAuth files and forces wayland input method. "adaptive" enables this option on Wayland and vice versa. Generally this should be adaptive when possible.
 waylandOnly="false"
