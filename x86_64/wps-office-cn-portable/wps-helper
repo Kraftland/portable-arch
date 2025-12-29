@@ -1,10 +1,4 @@
 #!/usr/bin/bash
 
 
-export launchTarget="cn.wps.app"
-
-if [[ -e "$*" ]]; then
-	export bwBindPar="$*"
-fi
-
-exec portable -- $@
+wps-office-cn-portable $@
