@@ -1,0 +1,38 @@
+# Maintainer: Kimiblock Moe
+
+pkgname=prismlauncher-portable
+pkgver=9.4
+pkgrel=6
+provides=(prismlauncher prismlauncher-portable prismlauncher-bwrap)
+replaces=(prismlauncher-bwrap)
+conflicts=(prismlauncher)
+pkgdesc="Minecraft launcher with ability to manage multiple instances. Sandboxed by portable."
+arch=(x86_64)
+url='https://prismlauncher.org'
+license=('GPL-3.0-only AND LGPL-3.0-or-later AND LGPL-2.0-or-later AND Apache-2.0 AND MIT AND LicenseRef-Batch AND OFL-1.1')
+depends=(
+glibc  gcc-libs  java-runtime  libgl  qt6-base  qt6-5compat  qt6-svg  qt6-imageformats  qt6-networkauth  quazip-qt6  zlib  hicolor-icon-theme tomlplusplus cmark portable)
+makedepends=(desktop-file-utils prismlauncher)
+optdepends=('visualvm: Profiling support')
+source=(
+	portable-config
+	desktop.file
+)
+b2sums=('9207b8b3001285fae586f40e0284873173de8ee52e3a4407e67197ed3fac064de44b0ea90c252f7dfe834a85aa7149d270f9906ee2d2618a814b1803108b804c'
+        '8370d9a7b7f60ec115cad0c2c4d86cdaebbd2f1e5cd5c4d5b8525310aac8751397d59a09440058db67e9a6f1adbd5b227333f6cd03c7eb4cab66dad2c9035f2c')
+
+package() {
+	export pkgdir
+	export pkgname
+	export srcdir
+	portable-packer \
+		-v \
+		--distro arch \
+		--mode copy prismlauncher \
+		--hash true \
+		--config "${srcdir}/portable-config" \
+		--desktop-file "${srcdir}/desktop.file"
+
+	install -vDm755 "/usr/bin/prismlauncher" -t "${pkgdir}/usr/lib/portable/overlay-usr"
+	ln -srf "${pkgdir}/usr/bin/prismlauncher-portable" "${pkgdir}/usr/bin/prismlauncher"
+}
