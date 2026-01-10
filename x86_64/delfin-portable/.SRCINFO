@@ -1,0 +1,24 @@
+pkgbase = delfin-portable
+	pkgdesc = Delfin video player. Sandboxed to prevent dGPU wakeups.
+	pkgver = 0.4.8
+	pkgrel = 1
+	epoch = 1
+	url = https://github.com/Kraftland/portable
+	arch = x86_64
+	license = GPL-3.0-or-later
+	makedepends = delfin
+	makedepends = portable
+	provides = delfin
+	conflicts = delfin
+	options = !debug
+	options = !strip
+	source = portable-config
+	source = cafe.avery.Delfin.desktop
+	md5sums = f3884c17614670b0c790af7a08dc5fd3
+	md5sums = 2f5b7f6d9ddd0dd61e9d4f9bbaa27580
+
+pkgname = delfin-portable
+	depends = portable
+	depends = mpv
+	depends = libadwaita
+	depends = gtk4
