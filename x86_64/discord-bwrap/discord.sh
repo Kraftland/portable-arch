@@ -12,7 +12,7 @@ install \
 	/usr/share/discord-bwrap/settings.json \
 	"${XDG_DATA_HOME}/Discord_Data/.config/discord/settings.json"
 
-export _portalConfig=/usr/lib/portable/info/com.discord.app/config
+export _portableConfig=com.discordapp.Discord
 
 if [[ "$@" = "--actions opendir" ]]; then
 	exec portable --actions opendir
