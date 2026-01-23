@@ -1,12 +1,12 @@
 pkgbase = wps-office-cn-portable
 	pkgdesc = Kingsoft Office (WPS Office) CN version - an office productivity suite
-	pkgver = 12.1.2.23578
-	pkgrel = 3
+	pkgver = 12.1.2.24722.portable
+	pkgrel = 1
 	url = https://linux.wps.cn
 	arch = x86_64
 	license = LicenseRef-WPS-EULA
 	makedepends = desktop-file-utils
-	makedepends = wps-office-cn=12.1.2.23578
+	makedepends = wps-office-cn=12.1.2.24722
 	depends = portable
 	replaces = wps-office-cn-bwrap
 	options = !emptydirs
