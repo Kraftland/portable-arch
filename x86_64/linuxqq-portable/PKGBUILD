@@ -4,7 +4,7 @@
 
 pkgname=linuxqq-portable
 pkgver=3.2.23_44343
-pkgrel=1
+pkgrel=2
 epoch=1
 pkgdesc="Linux QQ based on Electron, sandboxed by portable"
 arch=('x86_64' 'aarch64' 'loong64')

@@ -1,7 +1,7 @@
 pkgbase = linuxqq-portable
 	pkgdesc = Linux QQ based on Electron, sandboxed by portable
 	pkgver = 3.2.23_44343
-	pkgrel = 1
+	pkgrel = 2
 	epoch = 1
 	url = https://im.qq.com/linuxqq
 	arch = x86_64

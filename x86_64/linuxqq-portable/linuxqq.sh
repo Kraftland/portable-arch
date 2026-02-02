@@ -6,7 +6,8 @@ if [ -d ~/.config/QQ/versions ]; then
 fi
 
 rm -rf ~/.config/QQ/crash_files/*
+if [[ "${XDG_SESSION_TYPE}" = "wayland" ]]; then
+	flag="--ozone-platform=wayland"
+fi
 
-#XDG_CONFIG_HOME=${XDG_CONFIG_HOME:-~/.config}
-
-/opt/QQ/qq --no-sandbox --ozone-platform-hint=auto --enable-features=WebRTCPipeWireCapturer --wayland-text-input-version=3 --enable-wayland-ime "$@"
+/opt/QQ/qq --no-sandbox ${flag} --enable-features=WebRTCPipeWireCapturer --wayland-text-input-version=3 --enable-wayland-ime "$@"
