@@ -38,13 +38,11 @@ source=("wemeet".sh
 	'git+https://github.com/xuwd1/wemeet-wayland-screenshare.git'
 	)
 makedepends=('patchelf' 'cmake' 'git' libportal)
-sha512sums=(
-	'SKIP'
-	'SKIP'
-	'SKIP'
-	'SKIP'
-	)
-sha512sums_x86_64=('SKIP')
+sha512sums=('ac2a0ca1795b00978224c83ed8a7a5e102d63dd9f9e991550c40382eccb869472da56cb683e335ece73ae092d5f2900191b7936750384b98d708b260efb35e44'
+            '6c429d219f87f4a8fd43dd39413a9f52f6dc7fa4dcad97bba6955450fac2ae5120dbe748793618779207ee081bc8d153b28a894a9a8605b7367353e553705521'
+            'd7f5298ce768094eaf2931805897144576c208b33ce7b758703ea7e0cdb1e8a5a5ab0dac2b792fb73702343e4a54280017348cf72d889e226eedfe4dc05004c0'
+            'SKIP')
+sha512sums_x86_64=('2be43847d67c434f0dd2625e614a74ec03200cdf6e1b4c8845023b62faee06c73a364c2155419275cb9d77f1f3df056ca009c0e415af4a2b35fa34323a159303')
 sha512sums_aarch64=('d84bb40617edf1a97d0fd3b6674df050d62c7ce19e8aff1230a42d47d1887ca641aec20d732fc1bbdecc233781db0be0c9ce8a412fdb68d28eec59d09228f638')
 
 prepare() {
