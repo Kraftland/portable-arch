@@ -19,7 +19,7 @@ waylandOnly="false"
 bindInputDevices="false"
 
 # Takes boolean value. Binds /dev/video* into the sandbox. Required if target application uses /dev/video* interfaces directly instead of v4l2.
-bindCameras="false"
+bindCameras="true"
 
 # Takes boolean value. Binds PipeWire socket into the sandbox. Required if target application doesn't use Portals.
 bindPipewire="false"
