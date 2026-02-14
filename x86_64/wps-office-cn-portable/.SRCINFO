@@ -6,7 +6,7 @@ pkgbase = wps-office-cn-portable
 	arch = x86_64
 	license = LicenseRef-WPS-EULA
 	makedepends = desktop-file-utils
-	makedepends = wps-office-cn=12.1.2.24722
+	makedepends = wps-office-cn
 	depends = portable
 	replaces = wps-office-cn-bwrap
 	options = !emptydirs
@@ -14,7 +14,7 @@ pkgbase = wps-office-cn-portable
 	source = wps-helper
 	source = wps-office-wps.desktop
 	sha1sums = de19eb2efaf516d222defb61117ef2e345afe86c
-	sha1sums = 67a759a2bc8a0cc17eb75b0b524b163f0318cf32
+	sha1sums = 3e8ddf69528f05eb4004962eddea2014e25ab44f
 	sha1sums = 63bd9f86898f53eb8455443e59a9f8afc6cdbd75
 
 pkgname = wps-office-cn-portable
@@ -42,8 +42,6 @@ pkgname = wps-office-cn-portable
 	optdepends = ttf-ms-fonts: Microsft Fonts recommended for wps-office
 	optdepends = wps-office-fonts: FZ TTF fonts provided by wps community
 	optdepends = wps-office-mui-zh-cn: zh_CN support for WPS Office
-	provides = wps-office
-	provides = wps-office-cn
 	conflicts = kingsoft-office
 	conflicts = wps-office
 	conflicts = wps-office-cn
