@@ -40,8 +40,11 @@ Warning! Please use chroot to build these packages.
 
 We are currently only accepting `x86_64` and `any` packages. Please place your PKGBUILD and up-to-date .SRCINFO under `x86_64/${pkgname}` or `any/${pkgname}` and create pull requests. Or become a maintainer by sending Kimiblock Moe an email. If you are in need of other architectures, let me know.
 
+The main branch is protected, please always push to another branch and merge via pull request. Please do not change packages which do not belong to you.
+
 The pre-commit hook is capable of generating .SRCINFO automatically. To make use of it, run `ln -srf pre-commit .git/hooks/pre-commit`
 
 # Background
 
 This repository was created because of AUR's opaque moderation rules, see [An open letter to the AUR community](https://blog.kimiblock.top/2025/09/08/letter-to-aur/).
+
