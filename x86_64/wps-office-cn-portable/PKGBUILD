@@ -5,13 +5,13 @@ pkgname=wps-office-cn-portable
 pkgver=12.1.2.24722.portable
 pkgrel=1
 pkgdesc="Kingsoft Office (WPS Office) CN version - an office productivity suite"
-makedepends+=(desktop-file-utils "wps-office-cn")
+makedepends+=(desktop-file-utils "wps-office-cn" "portable")
 arch=('x86_64')
 license=('LicenseRef-WPS-EULA')
 url="https://linux.wps.cn"
 options=('!emptydirs')
-depends=("portable")
 replaces+=(wps-office-cn-bwrap)
+conflicts=('kingsoft-office' 'wps-office' "wps-office-cn" wps-office-cn-bwrap)
 
 source=("portable-config" "wps-helper" wps-office-wps.desktop)
 sha1sums=('de19eb2efaf516d222defb61117ef2e345afe86c'
@@ -28,7 +28,6 @@ package() {
                 'ttf-ms-fonts: Microsft Fonts recommended for wps-office'
                 'wps-office-fonts: FZ TTF fonts provided by wps community'
                 'wps-office-mui-zh-cn: zh_CN support for WPS Office')
-    conflicts=('kingsoft-office' 'wps-office' "wps-office-cn")
 
 	install -vDm755 "/usr/bin/wps" -t "${pkgdir}/usr/lib/portable/overlay-usr"
 
