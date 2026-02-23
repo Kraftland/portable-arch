@@ -1,7 +1,7 @@
 pkgbase = steam-portable
 	pkgdesc = Valve's digital software delivery system sandboxed by portable. Automatically uses discrete GPUs.
 	pkgver = 1.0.0.85
-	pkgrel = 1
+	pkgrel = 2
 	epoch = 1
 	url = https://github.com/Kraftland/portable
 	arch = x86_64
@@ -15,9 +15,9 @@ pkgbase = steam-portable
 	source = portable-config
 	source = steam.sh
 	source = steam.desktop
-	md5sums = 1a959188d6f88fcb3b820741fbee085d
-	md5sums = 5551ceb75a951eeb503ba080c010b7ba
-	md5sums = 94c96c66a514972aab5aab36fa3e4932
+	md5sums = 79e25131895a4131f9d1980c3b6b130d
+	md5sums = ba9839547fccab9c029c7947f123f7c1
+	md5sums = 7e051f994b1dc0a0eae46149ad0255cb
 
 pkgname = steam-portable
 	depends = portable
