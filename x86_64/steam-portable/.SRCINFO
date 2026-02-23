@@ -15,7 +15,7 @@ pkgbase = steam-portable
 	source = portable-config
 	source = steam.sh
 	source = steam.desktop
-	md5sums = 79e25131895a4131f9d1980c3b6b130d
+	md5sums = ecc7d37e925ee97414a478f4e1b691cf
 	md5sums = ba9839547fccab9c029c7947f123f7c1
 	md5sums = 7e051f994b1dc0a0eae46149ad0255cb
 

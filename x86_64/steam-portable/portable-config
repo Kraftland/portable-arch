@@ -34,7 +34,7 @@ waylandOnly="false"
 # Expose all GPUs. Takes boolean value, usually used in games.
 gameMode="true"
 
-networkDeny="localhost private"
+networkDeny="private"
 
 ########## Section: Input ##########
 
