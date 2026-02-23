@@ -29,5 +29,7 @@ gameMode="false"
 
 useZink="true"
 
+networkDeny="private localhost"
+
 # Below you can set envs that will be imported into the application sandbox
 PULSE_LATENCY_MSEC=20
