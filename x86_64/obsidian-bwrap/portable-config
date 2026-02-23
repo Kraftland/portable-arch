@@ -14,12 +14,8 @@ launchTarget="electron /usr/lib/obsidian/app.asar --enable-features=AcceleratedV
 
 waylandOnly="adaptive"
 
-# Takes boolean value.
-bindInputDevices="false"
-
-# Expose all GPUs. Takes boolean value, usually used in games.
-gameMode="false"
-
 terminateImmediately="true"
+
+networkDeny="localhost private"
 
 # Below you can set envs that will be imported into the application sandbox
