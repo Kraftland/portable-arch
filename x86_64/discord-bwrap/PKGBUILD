@@ -6,7 +6,7 @@
 
 pkgname=discord-portable
 _pkgname=Discord
-pkgver=0.0.121
+pkgver=0.0.127
 pkgrel=1
 epoch=1
 pkgdesc="All-in-one voice and text chat for gamers. Sandboxed for privacy."

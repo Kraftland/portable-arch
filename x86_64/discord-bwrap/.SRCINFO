@@ -1,12 +1,12 @@
 pkgbase = discord-portable
 	pkgdesc = All-in-one voice and text chat for gamers. Sandboxed for privacy.
-	pkgver = 0.0.121
+	pkgver = 0.0.127
 	pkgrel = 1
 	epoch = 1
 	url = https://discord.com
 	arch = x86_64
 	license = custom
-	makedepends = discord=1:0.0.121
+	makedepends = discord=1:0.0.127
 	makedepends = portable
 	provides = discord
 	provides = discord-sandbox
