@@ -1,0 +1,13 @@
+#!/usr/bin/env bash
+
+if [ $# -eq 0 ]; then
+    _portableConfig=cn.wps.wps_365 portable
+
+else
+    FILE="$1"
+    DIR="$(dirname "$FILE")"
+
+    _portableConfig=cn.wps.wps_365 exec portable \
+	    --expose "$FILE" "$FILE" \
+	    -- "$FILE"
+fi
