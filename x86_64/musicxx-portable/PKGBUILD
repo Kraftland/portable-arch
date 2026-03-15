@@ -1,0 +1,31 @@
+# Maintainer: sf467
+
+pkgname=musicxx-portable
+depends=(gtk3  util-linux-libs  xz)
+provides=("musicxx")
+conflicts=("musicxx")
+pkgver=0.85.5
+pkgrel=2
+pkgdesc="Audio and video player"
+arch=('x86_64')
+license=('MIT')
+url="https://github.com/coolight7/musicxx"
+makedepends=(musicxx-bin "portable" "desktop-file-utils")
+source=('com.mimicry.musicxx.desktop' 'portable-config' 'musicxx')
+sha512sums=('6c549986d22eb4c5cec8b32dec26df77a852efbcc971adae6f8082b75d5c8ffbe963202c0ac89294de86f542a8ed46817b164974ca0e51823a393592036981fc'
+	'974a774fdfd97a0405ac69ca0dea1e04480df5ffda25f5c61ad14217e64cf96f10114d22922485dd4d63b1673868a293b8eb6a5d719bd318ed332c40444d9600'
+	'be7457a5fda1e9b2dd8132fc4ba01f8af488ed6ca6c3ac9602d04c9df940fca266a770fa37bc64931d8aa96d6230ba44fdd3ef74f39a8d7eff6e063d2f056d15')
+
+package() {
+	declare -x -g pkgdir
+	declare -x -g pkgname
+	declare -x -g srcdir
+	portable-packer \
+		-v \
+		--distro arch \
+		--mode copy musicxx-bin \
+		--hash true \
+		--config "${srcdir}/portable-config" \
+		--desktop-file "${srcdir}/com.mimicry.musicxx.desktop"
+	install -vDm755 "${srcdir}/musicxx" -t "${pkgdir}/usr/bin/"
+}

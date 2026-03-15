@@ -1,0 +1,24 @@
+pkgbase = musicxx-portable
+	pkgdesc = Audio and video player
+	pkgver = 0.85.5
+	pkgrel = 2
+	url = https://github.com/coolight7/musicxx
+	arch = x86_64
+	license = MIT
+	makedepends = musicxx-bin
+	makedepends = portable
+	makedepends = desktop-file-utils
+	depends = gtk3
+	depends = util-linux-libs
+	depends = xz
+	provides = musicxx
+	provides = musicxx-bin
+	conflicts = musicxx-bin
+	source = com.mimicry.musicxx.desktop
+	source = portable-config
+	source = musicxx
+	sha512sums = 6c549986d22eb4c5cec8b32dec26df77a852efbcc971adae6f8082b75d5c8ffbe963202c0ac89294de86f542a8ed46817b164974ca0e51823a393592036981fc
+	sha512sums = dde7226701a3f03be20623ff05885d626bd3e779e2e0a88e93f014d04b6af5f37dcd18c450fc4edb9172b77ea4cdb98c58fe099c3b8adba8acbb5125c4960222
+	sha512sums = be7457a5fda1e9b2dd8132fc4ba01f8af488ed6ca6c3ac9602d04c9df940fca266a770fa37bc64931d8aa96d6230ba44fdd3ef74f39a8d7eff6e063d2f056d15
+
+pkgname = musicxx-portable
