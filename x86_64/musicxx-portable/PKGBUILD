@@ -2,8 +2,8 @@
 
 pkgname=musicxx-portable
 depends=(gtk3  util-linux-libs  xz)
-provides=("musicxx" "musicxx-bin")
-conflicts=("musicxx-bin")
+provides=("musicxx")
+conflicts=("musicxx")
 pkgver=0.85.5
 pkgrel=2
 pkgdesc="Audio and video player"
