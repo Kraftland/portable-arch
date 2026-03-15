@@ -1,0 +1,6 @@
+[Desktop Entry]
+Type=Application
+Name=musicxx
+Exec=/usr/bin/musicxx
+Icon=/opt/musicxx/musicxx.png
+Categories=AudioVideo;
