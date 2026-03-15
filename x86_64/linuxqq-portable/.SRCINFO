@@ -1,7 +1,7 @@
 pkgbase = linuxqq-portable
 	pkgdesc = Linux QQ based on Electron, sandboxed by portable
 	pkgver = 3.2.26_46494
-	pkgrel = 1
+	pkgrel = 2
 	epoch = 1
 	url = https://im.qq.com/linuxqq
 	arch = x86_64
@@ -24,7 +24,7 @@ pkgbase = linuxqq-portable
 	conflicts = linuxqq
 	options = !strip
 	options = !debug
-	source = linuxqq.sh
+	source = linuxqq
 	source = start.sh
 	source = portable-config
 	source = im.qq.app.desktop
