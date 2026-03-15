@@ -19,7 +19,7 @@ pkgbase = wps-office-365-portable
 	source = cn.wps.wps_365.desktop
 	sha1sums = c8f4b13d06ed296990e7035aaa332346bf0effbd
 	sha1sums = 75e7b46c6ec8679cd182806585d811b662ba0c58
-	sha1sums = bdf9290ef3e2a07db8a272fe272803286476523a
+	sha1sums = 73329e11892b85e14827b7bd9ff80bb6341f8f50
 
 pkgname = wps-office-365-portable
 	depends = fontconfig
