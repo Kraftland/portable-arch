@@ -15,7 +15,7 @@ conflicts=("linuxqq")
 provides=("linuxqq")
 depends=('nss' 'alsa-lib' 'gtk3' 'at-spi2-core' 'libvips' 'openjpeg2' 'openslide' 'portable')
 optdepends=('libappindicator-gtk3: Allow QQ to extend a menu via Ayatana indicators in Unity, KDE or Systray (GTK+ 3 library).')
-source=("linuxqq.sh" "start.sh" "portable-config" "im.qq.app.desktop")
+source=("linuxqq" "start.sh" "portable-config" "im.qq.app.desktop")
 sha512sums=('5132db083f632c6f4ad7c77f9d3994392c30fac01697f0fec4010cb5daccb33e7d3d56e7a13daaa405a175d0f0e896ae7addc56c9946539389cb4f80bea6ab27'
             'b6a955e64b69d98776346a5ec154d119e1acdc3bba364bf01bdcd6119ce20933f326d40990e7e477c3b7c741beb50e22da4ad2d6880538256245bdc31dcede0e'
             'cf16b3e443633299e5f9632bce91df1dbceb7a0d041c722c38ff8044cc1da6aaa85ed23da72c24b74eb0a203b62aa65a6ce01fcb8ae71c6fa858b7bbb32d0646'
@@ -23,7 +23,7 @@ sha512sums=('5132db083f632c6f4ad7c77f9d3994392c30fac01697f0fec4010cb5daccb33e7d3
 options=('!strip' '!debug')
 
 package() {
-#	install -vDm755 "/usr/bin/linuxqq" -t "${pkgdir}/usr/lib/portable/overlay-usr"
+	install -vDm755 "/usr/bin/linuxqq" -t "${pkgdir}/usr/lib/portable/overlay-usr"
 	declare -x -g pkgdir
 	declare -x -g pkgname
 	declare -x -g srcdir
@@ -34,5 +34,5 @@ package() {
 		--hash true \
 		--config "${srcdir}/portable-config" \
 		--desktop-file "${srcdir}/im.qq.app.desktop"
-	install -vDm755 "${srcdir}/linuxqq.sh" -t "${pkgdir}/usr/bin/linuxqq"
+	install -vDm755 "${srcdir}/start.sh"  "${pkgdir}/usr/bin/linuxqq"
 }
