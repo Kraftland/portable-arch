@@ -11,6 +11,6 @@ else
     DIR="$(dirname "$FILE")"
 
     _portableConfig=cn.wps.wps_365 exec portable \
-	    --expose "$FILE" "$FILE" \
+	    --expose "$FILE" "/tmp/$(basename "$FILE")" \
 	    -- "$FILE"
 fi
