@@ -3,9 +3,14 @@
 pkgbase=wps-office-365-portable
 pkgname=wps-office-365-portable
 pkgver=12.8.2.21176.portable
-pkgrel=3
+pkgrel=4
 pkgdesc="Kingsoft Office (WPS Office) CN version - an office productivity suite"
 makedepends+=(desktop-file-utils "wps-office-365" "portable")
+depends=(
+  'fontconfig' 'libxrender' 'xdg-utils' 'glu' 'coreutils'
+  'libpulse' 'libxss' 'sqlite' 'libtool' 'libtiff'
+  'libxslt' 'libjpeg-turbo' 'libpng' 'freetype2')
+
 arch=('x86_64')
 license=('LicenseRef-WPS-EULA')
 url="https://365.wps.cn/"
@@ -13,10 +18,11 @@ options=('!emptydirs')
 replaces+=(wps-office-cn-bwrap)
 conflicts=('kingsoft-office' 'wps-office' "wps-office-365" wps-office-cn-bwrap)
 
-source=("portable-config" "wps365-helper" cn.wps.wps_365.desktop)
-sha1sums=('03aba56ecfb43c7c411334e96faba4a25c8a7860'
-          '75e7b46c6ec8679cd182806585d811b662ba0c58'
-          '73329e11892b85e14827b7bd9ff80bb6341f8f50')
+source=(portable-config wps365-open cn.wps.wps_365.desktop wps)
+sha1sums=('0c74705be77e05bce29cbad6560c1fb4e3b9bbd5'
+          '0cb27cb3a49735bab9314896980679a4b0eca54e'
+          '9b1b7676f54dd9f7419a7c72275cdef8adb1c754'
+	  '0ac126e52e4818d1c409ffaac46a88a3e9223c43')
 
 package() {
 	depends+=('fontconfig' 'xorg-mkfontscale' 'libxrender' 'desktop-file-utils' 'shared-mime-info' 'xdg-utils' 'glu' 'sdl2' 'libpulse' 'hicolor-icon-theme' 'libxss' 'sqlite' 'libtool' 'libxslt' 'libjpeg-turbo')
@@ -29,8 +35,6 @@ package() {
                 'wps-office-fonts: FZ TTF fonts provided by wps community'
                 'wps-office-mui-zh-cn: zh_CN support for WPS Office')
 
-	install -vDm755 "/usr/bin/wps"  "${pkgdir}/usr/lib/portable/info/cn.wps.wps_365/wps"
-
 	declare -x -g pkgdir
 	declare -x -g pkgname
 	declare -x -g srcdir
@@ -41,5 +45,6 @@ package() {
 		--hash true \
 		--config "${srcdir}/portable-config" \
 		--desktop-file "${srcdir}/cn.wps.wps_365.desktop"
-	install -vDm755 "${srcdir}/wps365-helper" -t "${pkgdir}/usr/bin"
+	install -vDm755 "${srcdir}/wps365-open" "${pkgdir}/usr/lib/portable/info/cn.wps.wps_365/wps365-open"
+	install -vDm755 "${srcdir}/wps" "${pkgdir}/usr/bin/wps"
 }
