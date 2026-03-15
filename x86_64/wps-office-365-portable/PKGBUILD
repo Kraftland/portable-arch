@@ -16,7 +16,7 @@ conflicts=('kingsoft-office' 'wps-office' "wps-office-365" wps-office-cn-bwrap)
 source=("portable-config" "wps365-helper" cn.wps.wps_365.desktop)
 sha1sums=('c8f4b13d06ed296990e7035aaa332346bf0effbd'
           '75e7b46c6ec8679cd182806585d811b662ba0c58'
-          'bdf9290ef3e2a07db8a272fe272803286476523a')
+          '73329e11892b85e14827b7bd9ff80bb6341f8f50')
 
 package() {
 	depends+=('fontconfig' 'xorg-mkfontscale' 'libxrender' 'desktop-file-utils' 'shared-mime-info' 'xdg-utils' 'glu' 'sdl2' 'libpulse' 'hicolor-icon-theme' 'libxss' 'sqlite' 'libtool' 'libxslt' 'libjpeg-turbo')
