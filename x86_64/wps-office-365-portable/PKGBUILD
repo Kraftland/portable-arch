@@ -3,7 +3,7 @@
 pkgbase=wps-office-365-portable
 pkgname=wps-office-365-portable
 pkgver=12.8.2.21176.portable
-pkgrel=1
+pkgrel=2
 pkgdesc="Kingsoft Office (WPS Office) CN version - an office productivity suite"
 makedepends+=(desktop-file-utils "wps-office-365" "portable")
 arch=('x86_64')
@@ -14,7 +14,7 @@ replaces+=(wps-office-cn-bwrap)
 conflicts=('kingsoft-office' 'wps-office' "wps-office-365" wps-office-cn-bwrap)
 
 source=("portable-config" "wps365-helper" cn.wps.wps_365.desktop)
-sha1sums=('c8f4b13d06ed296990e7035aaa332346bf0effbd'
+sha1sums=('3b0e6180ed0b7ff23347b48b4749b64ccb90357c'
           '75e7b46c6ec8679cd182806585d811b662ba0c58'
           '73329e11892b85e14827b7bd9ff80bb6341f8f50')
 
@@ -29,7 +29,7 @@ package() {
                 'wps-office-fonts: FZ TTF fonts provided by wps community'
                 'wps-office-mui-zh-cn: zh_CN support for WPS Office')
 
-	install -vDm755 "/usr/bin/wps" -t "${pkgdir}/usr/lib/portable/overlay-usr"
+	install -vDm755 "/usr/bin/wps"  "${pkgdir}/usr/lib/portable/info/im.qq.app/wps"
 
 	declare -x -g pkgdir
 	declare -x -g pkgname
