@@ -2,8 +2,8 @@
 
 pkgbase=wps-office-365-portable
 pkgname=wps-office-365-portable
-pkgver=12.8.2.21176.portable
-pkgrel=5
+pkgver=12.1.2.24722.portable
+pkgrel=1
 pkgdesc="Kingsoft Office (WPS Office) CN version - an office productivity suite"
 makedepends+=(desktop-file-utils "wps-office-365" "portable")
 depends=(
