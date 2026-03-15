@@ -4,7 +4,7 @@
 
 pkgname=linuxqq-portable
 pkgver=3.2.26_46494
-pkgrel=3
+pkgrel=4
 epoch=1
 pkgdesc="Linux QQ based on Electron, sandboxed by portable"
 makedepends+=(desktop-file-utils "linuxqq" "portable")
@@ -22,7 +22,6 @@ sha512sums=('5132db083f632c6f4ad7c77f9d3994392c30fac01697f0fec4010cb5daccb33e7d3
 options=('!strip' '!debug')
 
 package() {
-	install -vDm755 "/usr/bin/linuxqq" -t "${pkgdir}/usr/lib/portable/overlay-usr"
 	declare -x -g pkgdir
 	declare -x -g pkgname
 	declare -x -g srcdir
@@ -33,5 +32,7 @@ package() {
 		--hash true \
 		--config "${srcdir}/portable-config" \
 		--desktop-file "${srcdir}/im.qq.app.desktop"
-	install -vDm755 "${srcdir}/start.sh"  "${pkgdir}/usr/bin/linuxqq"
+        install -Dm755 "${srcdir}/linuxqq.sh" "${pkgdir}/usr/lib/portable/info/im.qq.app/start-script.sh"
+        install -Dm755 "${srcdir}/start.sh" "${pkgdir}/usr/bin/linuxqq"
+
 }
