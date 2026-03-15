@@ -1,7 +1,7 @@
 pkgbase = wps-office-365-portable
 	pkgdesc = Kingsoft Office (WPS Office) CN version - an office productivity suite
-	pkgver = 12.8.2.21176.portable
-	pkgrel = 5
+	pkgver = 12.1.2.24722.portable
+	pkgrel = 1
 	url = https://365.wps.cn/
 	arch = x86_64
 	license = LicenseRef-WPS-EULA
