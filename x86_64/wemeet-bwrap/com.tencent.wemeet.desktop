@@ -1,0 +1,31 @@
+[Desktop Entry]
+Name=Wemeet
+Name[zh_CN]=腾讯会议
+Exec=/usr/bin/wemeet %u
+Icon=wemeet
+Type=Application
+Terminal=false
+Categories=AudioVideo;
+Comment=Tencent Meeting Linux Client
+Comment[zh_CN]=腾讯会议Linux客户端
+Keywords=wemeet;tencent;meeting;
+MimeType=x-scheme-handler/wemeet;
+Actions=opendir;share;quit;
+
+[Desktop Action opendir]
+Name=Open Wemeet Home
+Name[zh_CN]=打开数据目录
+Exec=/usr/bin/wemeet --actions opendir
+Icon=go-home-symbolic
+
+[Desktop Action share]
+Name=Share files with Wemeet
+Name[zh_CN]=向腾讯会议传输文件
+Exec=/usr/bin/wemeet --actions share-files
+Icon=insert-image-symbolic
+
+[Desktop Action quit]
+Name=Quit Wemeet
+Name[zh_CN]=退出腾讯会议
+Exec=/usr/bin/wemeet --actions quit
+Icon=system-log-out-symbolic

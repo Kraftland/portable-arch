@@ -1,12 +1,15 @@
-# Maintainer: Kimiblock Moe
+# Maintainer: sf467
 # Contributor: sukanka <su975853527[AT]gmail.com>
 # Contributor: Sam L. Yes <samlukeyes123 at gmail dot com>
+# Contributor: Kimiblock Moe
 
-_pkgname=wemeet
-pkgname=$_pkgname-bwrap
+pkgname=wemeet-bwrap
+pkgver=3.26.10.401
+pkgrel=2
+pkgdesc="Sandboxed wemeet, supports screensharing on Wayland / 沙盒化腾讯会议, 支持 Wayland 屏幕共享"
 depends=(
     "bash"
-    "qt5-webengine" "qt5-x11extras" "libxinerama"
+    "qt5-x11extras" "libxinerama"
     libpulse
     # dependencies detected by namcap
     gcc-libs qt5-declarative libglvnd libxfixes alsa-lib qt5-webchannel openssl
@@ -18,136 +21,37 @@ depends=(
     opencv
     libxrandr
 )
-provides=('wemeet' 'tencent-meeting' "wemeet-wayland-screenshare")
+# provides=('tencent-meeting' "wemeet-wayland-screenshare")
 conflicts=('wemeet' 'tencent-meeting' "wemeet-wayland-screenshare")
-pkgver=3.26.10.401
-_pkgver_arm=3.26.10.401
-_x86_md5=72e0e0023e1d1e6d4123fba28821aea1
-_arm_md5=c06d6bc4a3370dbfb2f43bbc6ff8969e
-pkgrel=1
-pkgdesc="Sandboxed wemeet, supports screensharing on Wayland / 沙盒化腾讯会议, 支持 Wayland 屏幕共享"
 arch=('x86_64' 'aarch64')
 license=('LicenseRef-proprietary')
 url="https://source.meeting.qq.com/download-center.html"
-source_x86_64=("${_pkgname}-${pkgver}-x86_64.deb::https://updatecdn.meeting.qq.com/cos/${_x86_md5}/TencentMeeting_0300000000_${pkgver}_x86_64_default.publish.deb"
-)
-source_aarch64=("${_pkgname}-${_pkgver_arm}-aarch64.deb::https://updatecdn.meeting.qq.com/cos/${_arm_md5}/TencentMeeting_0300000000_${_pkgver_arm}_arm64_default.publish.deb")
-source=("wemeet".sh
+source=(wemeet-open
 	portable-config
 	start.sh
-	'git+https://github.com/xuwd1/wemeet-wayland-screenshare.git'
+	com.tencent.wemeet.desktop
 	)
-makedepends=('patchelf' 'cmake' 'git' libportal)
-sha512sums=('ac2a0ca1795b00978224c83ed8a7a5e102d63dd9f9e991550c40382eccb869472da56cb683e335ece73ae092d5f2900191b7936750384b98d708b260efb35e44'
-            '1b223854871dd39274aca5d852b0e0379a8039f5227008affc490fd3f9f816f2963b7994502a9737c323aafea04eb4844c4a37a488be9e49c430b05f3bff4a2d'
-            'd7f5298ce768094eaf2931805897144576c208b33ce7b758703ea7e0cdb1e8a5a5ab0dac2b792fb73702343e4a54280017348cf72d889e226eedfe4dc05004c0'
-            'SKIP')
-sha512sums_x86_64=('acaa1eba8eccd3a5bd4cb57dc0fadce5c33950857677783944ac2bfbefbed927ca3b4b7d9d0c9e864dcdc3b9f9f8a359c456e9b63b38ac0fa9436fc336aa9ea7')
-sha512sums_aarch64=('6fb54c4972b6ebaf8e1ce576b4ea075ec1b1cd5d02702feef5382712a8bafc2ff85cbd6ab43c90e6e6c55627da77ecc1c8c58f4154e0a160247387f5b2972abc')
+sha512sums=('5fd275121faa76dcb4043034c1d0b2d48ae554848e069dfa2f2385b090dcedbee554ac5b233bcb500a3793d13427037bd74609f43dde935e75f601fce23d7758'
+	'50457596c01a732dc6e8797bdc5de53b3de47e13a703e832eacb5abf407a2b947ab6f5285338199ce8840a42e8082f1034545fadaee66d8469f39b0614096863'
+	'd7f5298ce768094eaf2931805897144576c208b33ce7b758703ea7e0cdb1e8a5a5ab0dac2b792fb73702343e4a54280017348cf72d889e226eedfe4dc05004c0'
+	'1efed01fdca8513c216723cda0040a1c15802fae4d1ac5b75a49477818f4ab784ee68e53e75ed338addc4a960ec7c980f06e8066a4419050ec31d1f3fc3b3e2b')
 
-prepare() {
-    cd "$srcdir"
-    tar xpf data.tar.xz
-
-    pushd usr/share/applications
-    popd
-
-    pushd opt/$_pkgname
-    if [ -d 'icons' ]; then
-        for res in 16 32 64 128 256; do
-            install -dm755 "$srcdir/usr/share/icons/hicolor/${res}x${res}/apps"
-            mv "icons/hicolor/${res}x${res}/mimetypes/${_pkgname}app.png" \
-                "$srcdir/usr/share/icons/hicolor/${res}x${res}/apps/${_pkgname}app.png"
-        done
-    else
-        echo 'icons directory not found'
-    fi
-
-    # rm bin/qt.conf
-    sed -i "s|^Prefix.*|Prefix = /usr/lib/wemeet|" bin/qt.conf
-    patchelf --set-rpath '$ORIGIN:/usr/lib/wemeet' bin/wemeetapp
-    popd
-
-    pushd opt/$_pkgname/bin
-
-    find modules/ -type f -name '*.so' | xargs -I {} patchelf --set-rpath '$ORIGIN:/usr/lib/wemeet' {}
-    popd
-	cd "${srcdir}"/wemeet-wayland-screenshare
-	git submodule update --init --recursive
-}
-
-function build() {
-	cd "${srcdir}"/wemeet-wayland-screenshare
-	mkdir -p build
-	cd build
-	cmake .. -DCMAKE_BUILD_TYPE=Release
-	make
-}
+makedepends=(desktop-file-utils "wemeet-bin" "portable")
 
 package() {
-	install -Dm755 \
-		"${srcdir}/wemeet-wayland-screenshare/build/libhook.so" \
-		"${pkgdir}/usr/lib/wemeet/libhook.so"
-	depends+=(portable "libportal" "xdg-desktop-portal" "xdg-desktop-portal-impl")
-	echo 'https://rule.tencent.com/rule/ab9ea528-0bf1-47b3-a8c3-f001b98912e2' >"${srcdir}/LICENSE"
-	cd "$srcdir"
-    cp -r usr "$pkgdir"
-    cd opt/$_pkgname
+	declare -x -g pkgdir
+	declare -x -g pkgname
+	declare -x -g srcdir
 
-    install -Dm755 "${srcdir}/start.sh" "${pkgdir}/usr/bin/wemeet"
-    install -Dm755 "${srcdir}/portable-config" "${pkgdir}/usr/lib/portable/info/com.tencent.wemeet/config"
-    install -Dm644 $_pkgname.svg -t "$pkgdir/usr/share/icons/hicolor/scalable/apps"
+	install -vDm755 "${srcdir}/wemeet-open" "${pkgdir}/usr/lib/portable/info/com.tencent.wemeet/wemeet-open"
 
-    # libbugly is not likely to be necessary
-	cp -r lib \
-		"$pkgdir/usr/lib/$_pkgname"
-	install -vDm755 "$srcdir/wemeet.sh" "$pkgdir/usr/lib/wemeet/wemeet-x11"
-    if [ -f 'lib/libcrbase.so' ]; then
-        install -Dm755 lib/libcrbase.so -t "$pkgdir/usr/lib/$_pkgname"
-    else
-        echo 'lib/libcrbase.so not found'
-    fi
-    # copy Qt
-    cp -r plugins resources "$pkgdir/usr/lib/$_pkgname"
-    cp -a lib/lib{Qt,icu}* "$pkgdir/usr/lib/$_pkgname"
+	portable-packer \
+		-v \
+		--distro arch \
+		--mode copy wemeet-bin \
+		--hash \
+		--config "${srcdir}/portable-config" \
+		--desktop-file "${srcdir}/com.tencent.wemeet.desktop"
 
-    find "$pkgdir/usr/lib/$_pkgname" -type f -name '*.so*' | xargs -I {} patchelf --set-rpath '$ORIGIN:/usr/lib/wemeet' {}
-
-    install -dm755 "$pkgdir/opt/$_pkgname"
-    cp -r bin "$pkgdir/opt/$_pkgname"
-    ln -s raw/xcast.conf "$pkgdir/opt/$_pkgname/bin/xcast.conf"
-    rm "${pkgdir}/usr/share/applications/wemeetapp.desktop"
-    touch "${pkgdir}/usr/share/applications/com.tencent.wemeet.desktop"
-    echo '''[Desktop Entry]
-Name=Wemeet
-Name[zh_CN]=腾讯会议
-Exec=/usr/bin/wemeet %u
-Icon=wemeet
-Type=Application
-Terminal=false
-Categories=AudioVideo;
-Comment=Tencent Meeting Linux Client
-Comment[zh_CN]=腾讯会议Linux客户端
-Keywords=wemeet;tencent;meeting;
-MimeType=x-scheme-handler/wemeet;
-Actions=opendir;share;quit;
-
-[Desktop Action opendir]
-Name=Open Wemeet Home
-Name[zh_CN]=打开数据目录
-Exec=/usr/bin/wemeet --actions opendir
-Icon=go-home-symbolic
-
-[Desktop Action share]
-Name=Share files with Wemeet
-Name[zh_CN]=向腾讯会议传输文件
-Exec=/usr/bin/wemeet --actions share-files
-Icon=insert-image-symbolic
-
-[Desktop Action quit]
-Name=Quit Wemeet
-Name[zh_CN]=退出腾讯会议
-Exec=/usr/bin/wemeet --actions quit
-Icon=system-log-out-symbolic''' >"${pkgdir}/usr/share/applications/com.tencent.wemeet.desktop"
-	install -Dm644 "${srcdir}/LICENSE" "${pkgdir}/usr/share/licenses/wemeet-bwrap/LICENSE"
+	install -vDm755 "${srcdir}/start.sh" "${pkgdir}/usr/bin/wemeet"
 }
