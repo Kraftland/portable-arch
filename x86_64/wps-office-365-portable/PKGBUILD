@@ -17,6 +17,7 @@ url="https://365.wps.cn/"
 options=('!emptydirs')
 replaces+=(wps-office-cn-bwrap)
 conflicts=('kingsoft-office' 'wps-office' "wps-office-365" wps-office-cn-bwrap)
+provides=('kingsoft-office' 'wps-office' "wps-office-365" wps-office-cn-bwrap)
 
 source=(portable-config wps365-open cn.wps.wps_365.desktop wps)
 sha1sums=('1e70271ac573ed609e9451c6bbd77fd811e71fa7'
