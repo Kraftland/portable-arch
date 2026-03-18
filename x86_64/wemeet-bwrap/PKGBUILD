@@ -21,7 +21,7 @@ depends=(
     opencv
     libxrandr
 )
-# provides=('tencent-meeting' "wemeet-wayland-screenshare")
+provides=('wemeet' 'tencent-meeting' "wemeet-wayland-screenshare")
 conflicts=('wemeet' 'tencent-meeting' "wemeet-wayland-screenshare")
 arch=('x86_64' 'aarch64')
 license=('LicenseRef-proprietary')
