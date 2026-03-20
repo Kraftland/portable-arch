@@ -4,7 +4,7 @@
 buildPrefix	= "extra-x86_64-build"
 
 # Your GitHub user name
-maintainer	= "Kimiblock Moe"
+maintainer	= "shinnkka"
 
 [[depends]]
 # Optional
