@@ -3,7 +3,7 @@
 pkgbase=wps-office-365-portable
 pkgname=wps-office-365-portable
 pkgver=12.1.2.24730.portable
-pkgrel=1
+pkgrel=2
 pkgdesc="Kingsoft Office (WPS Office) CN version - an office productivity suite"
 makedepends+=(desktop-file-utils "wps-office-365" "portable")
 depends=(
@@ -14,7 +14,7 @@ depends=(
 arch=('x86_64')
 license=('LicenseRef-WPS-EULA')
 url="https://365.wps.cn/"
-options=('!emptydirs')
+options=('!emptydirs' '!debug')
 replaces+=(wps-office-cn-bwrap)
 conflicts=('kingsoft-office' 'wps-office' "wps-office-365" wps-office-cn-bwrap)
 provides=('kingsoft-office' 'wps-office' "wps-office-365" wps-office-cn-bwrap)
