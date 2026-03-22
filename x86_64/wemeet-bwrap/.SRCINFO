@@ -1,7 +1,7 @@
 pkgbase = wemeet-bwrap
 	pkgdesc = Sandboxed wemeet, supports screensharing on Wayland / 沙盒化腾讯会议, 支持 Wayland 屏幕共享
 	pkgver = 3.26.10.401
-	pkgrel = 2
+	pkgrel = 3
 	url = https://source.meeting.qq.com/download-center.html
 	arch = x86_64
 	arch = aarch64
@@ -42,6 +42,8 @@ pkgbase = wemeet-bwrap
 	conflicts = wemeet
 	conflicts = tencent-meeting
 	conflicts = wemeet-wayland-screenshare
+	options = !emptydirs
+	options = !debug
 	source = wemeet-open
 	source = portable-config
 	source = start.sh
