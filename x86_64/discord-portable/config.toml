@@ -47,7 +47,7 @@ filterDest = ["private"]
 # The privacy section defines several device exposure preference. By default, Portable does not allow apps to see physical devices. This includes discrete GPUs when gameMode is off, input devices, cameras, and all other PCI devices.
 [privacy]
 # When false, prevents application from connecting to X server on Wayland. Defaults to true.
-x11 = false
+x11 = true
 
 # When false, prevents application from connecting to legacy notifications endpoint. Defaults to true.
 classicNotifications = true
