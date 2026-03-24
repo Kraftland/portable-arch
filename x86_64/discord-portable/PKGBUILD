@@ -6,7 +6,7 @@
 
 pkgname=discord-portable
 _pkgname=Discord
-pkgver=0.0.127
+pkgver=0.0.129
 pkgrel=1
 epoch=1
 pkgdesc="All-in-one voice and text chat for gamers. Sandboxed for privacy."
@@ -14,18 +14,18 @@ arch=('x86_64')
 url='https://discord.com'
 license=('custom')
 conflicts=("discord")
-makedepends+=("discord=1:$(echo ${pkgver} | sed 's|.portable||g')" portable)
+makedepends+=(portable discord)
 provides+=("discord" "discord-sandbox" "discord-portable")
 options=(!debug !strip)
 replaces+=(discord-bwrap)
 source=(
-	"portable-config"
+	"config.toml"
 	"discord.sh"
 	"discord.desktop"
 	)
-sha512sums=('638bce366dba72aee38b2fe00675f0773596825b7d1a7e2f2b76519a2e3626e27e40dd0f91c5b08466cc22938885d3dd6d77a2b43ba7669d6d13ebd85ad37d00'
-            '7657ac6e36d803414fad213c08ad5ae4744efc355938fe208fd91f1ec25c3ab7e744ae36bce2c12c5c557e8022ceca0998b6b355338b10be7e34e35e1ed50da7'
-            '2bbac6cd293e231ae93b0f58eecd6a6217b8299d2dbbe2d06a329297fa353506f6e90070aef363445ebd863c0d302bebb7d4af48a4858c25c1ef9b3924feb53b')
+sha512sums=('f12c3a2b660d5bd5f34f7c0f3d21748dbe45b11d974bde534aac7676e9b390acd1209a687f9b0d0f60a3d623cbca24f54c6bf075e50c0e9d33b96701688b0804'
+            '412d788d281267800c9f9fe65ac356b943aeac2c66a12fba50f5a2012387b18626ab3e8dcce915f0f7330998959320b451b0cc88acf8457c8ed74ae9ed674399'
+            '6f08846021880789769f6739088b9d732d5448d60a4f4ca2a0aa85d3ba10766ee9aa64084ccd5ae0182c2fca076a154db802621ef9a958245ec4e914d2813f01')
 
 function prepare() {
 	echo '''{
@@ -33,9 +33,6 @@ function prepare() {
 }''' >"${srcdir}/skip-update.json"
 }
 
-function pkgver() {
-	pacman -Q discord | awk '{sub(/-.*/, "", $2); print $2}' | sed "s|${epoch}:||g"
-}
 
 package() {
 	depends=('libnotify' 'libxss' 'nspr' 'nss' 'gtk3' libpulse libappindicator-gtk3 "portable")
@@ -47,9 +44,9 @@ package() {
 		--distro arch \
 		--mode copy discord \
 		--hash true \
-		--config "${srcdir}/portable-config" \
+		--config-ng "${srcdir}/config.toml" \
 		--desktop-file "${srcdir}/discord.desktop"
 
-	install -Dm755 discord.sh "${pkgdir}/usr/bin/Discord"
+	install -Dm755 discord.sh "${pkgdir}/usr/lib/portable/overlay-usr/discord"
 	install -Dm644 "${srcdir}/skip-update.json" "${pkgdir}/usr/share/discord-bwrap/settings.json"
 }
