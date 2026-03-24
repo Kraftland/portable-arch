@@ -1,4 +1,0 @@
-#!/usr/bin/bash
-
-
-bwBindPar="$@" wps-office-cn-portable $@
