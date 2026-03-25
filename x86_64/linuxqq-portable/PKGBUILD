@@ -18,7 +18,7 @@ optdepends=('libappindicator-gtk3: Allow QQ to extend a menu via Ayatana indicat
 source=("linuxqq.sh" "start.sh" "portable-config" "im.qq.app.desktop")
 sha512sums=('5132db083f632c6f4ad7c77f9d3994392c30fac01697f0fec4010cb5daccb33e7d3d56e7a13daaa405a175d0f0e896ae7addc56c9946539389cb4f80bea6ab27'
             'b6a955e64b69d98776346a5ec154d119e1acdc3bba364bf01bdcd6119ce20933f326d40990e7e477c3b7c741beb50e22da4ad2d6880538256245bdc31dcede0e'
-            'cf16b3e443633299e5f9632bce91df1dbceb7a0d041c722c38ff8044cc1da6aaa85ed23da72c24b74eb0a203b62aa65a6ce01fcb8ae71c6fa858b7bbb32d0646'
+            '30c3262e3fe58497374eae6e808b78034c9c0622572eb5dc2c8889b72d8c4f804f3d870fb206a23d8f829f23e2bc275335d9903f3c6d35a059f0d6668cd59f14'
             'ba310fcec0a795391f60348d7bf8379ce3110dcca6d1be7435b9b50cb8271dcedfb16d7607661cf39093f294dde45eab85c84a7436eea9c4adf0743183da4253')
 options=('!strip' '!debug')
 
