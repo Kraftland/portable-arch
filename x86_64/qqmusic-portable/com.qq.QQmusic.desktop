@@ -1,0 +1,12 @@
+[Desktop Entry]
+Name=qqmusic
+Name[zh_CN]=QQ音乐
+Keywords=Audio;Song;MP3;CD;Podcast;MTP;iPod;Playlist;Last.fm;UPnP;DLNA;Radio;
+Exec=env _portableConfig="com.qq.QQmusic" portable %U
+Terminal=false
+Type=Application
+Icon=qqmusic
+StartupWMClass=qqmusic
+Comment=Tencent QQMusic
+Categories=AudioVideo;
+MimeType=application/x-ogg;application/oog;audio/x-vorbis+ogg;audio/vorbis;audio/x-vorbis;audio/x-scpls;audio/x-mp3;audio/x-mpeg;audio/x-mpegurl;audio/x-flac;audio/x-mp4;audio/x-stm;audio/x-xm;

@@ -1,0 +1,33 @@
+pkgname=qqmusic-portable
+_pkgname=qqmusic
+pkgver=1.1.8
+pkgrel=1
+pkgdesc="腾讯QQ音乐"
+arch=("x86_64")
+url="https://y.qq.com/"
+license=("CC0-1.0")
+depends=('nss' 'libxss' 'gtk3' 'alsa-lib' 'portable')
+provides=("$_pkgname")
+conflicts=("$_pkgname")
+sign=1-d1ca4d5c5a8369b26af88e881ba3ac544066a899dcaea29778b35c9f648e6fee-68cb7c1c
+source=(
+  "qqmusic_${pkgver}_amd64.deb::https://c.y.qq.com/cgi-bin/file_redirect.fcg?bid=dldir&file=ecosfile_plink%2Fmusic_clntupate%2Flinux%2Fother%2Fqqmusic_${pkgver}_amd64.deb&sign=${sign}"
+  "com.qq.QQmusic.desktop"
+  "portable-config"
+)
+sha512sums=('0da75cddd70340dfb3551af39200b6c90a3b506db539a0276d4a4f50d593f3559dcfa16819a68634ef0b85247d1add1737f699fd24942f1da8915ee867f4b2ee'
+            'e2a1ebc3d03433b9c500da8b234f2f2a1bc6dba3cd296d246a442953036fe90ddabe67abef393dd52d269c1775296948c125e1c15734d6b276d1dab7261a3d18'
+            'ce932ddd08f7cb36c602b36eae1025a12cdc4bccc36d0548988fe547af8aa186b29caf2c6ab309aa71144fb765c61bec0776336cb7700cd7c5369501cd9d9611')
+
+package() {
+  declare -x -g pkgdir
+  declare -x -g pkgname
+  declare -x -g srcdir
+  portable-packer \
+    -v \
+    --distro arch \
+    --mode copy qqmusic-bin \
+    --hash true \
+    --config "${srcdir}/portable-config" \
+    --desktop-file "${srcdir}/com.qq.QQmusic.desktop"
+}
