@@ -37,9 +37,10 @@ sha512sums=('5fd275121faa76dcb4043034c1d0b2d48ae554848e069dfa2f2385b090dcedbee55
 	'd7f5298ce768094eaf2931805897144576c208b33ce7b758703ea7e0cdb1e8a5a5ab0dac2b792fb73702343e4a54280017348cf72d889e226eedfe4dc05004c0'
 	'1efed01fdca8513c216723cda0040a1c15802fae4d1ac5b75a49477818f4ab784ee68e53e75ed338addc4a960ec7c980f06e8066a4419050ec31d1f3fc3b3e2b')
 
-makedepends=(desktop-file-utils "wemeet-bin" "portable")
+makedepends=(desktop-file-utils "wemeet-bin" "portable-packer")
 
 package() {
+	depends+=(portable)
 	declare -x -g pkgdir
 	declare -x -g pkgname
 	declare -x -g srcdir
