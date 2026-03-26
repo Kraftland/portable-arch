@@ -14,7 +14,7 @@ arch=('x86_64')
 url='https://discord.com'
 license=('custom')
 conflicts=("discord")
-makedepends+=(portable discord)
+makedepends+=(portable-packer discord)
 provides+=("discord" "discord-sandbox" "discord-portable")
 options=(!debug !strip)
 replaces+=(discord-bwrap)
@@ -35,7 +35,7 @@ function prepare() {
 
 
 package() {
-	depends=('libnotify' 'libxss' 'nspr' 'nss' 'gtk3' libpulse libappindicator-gtk3 "portable")
+	depends+=('libnotify' 'libxss' 'nspr' 'nss' 'gtk3' libpulse libappindicator-gtk3 "portable")
 	export pkgdir
 	export pkgname
 	export srcdir
