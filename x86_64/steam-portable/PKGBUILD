@@ -15,7 +15,7 @@ conflicts=("steam")
 
 optdepends=()
 
-makedepends+=(coreutils)
+makedepends+=(coreutils portable-packer)
 
 checkdepends=()
 
