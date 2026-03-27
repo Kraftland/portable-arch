@@ -26,7 +26,7 @@ sha1sums=('1e70271ac573ed609e9451c6bbd77fd811e71fa7'
 	  'c247299f2c66a3b3e59efcf74fa41733f65c8e38')
 
 package() {
-	depends+=('fontconfig' 'xorg-mkfontscale' 'libxrender' 'desktop-file-utils' 'shared-mime-info' 'xdg-utils' 'glu' 'sdl2' 'libpulse' 'hicolor-icon-theme' 'libxss' 'sqlite' 'libtool' 'libxslt' 'libjpeg-turbo'"portable")
+	depends+=('fontconfig' 'xorg-mkfontscale' 'libxrender' 'desktop-file-utils' 'shared-mime-info' 'xdg-utils' 'glu' 'sdl2' 'libpulse' 'hicolor-icon-theme' 'libxss' 'sqlite' 'libtool' 'libxslt' 'libjpeg-turbo' "portable")
     optdepends=('cups: Printing support'
                 'libjpeg-turbo: JPEG image codec support'
                 'pango: for complex (right-to-left) text support'
