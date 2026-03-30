@@ -10,7 +10,7 @@ pkgdesc="A powerful knowledge base that works on top of a local folder of plain 
 arch=('x86_64')
 url="https://obsidian.md"
 license=('custom:Commercial')
-depends=('zlib' 'hicolor-icon-theme' 'fuse' 'electron' 'portable')
+makedepends+=(portable-packer)
 options=(!strip !debug)
 source=("obsidian.sh"
 	"portable-config"
@@ -24,6 +24,7 @@ sha256sums=('2c43aa33e989f946c2af48b07c3e7f3683356f91fcefa6d2970ac2531ed197a1'
 
 package() {
 	cd "$srcdir"
+	depends+=('zlib' 'hicolor-icon-theme' 'fuse' 'electron' 'portable')
 
     # Most of the release package is electron, but we use system's default one
     # So strip away asar packages and put them to /usr/lib/
