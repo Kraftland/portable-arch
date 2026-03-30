@@ -4,7 +4,7 @@
 # Contributor: Xuanwo <xuanwo@archlinuxcn.org>
 
 pkgname=obsidian-bwrap
-pkgver=1.12.4
+pkgver=1.12.7
 pkgrel=1
 pkgdesc="A powerful knowledge base that works on top of a local folder of plain text Markdown files. Sandboxed by portable for privacy."
 arch=('x86_64')
@@ -19,18 +19,11 @@ source=("obsidian.sh"
 )
 sha256sums=('2c43aa33e989f946c2af48b07c3e7f3683356f91fcefa6d2970ac2531ed197a1'
             '3ea41ad31981798a701db564a82ea16c1bf1490a8fe060c0fbea249913435288'
-            '88504345238b1142b43880d93cf8546993e18bdf1597074b4d4360d0ce22ca41'
-            '72eb26dfcf123f8e07be8083f74fa045f400c71ec1fe64e58ab91d9cc084c8de')
+            '5d12051d82261ab2a9523879abfbbd2f853ef9433e2789084b6a70f8b1f6794e'
+            'fcbe08b111d9c1fdb09b9c08952b06e1c829c62163eba2584c4b4ec859be079d')
 
 package() {
 	cd "$srcdir"
-	install -vDm755 portable-config "$pkgdir"/usr/lib/portable/info/md.obsidian.app/config
-
-	# Install executable file
-	install -vDm755 obsidian.sh "$pkgdir"/usr/bin/obsidian
-
-    # Install desktop file
-    install -Dm644 obsidian.desktop "$pkgdir"/usr/share/applications/md.obsidian.Obsidian.desktop
 
     # Most of the release package is electron, but we use system's default one
     # So strip away asar packages and put them to /usr/lib/
@@ -41,11 +34,12 @@ package() {
     find . -type d -exec install -d {,"$pkgdir"/usr/lib/obsidian/}{} \;
     find . -type f -exec install -D {,"$pkgdir"/usr/lib/obsidian/}{} \;
 
-	#portable-packer \
-	#	-v \
-	#	--distro arch \
-	#	--mode post \
-	#	--hash true \
-	#	--config "${srcdir}/portable-config" \
-	#	--desktop-file "${srcdir}/obsidian.desktop"
+	declare -x pkgdir srcdir pkgname
+	portable-packer \
+		-v \
+		--distro arch \
+		--mode post \
+		--hash true \
+		--config "${srcdir}/portable-config" \
+		--desktop-file "${srcdir}/obsidian.desktop"
 }
