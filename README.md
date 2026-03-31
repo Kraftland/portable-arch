@@ -8,33 +8,16 @@ This repository is intended for Arch Linux PKGBUILD scripts.
 
 ## Installation:
 
+Note that we are currently in progress of migrating to StashPak, of which the progress is tracked [here](https://github.com/Kraftland/portable-arch/issues/24). You may have to clone the repo and build packages manually for some packages.
+
 1. moeOS systems already have this enabled on latest updates
 2. Ordinary Arch systems:
 
-- Install `paru`
-
-Edit `/etc/paru.conf`, add the following to include this repository:
-
-```
-[portable]
-Url = https://github.com/Kraftland/portable-arch.git
-Depth = 10
-SkipReview
-```
-
-**And add or uncomment Chroot**
-
-Warning! Please use chroot to build these packages.
-
-(Note that SkipReview skips the paru review functionality, if you wish to have that please comment it out.)
-
-- Sync PKGBUILDs: `paru -Syu --pkgbuilds`
+- Install `stashpak`
 
 ## Usage:
 
-- `paru -Syu` upgrades your system as well as Portable packages
-- `paru -Sl portable` to list all packages
-- `paru -S [package name]` to install a package
+- `stashpak get <packages>` gets packages from this repository
 
 # Contributing
 
