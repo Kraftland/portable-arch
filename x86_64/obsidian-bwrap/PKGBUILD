@@ -35,7 +35,9 @@ package() {
     find . -type d -exec install -d {,"$pkgdir"/usr/lib/obsidian/}{} \;
     find . -type f -exec install -D {,"$pkgdir"/usr/lib/obsidian/}{} \;
 
-	declare -x pkgdir srcdir pkgname
+	declare -x -g pkgdir
+	declare -x -g pkgname
+	declare -x -g srcdir
 	portable-packer \
 		-v \
 		--distro arch \
