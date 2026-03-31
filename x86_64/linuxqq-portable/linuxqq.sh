@@ -10,4 +10,4 @@ if [[ "${XDG_SESSION_TYPE}" = "wayland" ]]; then
 	flag="--ozone-platform=wayland"
 fi
 
-/opt/QQ/qq --no-sandbox ${flag} --enable-features=WebRTCPipeWireCapturer --wayland-text-input-version=3 --enable-wayland-ime "$@"
+/host/opt/QQ/qq --no-sandbox ${flag} --enable-features=WebRTCPipeWireCapturer --wayland-text-input-version=3 --enable-wayland-ime "$@"
