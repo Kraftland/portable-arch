@@ -1,10 +1,10 @@
 #!/bin/bash
 
 # 配置：指定四个外部程序分别打开四种文件类型
-WPS_PROGRAM="/opt/kingsoft/wps-office/office6/wps"        # WPS Office 打开 Word 文件
-EXCEL_PROGRAM="/opt/kingsoft/wps-office/office6/et"      # WPS Office 打开 Excel 文件
-PPT_PROGRAM="/opt/kingsoft/wps-office/office6/wpp"        # WPS Office 打开 PPT 文件
-PDF_PROGRAM="/opt/kingsoft/wps-office/office6/wpspdf"            # PDF 打开程序
+WPS_PROGRAM="/host/opt/kingsoft/wps-office/office6/wps"        # WPS Office 打开 Word 文件
+EXCEL_PROGRAM="/host/opt/kingsoft/wps-office/office6/et"      # WPS Office 打开 Excel 文件
+PPT_PROGRAM="/host/opt/kingsoft/wps-office/office6/wpp"        # WPS Office 打开 PPT 文件
+PDF_PROGRAM="/host/opt/kingsoft/wps-office/office6/wpspdf"            # PDF 打开程序
 
 # 如果没有传入文件，则启动默认程序
 if [ $# -eq 0 ]; then

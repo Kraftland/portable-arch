@@ -20,4 +20,4 @@ elif [ "$XDG_SESSION_TYPE" = 'wayland' ]; then
 fi
 
 export LD_PRELOAD="$LD_PRELOAD_WRAP"
-exec /opt/wemeet/bin/wemeetapp "$@"
+exec /host/opt/wemeet/bin/wemeetapp "$@"

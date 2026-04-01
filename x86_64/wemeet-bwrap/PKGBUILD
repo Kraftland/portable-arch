@@ -5,7 +5,7 @@
 
 pkgname=wemeet-bwrap
 pkgver=3.26.10.401
-pkgrel=3
+pkgrel=4
 pkgdesc="Sandboxed wemeet, supports screensharing on Wayland / 沙盒化腾讯会议, 支持 Wayland 屏幕共享"
 depends=(
     "bash"
@@ -32,7 +32,7 @@ source=(wemeet-open
 	start.sh
 	com.tencent.wemeet.desktop
 	)
-sha512sums=('5fd275121faa76dcb4043034c1d0b2d48ae554848e069dfa2f2385b090dcedbee554ac5b233bcb500a3793d13427037bd74609f43dde935e75f601fce23d7758'
+sha512sums=('e4d93db1dfc6f483138e5fae8dc50f5f724d00a87e7a18889b71bf9b5c6c9d4376440c01e6baf9f02eeb616660ddc2cdcdf37820fe78371abdb597061ab07846'
 	'50457596c01a732dc6e8797bdc5de53b3de47e13a703e832eacb5abf407a2b947ab6f5285338199ce8840a42e8082f1034545fadaee66d8469f39b0614096863'
 	'd7f5298ce768094eaf2931805897144576c208b33ce7b758703ea7e0cdb1e8a5a5ab0dac2b792fb73702343e4a54280017348cf72d889e226eedfe4dc05004c0'
 	'1efed01fdca8513c216723cda0040a1c15802fae4d1ac5b75a49477818f4ab784ee68e53e75ed338addc4a960ec7c980f06e8066a4419050ec31d1f3fc3b3e2b')
