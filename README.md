@@ -15,6 +15,8 @@ Note that we are currently in progress of migrating to StashPak, of which the pr
 
 - Install `stashpak`
 
+Some packages requires the use of [Arch Linux CN Repository](https://github.com/archlinuxcn/repo)
+
 ## Usage:
 
 - `stashpak get <packages>` gets packages from this repository
