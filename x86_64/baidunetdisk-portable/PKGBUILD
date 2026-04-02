@@ -37,6 +37,7 @@ prepare() {
 		--set-key=Exec \
 		--set-value='env _portableConfig=com.baidu.pan portable -- %U' \
 		usr/share/applications/${_pkgname}.desktop
+	install usr/share/applications/${_pkgname}.desktop "${srcdir}/desktop.file"
 }
 
 package() {
@@ -64,5 +65,5 @@ package() {
 		--mode post \
 		--hash true \
 		--config "${srcdir}/portable-config" \
-		--desktop-file usr/share/applications/${_pkgname}.desktop
+		--desktop-file "${srcdir}/desktop.file"
 }
