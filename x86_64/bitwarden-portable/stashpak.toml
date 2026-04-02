@@ -9,4 +9,4 @@ type = "repo"
 repo = "archlinuxcn/bitwarden-portable"
 
 # Your GitHub user name
-maintainer	= "exampleUser"
+maintainer	= "Kimiblock"
