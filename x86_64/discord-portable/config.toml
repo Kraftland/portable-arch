@@ -60,3 +60,14 @@ pipeWire = false
 
 # When true, allows application to receive Input events, particularly useful for Games. Defaults to false.
 input = false
+
+[advanced]
+zink = false
+qt5Compat = true
+mprisName = []
+trayWake = true
+kDEStatus = true
+flatpakInfo = true
+
+# Enables landlock for additional protection, breaks many apps.
+landlock = true
