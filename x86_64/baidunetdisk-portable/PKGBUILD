@@ -11,7 +11,6 @@ pkgver=4.17.7
 pkgrel=1
 pkgdesc="Baidu Netdisk sandboxed by portable"
 arch=('x86_64')
-depends=('portable' 'libnotify' 'libsecret' 'libxss' 'gtk3' 'nss')
 makedepends+=('desktop-file-utils')
 provides=("baidunetdisk")
 conflicts=("baidunetdisk")
@@ -41,6 +40,7 @@ prepare() {
 }
 
 package() {
+	depends+=('portable' 'libnotify' 'libsecret' 'libxss' 'gtk3' 'nss')
 	cd "${srcdir}"
 	mv "usr" "${pkgdir}"
 	install -dm755 "${pkgdir}/usr/lib" "${pkgdir}/usr/share/licenses/${_pkgname}"
