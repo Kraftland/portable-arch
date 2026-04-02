@@ -11,7 +11,7 @@ pkgver=4.17.7
 pkgrel=1
 pkgdesc="Baidu Netdisk sandboxed by portable"
 arch=('x86_64')
-makedepends+=('desktop-file-utils')
+makedepends+=('desktop-file-utils' portable-packer)
 provides=("baidunetdisk")
 conflicts=("baidunetdisk")
 url="https://pan.baidu.com"
@@ -37,6 +37,7 @@ prepare() {
 		--set-key=Exec \
 		--set-value='env _portableConfig=com.baidu.pan portable -- %U' \
 		usr/share/applications/${_pkgname}.desktop
+	install usr/share/applications/${_pkgname}.desktop "${srcdir}/desktop.file"
 }
 
 package() {
@@ -54,8 +55,15 @@ package() {
 	ln -s "/usr/lib/${_pkgname}/LICENSES.chromium.html" \
 		"${pkgdir}/usr/share/licenses/${_pkgname}/LICENSES.chromium.html"
 	install -vDm755 "${srcdir}/baidunetdisk-wrapper.sh" "${pkgdir}/usr/bin/baidunetdisk"
-	install -vDm755 "${srcdir}/portable-config" "${pkgdir}/usr/lib/portable/info/com.baidu.pan/config"
-	mv \
-		"${pkgdir}/usr/share/applications/baidunetdisk.desktop" \
-		"${pkgdir}/usr/share/applications/com.baidu.pan.desktop"
+
+	export pkgdir
+	export pkgname
+	export srcdir
+	portable-packer \
+		-v \
+		--distro arch \
+		--mode post \
+		--hash true \
+		--config "${srcdir}/portable-config" \
+		--desktop-file "${srcdir}/desktop.file"
 }
