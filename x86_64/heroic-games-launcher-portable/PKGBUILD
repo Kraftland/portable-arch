@@ -38,7 +38,7 @@ function package() {
 		--distro arch \
 		--mode copy heroic-games-launcher-bin \
 		--hash true \
-		--config-ng "${srcdir}/config.tom;" \
+		--config-ng "${srcdir}/config.toml" \
 		--desktop-file "${srcdir}/desktop.file"
 	install -Dm644 portable-config \
 		"${pkgdir}/usr/lib/portable/info/com.heroicgameslauncher.hgl/config"
