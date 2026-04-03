@@ -1,0 +1,12 @@
+[metadata]
+# Optional
+# The command to build a package. Should be "extra-x86_64-build" or "archlinuxcn-x86_64-build"
+#buildPrefix	= "extra-x86_64-build"
+
+# The package type. Can be repo or build. Defines whether this package is pre-built or not. Defaults to "build"
+type = "repo"
+# A full repo/pkgname name to download package from if metaadata.type is repo.
+repo = "archlinuxcn/epiphany-portable"
+
+# Your GitHub user name
+maintainer	= "Kimiblock"
