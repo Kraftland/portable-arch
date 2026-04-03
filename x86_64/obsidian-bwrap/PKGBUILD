@@ -12,14 +12,12 @@ url="https://obsidian.md"
 license=('custom:Commercial')
 makedepends+=(portable-packer obsidian)
 options=(!strip !debug)
-source=("obsidian.sh"
+source=(
 	"config.toml"
         "obsidian.desktop"
 )
-sha256sums=('2c43aa33e989f946c2af48b07c3e7f3683356f91fcefa6d2970ac2531ed197a1'
-            '3ea41ad31981798a701db564a82ea16c1bf1490a8fe060c0fbea249913435288'
-            '5d12051d82261ab2a9523879abfbbd2f853ef9433e2789084b6a70f8b1f6794e'
-            'fcbe08b111d9c1fdb09b9c08952b06e1c829c62163eba2584c4b4ec859be079d')
+sha256sums=('b7bbb8548102c76d4c79842c9323243df190e74f5c2a612a8afb91673f26af74'
+            'e42c6a07f5fe11cbf917850050b579979c101727f2d995034df23cc3538f49d1')
 
 package() {
 	cd "$srcdir"
