@@ -21,30 +21,9 @@ provides=(google-earth google-earth-pro)
 conflicts=(google-earth google-earth-pro)
 options=('!strip' '!emptydirs')
 source=(
-    "https://dl.google.com/linux/earth/deb/pool/main/g/google-earth-pro-stable/google-earth-pro-stable_${pkgver}-r0_amd64.deb"
-    'Google-Terms-of-Service.html'::'https://www.google.com/intl/ALL/policies/terms/index.html'
-    'Google-Earth-Additional-Terms-of-Service.html'::'https://www.google.com/help/terms_maps.html'
-    'Legal-Notices-for-Google-Earth-and-Google-Earth-APIs.html'::'https://www.google.com/help/legalnotices_maps.html'
-    'Google-Privacy-Policy.html'::'https://www.google.com/intl/ALL/policies/privacy/index.html'
-    'portable-config'
+    'config.toml'
     'desktop.file'
 )
-noextract=("google-earth-pro-stable_${pkgver}-r0_amd64.deb")
-b2sums=(
-    'SKIP'
-    'SKIP'
-    'SKIP'
-    'SKIP'
-    'SKIP'
-    'SKIP'
-    'SKIP')
-
-_installdir='/opt/google/earth/pro'
-
-prepare() {
-    mkdir -p "${pkgname}-${pkgver}"
-    bsdtar -xf "google-earth-pro-stable_${pkgver}-r0_amd64.deb" -C "${pkgname}-${pkgver}"
-}
 
 package() {
     depends+=(
@@ -63,42 +42,17 @@ package() {
     gst-plugins-base-libs
     hicolor-icon-theme
     )
-    bsdtar -xf "${pkgname}-${pkgver}/data.tar.xz" -C "$pkgdir"
-    
-    # icons
-    local _res
-    for _res in 16 22 24 32 48 64 128 256
-    do
-        install -D -m644 "${pkgdir}/${_installdir}/product_logo_${_res}.png" \
-            "${pkgdir}/usr/share/icons/hicolor/${_res}x${_res}/apps/google-earth-pro.png"
-    done
-    
-    # remove the debian-intended cron job and duplicated images
-    rm -r "${pkgdir}/etc/cron.daily" "${pkgdir}/${_installdir}"/product_logo_*.png
-    
-    # fix search
-    sed -i '/googleearth-bin/s/^/LC_NUMERIC=en_US.UTF-8 /' "${pkgdir}/${_installdir}/googleearth"
-
-    # licenses
-    local _file
-    for _file in 'Google-Terms-of-Service.html' \
-                 'Google-Earth-Additional-Terms-of-Service.html' \
-                 'Legal-Notices-for-Google-Earth-and-Google-Earth-APIs.html' \
-                 'Google-Privacy-Policy.html'
-    do
-        install -D -m644 "$_file" "${pkgdir}/usr/share/licenses/${pkgname}/${_file}"
-    done
-
-    # Remove SGID
-    chmod -R 'a-s' "${pkgdir}"
-    rm -rf "${pkgdir}/usr/bin"
-    rm -rf "${pkgdir}/usr/share/applications"
-    rm -rf "${pkgdir}/usr/share/menu"
-    install -Dm644 \
-        "${srcdir}/desktop.file" \
-        "${pkgdir}/usr/share/applications/com.google.EarthPro.desktop"
-    install -Dm755 \
-        "${srcdir}/portable-config" \
-        "${pkgdir}/usr/lib/portable/info/com.google.EarthPro/config"
+  declare -x -g pkgdir
+  declare -x -g pkgname
+  declare -x -g srcdir
+  portable-packer \
+    -v \
+    --distro arch \
+    --mode copy google-earth-pro \
+    --hash true \
+    --config-ng "${srcdir}/config.toml" \
+    --desktop-file "${srcdir}/desktop.file"
 }
 
+sha256sums=('ddf172472950d332925b6f61754152d3739f890ff95a1fd5c51570b903515b87'
+            '99acc5129f767fcff44b8441b349b00480b074154f919114d2ebb819876613ff')
