@@ -7,20 +7,6 @@ pkgname=wemeet-bwrap
 pkgver=3.26.10.401
 pkgrel=3
 pkgdesc="Sandboxed wemeet, supports screensharing on Wayland / 沙盒化腾讯会议, 支持 Wayland 屏幕共享"
-depends=(
-    "bash"
-    "qt5-x11extras" "libxinerama"
-    libpulse
-    # dependencies detected by namcap
-    gcc-libs qt5-declarative libglvnd libxfixes alsa-lib qt5-webchannel openssl
-    libxrandr libxext libx11 hicolor-icon-theme glibc zlib libxcomposite
-    qt5-base systemd-libs libxdamage qt5-svg
-    libyuv
-    wireplumber
-    qt5-wayland
-    opencv
-    libxrandr
-)
 provides=('wemeet' 'tencent-meeting' "wemeet-wayland-screenshare")
 conflicts=('wemeet' 'tencent-meeting' "wemeet-wayland-screenshare")
 options=('!emptydirs' '!debug')
@@ -28,18 +14,17 @@ arch=('x86_64' 'aarch64')
 license=('LicenseRef-proprietary')
 url="https://source.meeting.qq.com/download-center.html"
 source=(wemeet-open
-	portable-config
-	start.sh
+	config.toml
 	com.tencent.wemeet.desktop
 	)
 sha512sums=('5fd275121faa76dcb4043034c1d0b2d48ae554848e069dfa2f2385b090dcedbee554ac5b233bcb500a3793d13427037bd74609f43dde935e75f601fce23d7758'
-	'50457596c01a732dc6e8797bdc5de53b3de47e13a703e832eacb5abf407a2b947ab6f5285338199ce8840a42e8082f1034545fadaee66d8469f39b0614096863'
-	'd7f5298ce768094eaf2931805897144576c208b33ce7b758703ea7e0cdb1e8a5a5ab0dac2b792fb73702343e4a54280017348cf72d889e226eedfe4dc05004c0'
-	'1efed01fdca8513c216723cda0040a1c15802fae4d1ac5b75a49477818f4ab784ee68e53e75ed338addc4a960ec7c980f06e8066a4419050ec31d1f3fc3b3e2b')
+            '57c22110da07fe1c482e825c60a6667d9c4acbf97178d0a4d1facf3b8b6c583c661d881187e196141548631acbaca7fcd796012ce31f1fd2743ca1eaef1012e8'
+            'SKIP')
 
 makedepends=(desktop-file-utils "wemeet-bin" "portable-packer")
 
 package() {
+	depends=("qt5-x11extras" "libxinerama" libpulse gcc-libs qt5-declarative libglvnd libxfixes alsa-lib qt5-webchannel openssl libxrandr libxext libx11 hicolor-icon-theme glibc zlib libxcomposite qt5-base systemd-libs libxdamage qt5-svg libyuv wireplumber qt5-wayland opencv libxrandr)
 	depends+=(portable)
 	declare -x -g pkgdir
 	declare -x -g pkgname
@@ -52,8 +37,6 @@ package() {
 		--distro arch \
 		--mode copy wemeet-bin \
 		--hash \
-		--config "${srcdir}/portable-config" \
+		--config-ng "${srcdir}/config.toml" \
 		--desktop-file "${srcdir}/com.tencent.wemeet.desktop"
-
-	install -vDm755 "${srcdir}/start.sh" "${pkgdir}/usr/bin/wemeet"
 }
