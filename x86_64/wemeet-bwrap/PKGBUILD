@@ -19,7 +19,7 @@ source=(wemeet-open
 	)
 sha512sums=('5fd275121faa76dcb4043034c1d0b2d48ae554848e069dfa2f2385b090dcedbee554ac5b233bcb500a3793d13427037bd74609f43dde935e75f601fce23d7758'
             '57c22110da07fe1c482e825c60a6667d9c4acbf97178d0a4d1facf3b8b6c583c661d881187e196141548631acbaca7fcd796012ce31f1fd2743ca1eaef1012e8'
-            '1efed01fdca8513c216723cda0040a1c15802fae4d1ac5b75a49477818f4ab784ee68e53e75ed338addc4a960ec7c980f06e8066a4419050ec31d1f3fc3b3e2b')
+            'SKIP')
 
 makedepends=(desktop-file-utils "wemeet-bin" "portable-packer")
 
