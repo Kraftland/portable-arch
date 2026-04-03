@@ -20,7 +20,7 @@ makedepends+=(coreutils portable)
 checkdepends=()
 
 source=(
-	portable-config
+	config.toml
 	up.desktop
 	https://codeberg.org/api/packages/UnifiedPush/generic/flutter-connector/1485e2fb13/flutter-example-linux.zip
 )
@@ -45,7 +45,7 @@ function package() {
 		--distro arch \
 		--mode post \
 		--hash true \
-		--config "${srcdir}/portable-config" \
+		--config-ng "${srcdir}/portable-config" \
 		--desktop-file "${srcdir}/up.desktop" \
 		--dbus-activation
 }
