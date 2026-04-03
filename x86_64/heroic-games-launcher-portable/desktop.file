@@ -1,6 +1,6 @@
 [Desktop Entry]
 Name=Heroic Games Launcher
-Exec=env _portableConfig="com.heroicgameslauncher.hgl" portable -- %U
+Exec=env PORTABLE_CONF="com.heroicgameslauncher.hgl" portable -- %U
 Terminal=false
 Type=Application
 Icon=heroic
