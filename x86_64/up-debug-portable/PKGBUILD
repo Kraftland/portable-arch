@@ -22,7 +22,7 @@ checkdepends=()
 source=(
 	config.toml
 	up.desktop
-	https://codeberg.org/api/packages/UnifiedPush/generic/flutter-connector/1485e2fb13/flutter-example-linux.zip
+	https://codeberg.org/api/packages/UnifiedPush/generic/flutter-connector/81d31ddfe5/flutter-example-linux.zip
 )
 
 
