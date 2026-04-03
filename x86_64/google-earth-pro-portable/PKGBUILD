@@ -21,7 +21,7 @@ provides=(google-earth google-earth-pro)
 conflicts=(google-earth google-earth-pro)
 options=('!strip' '!emptydirs')
 source=(
-    'portable-config'
+    'config.toml'
     'desktop.file'
 )
 
@@ -50,7 +50,7 @@ package() {
     --distro arch \
     --mode copy google-earth-pro \
     --hash true \
-    --config "${srcdir}/portable-config" \
+    --config-ng "${srcdir}/config.toml" \
     --desktop-file "${srcdir}/desktop.file"
 }
 
