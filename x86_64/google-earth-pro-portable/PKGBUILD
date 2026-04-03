@@ -54,5 +54,5 @@ package() {
     --desktop-file "${srcdir}/desktop.file"
 }
 
-sha256sums=('9b3d2bfe1b15503690b79bcf75e2b6a12149bbab3d4514be41d82fc46849df05'
+sha256sums=('ddf172472950d332925b6f61754152d3739f890ff95a1fd5c51570b903515b87'
             '99acc5129f767fcff44b8441b349b00480b074154f919114d2ebb819876613ff')
