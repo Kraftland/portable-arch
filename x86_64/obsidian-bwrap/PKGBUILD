@@ -10,12 +10,11 @@ pkgdesc="A powerful knowledge base that works on top of a local folder of plain 
 arch=('x86_64')
 url="https://obsidian.md"
 license=('custom:Commercial')
-makedepends+=(portable-packer)
+makedepends+=(portable-packer obsidian)
 options=(!strip !debug)
 source=("obsidian.sh"
-	"portable-config"
+	"config.toml"
         "obsidian.desktop"
-        "https://github.com/obsidianmd/obsidian-releases/releases/download/v${pkgver}/obsidian-${pkgver}.tar.gz"
 )
 sha256sums=('2c43aa33e989f946c2af48b07c3e7f3683356f91fcefa6d2970ac2531ed197a1'
             '3ea41ad31981798a701db564a82ea16c1bf1490a8fe060c0fbea249913435288'
@@ -26,23 +25,14 @@ package() {
 	cd "$srcdir"
 	depends+=('zlib' 'hicolor-icon-theme' 'fuse' 'electron' 'portable')
 
-    # Most of the release package is electron, but we use system's default one
-    # So strip away asar packages and put them to /usr/lib/
-    cd "obsidian-${pkgver}"/resources/
-    install -dm0755 "$pkgdir"/usr/lib/obsidian
-    # install icon
-    install -Dm644 icon.png "$pkgdir"/usr/share/pixmaps/obsidian.png
-    find . -type d -exec install -d {,"$pkgdir"/usr/lib/obsidian/}{} \;
-    find . -type f -exec install -D {,"$pkgdir"/usr/lib/obsidian/}{} \;
-
 	declare -x -g pkgdir
 	declare -x -g pkgname
 	declare -x -g srcdir
 	portable-packer \
 		-v \
 		--distro arch \
-		--mode post \
+		--mode copy obsidian \
 		--hash true \
-		--config "${srcdir}/portable-config" \
+		--config-ng "${srcdir}/config.toml" \
 		--desktop-file "${srcdir}/obsidian.desktop"
 }
