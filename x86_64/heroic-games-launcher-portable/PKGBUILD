@@ -26,7 +26,7 @@ source=(
 
 
 md5sums=('edd175309382ef8b40907f6d17218996'
-         'c8ad9b12ff79ccb596eccc150376cc92')
+         '754c05650789a7249855ef6620e32ef2')
 
 function package() {
 	depends=("portable" fuse2  gawk  python-wheel  python-setuptools)
