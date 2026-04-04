@@ -25,7 +25,7 @@ source=(
 )
 
 
-md5sums=('55db504b8f540e4e83e91233402c2d94'
+md5sums=('90d7b7b8fc59ed5459bc9119830b9a70'
          '446138ff6bdaec911b363ea104efc8ab')
 
 function package() {
