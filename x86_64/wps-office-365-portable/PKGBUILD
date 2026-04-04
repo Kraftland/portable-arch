@@ -20,7 +20,7 @@ conflicts=('kingsoft-office' 'wps-office' "wps-office-365" wps-office-cn-bwrap)
 provides=('kingsoft-office' 'wps-office' "wps-office-365" wps-office-cn-bwrap)
 
 source=(portable-config wps365-open cn.wps.wps_365.desktop wps)
-sha1sums=('0d177d65fc0f60753e7e5034eeb7dedf41a8b957'
+sha1sums=('d94ecb5673a1e18a407410934eb2777076e8ef6d'
           '0cb27cb3a49735bab9314896980679a4b0eca54e'
           '9b1b7676f54dd9f7419a7c72275cdef8adb1c754'
 	  'e6429393792ac3e30d05c23e70d8479cefdf05df')

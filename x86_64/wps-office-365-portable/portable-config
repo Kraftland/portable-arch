@@ -35,7 +35,7 @@ arguments = []
 # The processes section defines how Portable tracks tasks.
 [processes]
 # Watch for spawned commands. When all of them exits, automatically terminate the sandbox. Defaults to true.
-track = true
+track = false
 
 # The system section controls general permission.
 [system]
