@@ -3,14 +3,14 @@
 
 # 没有参数 → 默认运行
 if [ $# -eq 0 ]; then
-    _portableConfig=cn.wps.wps_365 portable
+    PORTABLE_CONF=cn.wps.wps_365 portable
 
 # 有参数 → 解析路径并绑定
 else
     FILE="$1"
     DIR="$(dirname "$FILE")"
 
-    _portableConfig=cn.wps.wps_365 exec portable \
+    PORTABLE_CONF=cn.wps.wps_365 exec portable \
 	    --expose "$FILE" "/tmp/$(basename "$FILE")" \
 	    -- "$FILE"
 fi
