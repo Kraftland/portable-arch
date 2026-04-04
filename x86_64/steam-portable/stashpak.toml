@@ -1,10 +1,25 @@
 [metadata]
 # Optional
 # The command to build a package. Should be "extra-x86_64-build" or "archlinuxcn-x86_64-build"
-buildPrefix	= "multilib-archlinuxcn-build"
+buildPrefix	= "multilib-build"
 
 # Your GitHub user name
 maintainer	= "Kimiblock"
+
+[[depends]]
+# Optional
+buildPrefix	= "multilib-build"
+
+# The package name of a dependency
+pkgname		= "steam"
+
+# Source can be either a string of git URL (type git), or repo name (type repo) to download from locally defined repositories.
+sourceType	= "repo"
+source		= "multilib"
+[[depends.depends]]
+pkgname		= "lib32-mesa"
+sourceType	= "repo"
+source		= "multilib"
 
 [[depends]]
 # Optional
@@ -16,14 +31,3 @@ pkgname		= "portable-packer"
 # Source can be either a string of git URL (type git), or repo name (type repo) to download from locally defined repositories.
 sourceType	= "repo"
 source		= "archlinuxcn"
-
-[[depends]]
-# Optional
-buildPrefix	= "extra-x86_64-build"
-
-# The package name of a dependency
-pkgname		= "steam"
-
-# Source can be either a string of git URL (type git), or repo name (type repo) to download from locally defined repositories.
-sourceType	= "repo"
-source		= "multilib"
