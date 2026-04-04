@@ -2,7 +2,7 @@
 
 pkgname=steam-portable
 pkgver=1.0.0.85
-pkgrel=2
+pkgrel=3
 epoch=1
 pkgdesc="Valve's digital software delivery system sandboxed by portable. Automatically uses discrete GPUs."
 arch=('x86_64')
