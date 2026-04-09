@@ -1,0 +1,15 @@
+[Desktop Entry]
+Version=1.0
+Type=Application
+Name=NetEase Cloud Music
+Name[zh_CN]=网易云音乐
+Name[zh_TW]=網易雲音樂
+Comment=NetEase Cloud Music
+Comment[zh_CN]=网易云音乐
+Comment[zh_TW]=網易雲音樂
+Icon=netease-cloud-music
+Exec=env PORTABLE_CONF=com.netease.CloudMusic portable -- %U
+Categories=AudioVideo;Player;
+Terminal=false
+StartupNotify=true
+StartupWMClass=netease-cloud-music
