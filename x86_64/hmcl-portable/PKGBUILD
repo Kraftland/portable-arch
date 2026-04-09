@@ -17,7 +17,7 @@ source=(
         net.huangyuhui.hmcl.desktop
         portable-config)
 sha256sums=('744da95283655004d6e231cca886587a9abd3fef47d181b6be3988b21661ad03'
-            'a0ec6686c8560b228a57d2bd3714668f3b8772a6e768f81011dd33b33d1f83ee')
+            '4854c2a06dde49a7568bc0d4d88583353356f8f30899a4f960884aedd4585e21')
 
 package() {
 	depends+=("portable")
