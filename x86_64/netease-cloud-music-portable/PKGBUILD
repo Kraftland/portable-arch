@@ -18,7 +18,7 @@ depends=('gtk2' 'gtk3' 'libvlc' 'taglib1' "vlc")
 makedepends=(gcc desktop-file-utils sed)
 source=(
 	"config.toml"
-        "obsidian.desktop"
+        "desktop.file"
         inner.sh
 )
 sha256sums=('1ee9f02842e6c2c8c79c48b2e932074f9c213a8eb4238e5e63f20438562fecbb'
