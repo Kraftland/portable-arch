@@ -14,6 +14,17 @@ maintainer	= "Kimiblock"
 #buildPrefix	= "extra-x86_64-build"
 
 # The package name of a dependency
+pkgname		= "portable-packer"
+
+# Source can be either a string of git URL (type git), or repo name (type repo) to download from locally defined repositories.
+sourceType	= "repo"
+source		= "archlinuxcn"
+
+[[depends]]
+# Optional
+#buildPrefix	= "extra-x86_64-build"
+
+# The package name of a dependency
 pkgname		= "netease-cloud-music"
 
 # Source can be either a string of git URL (type git), or repo name (type repo) to download from locally defined repositories.
