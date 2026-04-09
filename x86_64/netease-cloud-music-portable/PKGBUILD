@@ -20,7 +20,7 @@ source=(
         "desktop.file"
         inner.sh
 )
-sha256sums=('d93ba536660df02d02489de9c91034e81297e7eea1bcf270270bad39c19f21c8'
+sha256sums=('b9a18cd3526ce8d62fd488c33e9498655f74f18ee43ccfd4769ce34cb72c5d7d'
             'bda645b64e77a99297fc5f2777f72e3f1c71302699c4c77b9748eda1af3218d0'
             'a9d4a83f6c9e8bcbe50dec3e3546884201619ec96efa5c4977afde3291ac206d')
 
