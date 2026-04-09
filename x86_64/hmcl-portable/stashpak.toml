@@ -1,0 +1,25 @@
+[metadata]
+# Optional
+# The command to build a package. Should be "extra-x86_64-build" or "archlinuxcn-x86_64-build"
+buildPrefix	= "archlinuxcn-x86_64-build"
+
+# Your GitHub user name
+maintainer	= "sf467"
+
+[[depends]]
+# Optional
+#buildPrefix	= "extra-x86_64-build"
+
+# The package name of a dependency
+pkgname		= "portable-packer"
+
+# Source can be either a string of git URL (type git), or repo name (type repo) to download from locally defined repositories.
+sourceType	= "repo"
+source		= "archlinuxcn"
+
+[[depends]]
+# Optional
+buildPrefix	= "extra-x86_64-build"
+pkgname		= "hmcl"
+sourceType	= "git"
+source		= "https://aur.archlinux.org/hmcl.git"
