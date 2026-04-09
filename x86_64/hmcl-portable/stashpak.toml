@@ -20,6 +20,6 @@ source		= "archlinuxcn"
 [[depends]]
 # Optional
 buildPrefix	= "extra-x86_64-build"
-pkgname		= "hmcl-bin"
+pkgname		= "hmcl"
 sourceType	= "git"
-source		= "https://aur.archlinux.org/hmcl-bin.git"
+source		= "https://aur.archlinux.org/hmcl.git"

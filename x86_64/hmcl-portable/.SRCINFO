@@ -12,7 +12,7 @@ pkgbase = hmcl-portable
 	source = net.huangyuhui.hmcl.desktop
 	source = portable-config
 	sha256sums = 744da95283655004d6e231cca886587a9abd3fef47d181b6be3988b21661ad03
-	sha256sums = 4854c2a06dde49a7568bc0d4d88583353356f8f30899a4f960884aedd4585e21
+	sha256sums = 78c29c083171707df34649da8cd341bd6db49266f48730d6f8403de2424869d2
 
 pkgname = hmcl-portable
 	depends = hicolor-icon-theme
