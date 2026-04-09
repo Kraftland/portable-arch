@@ -14,7 +14,7 @@ url="https://music.163.com"
 provides=(netease-cloud-music)
 conflicts=(netease-cloud-music)
 license=('custom')
-options=(!emptydirs)
+options=(emptydirs)
 makedepends=(portable-packer)
 source=(
 	"config.toml"
