@@ -14,7 +14,7 @@ optdepends=('ffmpeg4.4: Adds support for playback of local files'
 options=('!strip')
 
 source=(config.toml desktop.file)
-sha512sums=('348b553278d5afd00d2c30f3ecb2a783664affc8557d802e0144c3010fc6f27e6eba870f173bfb9b94d0882d56e178a7af09c81c16b86e3d0e81eb924c804daf'
+sha512sums=('182c2e47f3909a4050e4fc3fff15a3635955e37b0f5fae9b1195df2ecad131d9d6d0b6c77c27e4503da0251ff810c4f320216e9855f185f7716ed1f1f2abc7bb'
             '24147db4d58407695b38e352d071d95ee4c10243f8e33496abe20f88b9f50d3141991df5838eb848523ab7c8636946d6c6b22a7a02275edc22000a8ea6bb5b56')
 
 package() {
