@@ -31,16 +31,5 @@ package() {
 		--config-ng "${srcdir}/config.toml" \
 		--desktop-file "${srcdir}/desktop.file"
 	ln -sf "/usr/share/applications/com.spotify.player.desktop" "${pkgdir}/usr/share/applications/spotify.desktop"
-
-    echo '''[Desktop Entry]
-Type=Application
-Name=Spotify Music
-GenericName=Stub for MPRIS
-Icon=spotify
-TryExec=spotify
-Exec=spotify --uri=%u
-Terminal=false
-NoDisplay=true
-Categories=Audio;Music;Player;AudioVideo;''' >"${pkgdir}/usr/share/applications/spotify.desktop"
 }
 
