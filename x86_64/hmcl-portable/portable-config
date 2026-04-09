@@ -1,64 +1,92 @@
-#!/usr/bin/bash
+# This is a Portable configuration, using TOML 1.1.0
+# For syntax, check https://toml.io/en/v1.1.0
 
-########## Section: General ##########
-
-# This is your Application ID, avoid conflict
-appID="net.huangyuhui.hmcl"
+# The metadata section contains information of your sandbox.
+[metadata]
+# This is your Application ID, avoid conflict. Should be a reversed DNS name.
+# If the author's DNS domain name contains hyphen/minus characters ('-'), which are not allowed in D-Bus interface names, they should be replaced by underscores. If the DNS domain name contains a digit immediately following a period ('.'), which is also not allowed in interface names), the interface name should add an underscore before that digit. For example, if the owner of 7-zip.org defined an interface for out-of-process plugins, it might be named org._7_zip.Plugin.
+appID = "net.huangyuhui.hmcl"
 
 # This is a friendly name of an application. It should only contain ASCII characters and not spaces.
-friendlyName="HMCL"
+friendlyName = "HMCL"
 
-# This is the state directory of your application, which is located under "XDG_DATA_HOME"
-stateDirectory="HMCL_Data"
+# This is the state directory of your application, relative to "XDG_DATA_HOME".
+stateDirectory = "HMCL_Data"
 
-# This is the target executable to launch
-launchTarget="/usr/bin/java -jar /usr/share/java/hmcl/hmcl.jar"
+# The exec section defines how the underlying process is started.
+[exec]
+# target defines the program to start.
+target = "java"
 
-# Enables Network access within the sandbox. Defaults to true.
-bindNetwork="true"
+# arguments holds an array of arguments passed to the application, this is also used when starting secondary instances.
+arguments = ["-jar /usr/share/java/hmcl/hmcl.jar"]
 
-########## Section: Output ##########
+# D-Bus activation works by installing a service under /usr/share/dbus-1/services. It is used by UnifiedPush to process notifications without showing a window. You should modify the activation cmdline to call portable with "--dbus-activation".
+[busActivation]
+# Whether or not to enable D-Bus activation. Defaults to false.
+enable = false
 
-# Use zink for GL -> Vulkan translation
-useZink="false"
+# target is the same as exec.target.
+target = ""
 
-# Enable compatibility workarounds for Qt5. Defaults to true.
-qt5Compat="true"
+# arguments is the same as exec.arguments.
+arguments = []
 
-# Takes a boolean value or string "adaptive". When true, do not process XAuth files and forces wayland input method. "adaptive" enables this option on Wayland and vice versa. Generally this should be adaptive when possible.
-waylandOnly="false"
+# The processes section defines how Portable tracks tasks.
+[processes]
+# Watch for spawned commands. When all of them exits, automatically terminate the sandbox. Defaults to true.
+track = true
 
-# Expose all GPUs. Takes boolean value, usually used in games.
-gameMode="true"
+# The system section controls general permission.
+[system]
+# Whether or not an application can call Inhibit Portal to prevent automatic suspend. Defaults to false.
+inhibitSuspend = false
 
-########## Section: Input ##########
+# Whether or not an application can call GlobalShortcuts Portal to request shortcuts registration. Defaults to false.
+globalShortcuts = false
 
-# Use pipewire-v4l2 to replace v4l2. Requires bindPipewire=true! Unstable for now
-pwCam="false"
+# Whether or not to expose all GPUs and prefer discrete graphics card. By default, Portable blocks any GPU except the integrated one to improve user experience and power consumption on hybrid systems.
+gameMode = true
 
-# Takes boolean value. Binds /dev/video* into the sandbox. Required if target application uses /dev/video* interfaces directly instead of v4l2.
-bindCameras="false"
+# Inhibit suspend and idle on behalf of applications. Requires system.inhibitSuspend being true
+inhibitOnBehalf = false
 
-# Takes boolean value. Binds PipeWire socket into the sandbox. Required if target application doesn't use Portals. Please be aware that such operation *will* impact the integrity of host.
-bindPipewire="false"
+# The network section defines behaviour of Portable's network firewall. Requires netsock for filtering.
+[network]
+# Whether or not an application can use network interfaces. Defaults to true.
+enable = true
 
-# Takes boolean value.
-bindInputDevices="false"
+# Whether or not to enable filtering on network packets. Defaults to false.
+filter = false
 
-########## Section: Portals ##########
+# Destinations to deny. Only effective if netsock is running and listening on /run/netsock/control.sock. IP literals are resolved directly, while strings are mapped to IP addresses by the system resolver. A special string of "private" means private IPs. Note that :53 is allowed regardless to avoid breaking DNS. Defaults to none, meaning sandbox can connect to whatever address.
+filterDest = ["private"]
 
-# If true, allows the sandboxed application to use the org.freedesktop.portal.Inhibit interface to inhibit certain actions, like suspend and logout
-allowInhibit="false"
+# The privacy section defines several device exposure preference. By default, Portable does not allow apps to see physical devices. This includes discrete GPUs when gameMode is off, input devices, cameras, and all other PCI devices.
+[privacy]
+# When false, prevents application from connecting to X server on Wayland. Defaults to true.
+x11 = true
 
-# If true, allow apps to register Global Shortcuts via the Portal.
-allowGlobalShortcuts="false"
+# When false, prevents application from connecting to legacy notifications endpoint. Defaults to true.
+classicNotifications = true
 
-########## Section: Miscellaneous ##########
+# When true, exposes camera devices in the sandbox. Defaults to false.
+cameras = false
 
-# Wake the application using D-Bus calls towards StatusNotifiers. Deprecated.
-dbusWake="false"
+# When true, allows application to connect to PipeWire server. Note that a proxy is set up to prevent privileged actions. Defaults to false.
+pipeWire = false
 
-########## Environment ##########
+# When true, allows application to receive Input events, particularly useful for Games. Defaults to false.
+input = false
 
-# Below you can set envs that will be imported into the application sandbox
+# Do not use. May break apps.
+[advanced]
+zink = false
+qt5Compat = true
+mprisName = []
+trayWake = false
+kDEStatus = true
+flatpakInfo = true
 
+# Enables landlock for additional protection, breaks many apps.
+landlock = true
