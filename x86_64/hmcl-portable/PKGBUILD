@@ -27,6 +27,6 @@ package() {
 		--mode copy hmcl \
 		--hash true \
 		--config-ng "${srcdir}/portable-config" \
-		--desktop-file "&{srcdir}/net.huangyuhui.hmcl.desktop"
+		--desktop-file "${srcdir}/net.huangyuhui.hmcl.desktop"
 }
 

@@ -9,10 +9,11 @@ pkgbase = hmcl-portable
 	makedepends = portable-packer
 	makedepends = hmcl
 	depends = hicolor-icon-theme
-	depends = portable
 	source = net.huangyuhui.hmcl.desktop
 	source = portable-config
 	sha256sums = 744da95283655004d6e231cca886587a9abd3fef47d181b6be3988b21661ad03
 	sha256sums = a0ec6686c8560b228a57d2bd3714668f3b8772a6e768f81011dd33b33d1f83ee
 
 pkgname = hmcl-portable
+	depends = hicolor-icon-theme
+	depends = portable
