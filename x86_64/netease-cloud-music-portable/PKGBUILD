@@ -14,6 +14,7 @@ url="https://music.163.com"
 provides=(netease-cloud-music)
 conflicts=(netease-cloud-music)
 license=('custom')
+options=(!emptydirs)
 makedepends=(portable-packer)
 source=(
 	"config.toml"
@@ -40,5 +41,6 @@ package() {
 		--desktop-file "${srcdir}/desktop.file"
 	install -vDm755 "${srcdir}/inner.sh" "${pkgdir}/usr/lib/portable/overlay-usr/netease-cloud-music"
 	ln -sf "/usr/share/applications/com.netease.CloudMusic.desktop" "${pkgdir}/usr/share/applications/netease-cloud-music.desktop"
+	install -d "${pkgdir}/opt/netease/netease-cloud-music/overlay"
 }
 
