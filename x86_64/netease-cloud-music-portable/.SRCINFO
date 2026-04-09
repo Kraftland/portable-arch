@@ -8,6 +8,7 @@ pkgbase = netease-cloud-music-portable
 	makedepends = portable-packer
 	provides = netease-cloud-music
 	conflicts = netease-cloud-music
+	options = !emptydirs
 	source = config.toml
 	source = desktop.file
 	source = inner.sh
