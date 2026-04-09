@@ -21,6 +21,9 @@ sha256sums=('744da95283655004d6e231cca886587a9abd3fef47d181b6be3988b21661ad03'
 
 package() {
 	depends+=("portable")
+	declare -x -g pkgdir
+	declare -x -g pkgname
+	declare -x -g srcdir
 	portable-packer \
 		-v \
 		--distro arch \
