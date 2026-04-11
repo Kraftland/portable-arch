@@ -1,0 +1,9 @@
+[Desktop Entry]
+Name=Z-Library
+Exec=z-library-bwrap %U
+Terminal=false
+Type=Application
+Icon=Z-Library
+StartupWMClass=Z-Library
+Comment=Your gateway to knowledge and culture
+Categories=Utility;
