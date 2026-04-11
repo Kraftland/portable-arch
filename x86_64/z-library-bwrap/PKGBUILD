@@ -7,7 +7,7 @@ pkgdesc="Your gateway to knowledge and culture. Sandboxed by portable and uses s
 arch=(x86_64 aarch64)
 url="https://go-to-library.sk/"
 license=('LicenseRef-unknown')
-makedepends=(desktop-file-utils tar portable-packer)
+makedepends=(tar portable-packer)
 source=(
 	"https://s3proxy-alp.cdn-zlib.sk/swfs_second_public_files/soft/desktop/Z-Library_3.1.0_amd64.deb"
 	config.toml
@@ -24,10 +24,6 @@ function package() {
 	tar -xf data.tar.xz ./usr
 	install -Dm644 "${srcdir}/opt/Z-Library/resources/app.asar" \
 		"${pkgdir}/usr/lib/z-library-bwrap/app.asar"
-	desktop-file-edit \
-		--set-key Exec \
-		--set-value 'env _portableConfig=go.to.library portable' \
-		"${pkgdir}/usr/share/applications/go.to.library.desktop"
 	cp -r "${srcdir}/usr/share/doc" "${srcdir}/usr/share/icons" "${pkgdir}/usr/share"
 	portable-packer \
 		-v \
