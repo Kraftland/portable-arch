@@ -28,6 +28,7 @@ function package() {
 		"${pkgdir}/usr/lib/z-library-bwrap/app.asar"
 	install -d "${pkgdir}/usr/share"
 	cp -r "${srcdir}/usr/share/doc" "${srcdir}/usr/share/icons" "${pkgdir}/usr/share"
+	declare -x -g pkgdir srcdir pkgname
 	portable-packer \
 		-v \
 		--distro arch \
