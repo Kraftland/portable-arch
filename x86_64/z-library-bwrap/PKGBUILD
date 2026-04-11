@@ -17,11 +17,6 @@ sha256sums=('SKIP'
 provides=(z-library)
 conflicts=(z-library)
 
-function pkgver() {
-	tar -xf control.tar.gz ./control
-	cat control | grep 'Version: ' | sed 's|Version: ||g'
-}
-
 function package() {
 	cd "${srcdir}"
 	depends=(electron bash hicolor-icon-theme portable)
