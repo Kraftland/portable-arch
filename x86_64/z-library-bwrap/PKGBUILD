@@ -24,15 +24,11 @@ function package() {
 	tar -xf data.tar.xz ./usr
 	install -Dm644 "${srcdir}/opt/Z-Library/resources/app.asar" \
 		"${pkgdir}/usr/lib/z-library-bwrap/app.asar"
-	install -Dm644 "${srcdir}/usr/share/applications/z-library.desktop" \
-		"${pkgdir}/usr/share/applications/go.to.library.desktop"
 	desktop-file-edit \
 		--set-key Exec \
 		--set-value 'env _portableConfig=go.to.library portable' \
 		"${pkgdir}/usr/share/applications/go.to.library.desktop"
 	cp -r "${srcdir}/usr/share/doc" "${srcdir}/usr/share/icons" "${pkgdir}/usr/share"
-
-	install "${pkgdir}/usr/share/applications/go.to.library.desktop" "${srcdir}/desktop.file"
 	portable-packer \
 		-v \
 		--distro arch \
