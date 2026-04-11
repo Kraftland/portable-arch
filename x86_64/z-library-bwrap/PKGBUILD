@@ -11,8 +11,10 @@ makedepends=(tar portable-packer)
 source=(
 	"https://s3proxy-alp.cdn-zlib.sk/swfs_second_public_files/soft/desktop/Z-Library_3.1.0_amd64.deb"
 	config.toml
+	desktop.file
 )
 sha256sums=('SKIP'
+            'SKIP'
             'SKIP')
 provides=(z-library)
 conflicts=(z-library)
