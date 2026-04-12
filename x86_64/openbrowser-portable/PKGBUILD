@@ -1,0 +1,38 @@
+# Maintainer: Kimiblock Moe
+
+pkgname=openbrowser-portable
+pkgver=1.1.1073.0
+pkgrel=1
+pkgdesc="CERNET browser sandboxed by Portable"
+arch=(x86_64)
+url="https://scholar.edu.cn/download.html"
+license=('LicenseRef-unknown')
+makedepends=(tar portable-packer)
+source=(
+	"https://download.scholar.edu.cn/openbrowser/ubuntu/openbrowser-cn-stable_1.1.1073.0-1_amd64.deb"
+	config.toml
+	desktop.file
+)
+sha256sums=('SKIP'
+            'SKIP'
+            'SKIP')
+provides=(openbrowser)
+conflicts=(openbrowser)
+
+function package() {
+	cd "${srcdir}"
+	depends=(portable bash alsa-lib  dbus  desktop-file-utils  gtk3  hicolor-icon-theme  libcups  libffi  libgcrypt libpulse  libva  libxss  nss  pciutils  systemd  ttf-liberation  xdg-utils  fontconfig  brotli libjpeg-turbo  flac  libxml2  libwebp  minizip  opus  harfbuzz  libxslt  freetype2)
+	tar -xf data.tar.xz ./opt
+	tar -xf data.tar.xz ./usr
+	cp -a \
+		"${srcdir}/opt" \
+		"${pkgdir}"
+	declare -x -g pkgdir srcdir pkgname
+	portable-packer \
+		-v \
+		--distro arch \
+		--mode post \
+		--hash true \
+		--config-ng "${srcdir}/config.toml" \
+		--desktop-file "${srcdir}/desktop.file"
+}
