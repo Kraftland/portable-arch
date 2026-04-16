@@ -1,7 +1,7 @@
 [Desktop Entry]
 Comment=Use WPS to office work.
 Comment[zh_CN]=使用 WPS Office 进行办公
-Exec=/usr/bin/wps %F
+Exec=env PORTABLE_CONF=cn.wps.wps_365 portable --forward-file -- %F
 GenericName=WPS
 GenericName[zh_CN]=WPS Office
 Name=WPS Office
