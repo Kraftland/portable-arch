@@ -16,3 +16,9 @@ pkgname		= "portable-packer"
 # Source can be either a string of git URL (type git), or repo name (type repo) to download from locally defined repositories.
 sourceType	= "repo"
 source		= "archlinuxcn"
+
+[[depends]]
+pkgname		= "xwaylandvideobridge"
+sourceType	= "git"
+source		= "https://aur.archlinux.org/xwaylandvideobridge.git"
+install		= true
