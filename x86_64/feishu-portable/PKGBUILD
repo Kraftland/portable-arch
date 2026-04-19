@@ -3,10 +3,10 @@
 # https://github.com/TD-Sky/PKGBUILDs
 
 pkgname=feishu-portable
-pkgver=7.54.11
-_pkghash_x64=f2c1bb9d
-_pkghash_arm64=0940b960
-pkgrel=2
+pkgver=7.62.9
+_pkghash_x64=f63223d9
+_pkghash_arm64=d95df105
+pkgrel=1
 epoch=1
 pkgdesc="Linux client of Feishu (Lark) from Bytedance. Sandboxed by portable."
 arch=('x86_64' 'aarch64')
@@ -24,8 +24,8 @@ source=(
 )
 sha256sums=('1c860975bdafada97b15a8ed358dbf1e7199feb300d5b6419a25046cd92628d4'
             '15abf93e2f57905021f37c3bbe958a4532b2f72c6afdbddc8b3b0e0d8466843f')
-sha256sums_x86_64=('ee1dc43e90fa3e5c252326b1c991d8cf7ae9b98f1f8b92bc600a37567df4d2a4')
-sha256sums_aarch64=('5348218e5f8119eaf1ee1c953e71c729eaa2ab53927cabf8ccf87454e9128fe2')
+sha256sums_x86_64=('f7a84e6002ac7ca699b6fbfe8e734290579e095bb0b9077048748f8390069883')
+sha256sums_aarch64=('8fe7c4b4977e8da1d5dcd07e31783c6a792ce85ddc77c57f4f3d8f707310b76a')
 
 function package() {
     depends+=(ca-certificates gtk3 nss xdg-utils dnsmasq portable libmfx libpulse alsa-lib xwaylandvideobridge)
