@@ -8,8 +8,6 @@ This repository is intended for Arch Linux PKGBUILD scripts.
 
 ## Installation:
 
-Note that we are currently in progress of migrating to StashPak, of which the progress is tracked [here](https://github.com/Kraftland/portable-arch/issues/24). You may have to clone the repo and build packages manually for some packages.
-
 1. moeOS systems already have this enabled on latest updates
 2. Ordinary Arch systems:
 
@@ -20,6 +18,8 @@ Some packages requires the use of [Arch Linux CN Repository](https://github.com/
 ## Usage:
 
 - `stashpak get <packages>` gets packages from this repository
+- `stashpak list` lists locally built packages
+- `stashpak update` updates locally built packages
 
 # Contributing
 
