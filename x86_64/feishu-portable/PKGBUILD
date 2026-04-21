@@ -15,17 +15,15 @@ license=('LicenseRef-feishu')
 options=(!debug !strip !emptydirs)
 provides+=('feishu-bin' 'feishu')
 conflicts=('feishu' 'feishu-bin')
-makedepends+=(xdg-utils)
+makedepends+=(xdg-utils portable-packer)
 source_x86_64=("https://sf3-cn.feishucdn.com/obj/ee-appcenter/${_pkghash_x64}/Feishu-linux_x64-${pkgver}.deb")
 source_aarch64=("https://sf3-cn.feishucdn.com/obj/ee-appcenter/${_pkghash_arm64}/Feishu-linux_arm64-${pkgver}.deb")
 source=(
-    portable-config
+    config.toml
     com.bytedance.feishu.desktop
-    feishu.sh
 )
-sha256sums=('38dede3b40110c7d1018301e001c64b9cf8d725303678d69ab39d4ba7c118631'
-            '6c96e320a3203642798d4e52262c01740e8adcd5f7bc613b5bfa2c13b9cb9606'
-            'c445a576126f6a7b33e9a35b472d33bcb7d2e56bcf2c99de7551b8c48bb52f8d')
+sha256sums=('1c860975bdafada97b15a8ed358dbf1e7199feb300d5b6419a25046cd92628d4'
+            '15abf93e2f57905021f37c3bbe958a4532b2f72c6afdbddc8b3b0e0d8466843f')
 sha256sums_x86_64=('ee1dc43e90fa3e5c252326b1c991d8cf7ae9b98f1f8b92bc600a37567df4d2a4')
 sha256sums_aarch64=('5348218e5f8119eaf1ee1c953e71c729eaa2ab53927cabf8ccf87454e9128fe2')
 
@@ -33,11 +31,6 @@ function package() {
     depends+=(ca-certificates gtk3 nss xdg-utils dnsmasq portable libmfx libpulse alsa-lib xwaylandvideobridge)
 
     tar -xpvf "${srcdir}/data.tar.xz" --xattrs-include='*' --numeric-owner -C "${pkgdir}"
-    rm -rf "${pkgdir}/usr/share/applications" "${pkgdir}/usr/share/menu" "${pkgdir}/usr/bin"
-    install -Dm755 portable-config "${pkgdir}/usr/lib/portable/info/com.bytedance.feishu/config"
-    install -Dm644 com.bytedance.feishu.desktop "${pkgdir}/usr/share/applications/com.bytedance.feishu.desktop"
-    install -Dm755 feishu.sh "${pkgdir}/usr/bin/feishu-portable"
-    install -Dm755 feishu.sh "${pkgdir}/usr/bin/feishu"
 
     # This is from the original feishu PKGBUILD, I have no idea why it's there
     sed -i 's/bytedance-feishu/feishu/g' "${pkgdir}/usr/share/appdata/bytedance-feishu.appdata.xml"
@@ -78,4 +71,16 @@ function package() {
     # license
     install -d "${pkgdir}/usr/share/licenses/feishu-portable"
     echo 'https://www.feishu.cn/terms' >"${pkgdir}/usr/share/licenses/feishu-portable/terms.url"
+
+	export pkgdir
+	export pkgname
+	export srcdir
+	portable-packer \
+		-v \
+		--distro arch \
+		--mode post \
+		--hash true \
+		--config-ng "${srcdir}/config.toml" \
+		--desktop-file "${srcdir}/com.bytedance.feishu.desktop"
+	ln -sf "/usr/bin/feishu-portable" "${pkgdir}/usr/bin/feishu"
 }
