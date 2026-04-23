@@ -19,7 +19,7 @@ stateDirectory = "Steam_Data"
 target = "steam"
 
 # arguments holds an array of arguments passed to the application, this is also used when starting secondary instances.
-arguments = []
+arguments = ["-steamos3"]
 
 # D-Bus activation works by installing a service under /usr/share/dbus-1/services. It is used by UnifiedPush to process notifications without showing a window. You should modify the activation cmdline to call portable with "--dbus-activation".
 [busActivation]
