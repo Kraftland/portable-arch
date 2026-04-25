@@ -2,7 +2,7 @@
 
 pkgname=steam-portable
 pkgver=1.0.0.85
-pkgrel=3
+pkgrel=4
 epoch=1
 pkgdesc="Valve's digital software delivery system sandboxed by portable. Automatically uses discrete GPUs."
 arch=('x86_64')
@@ -25,7 +25,7 @@ source=(
 )
 
 
-md5sums=('90d7b7b8fc59ed5459bc9119830b9a70'
+md5sums=('7a6c4aa588d35740616b5c875023e06b'
          '446138ff6bdaec911b363ea104efc8ab')
 
 function package() {
@@ -48,5 +48,6 @@ function package() {
 		--desktop-file "${srcdir}/steam.desktop"
 
 	install -vDm755 /usr/bin/steam -t "${pkgdir}/usr/lib/portable/overlay-usr"
+	ln -sf "/usr/bin/steam-portable" "${pkgdir}/usr/bin/steam"
 }
 

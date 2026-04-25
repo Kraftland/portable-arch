@@ -21,8 +21,8 @@ provides=('kingsoft-office' 'wps-office' "wps-office-365" wps-office-cn-bwrap)
 
 source=(portable-config wps365-open cn.wps.wps_365.desktop)
 sha1sums=('d94ecb5673a1e18a407410934eb2777076e8ef6d'
-          '0cb27cb3a49735bab9314896980679a4b0eca54e'
-	  '583dc7fccccb735d8b7b86e97b97af642d58ee9a')
+          'ed9315900efcb391419f657caea04a3d1fc77923'
+          '583dc7fccccb735d8b7b86e97b97af642d58ee9a')
 
 package() {
 	depends+=('fontconfig' 'xorg-mkfontscale' 'libxrender' 'desktop-file-utils' 'shared-mime-info' 'xdg-utils' 'glu' 'sdl2' 'libpulse' 'hicolor-icon-theme' 'libxss' 'sqlite' 'libtool' 'libxslt' 'libjpeg-turbo' "portable")
