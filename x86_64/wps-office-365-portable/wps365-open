@@ -35,7 +35,7 @@ for FILE in "$@"; do
         "x-scheme-handler/ksowebstartupwpp" | "application/wps-office.uot3" | "application/wps-office.uott3" | \
         "x-scheme-handler/ksodoccenter")
             echo "Opening Word document with WPS: $FILE"
-            $WPS_PROGRAM "$FILE" &
+            cd "$(dirname "$FILE")" && $WPS_PROGRAM "$(basename "$FILE")" &
             ;;
         
         "application/wps-office.et" | "application/wps-office.ett" | "application/wps-office.ets" | "application/wps-office.eto" | \
@@ -44,7 +44,7 @@ for FILE in "$@"; do
         "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet" | "application/wps-office.uos" | \
         "application/wps-office.uos3" | "application/wps-office.uost3")
             echo "Opening Excel file with WPS: $FILE"
-            $EXCEL_PROGRAM "$FILE" &
+            cd "$(dirname "$FILE")" && $EXCEL_PROGRAM "$(basename "$FILE")" &
             ;;
         
         "application/wps-office.dps" | "application/wps-office.dpt" | "application/wps-office.dpss" | "application/wps-office.dpso" | \
@@ -55,18 +55,18 @@ for FILE in "$@"; do
         "application/vnd.openxmlformats-officedocument.presentationml.slideshow" | "application/wps-office.uop" | \
         "application/wps-office.uop3" | "application/wps-office.uopt3")
             echo "Opening PowerPoint file with WPS: $FILE"
-            $PPT_PROGRAM "$FILE" &
+            cd "$(dirname "$FILE")" && $PPT_PROGRAM "$(basename "$FILE")" &
             ;;
         
         "application/pdf")
             echo "Opening PDF file with Evince: $FILE"
-            $PDF_PROGRAM "$FILE" &
+            cd "$(dirname "$FILE")" && $PDF_PROGRAM "$(basename "$FILE")" &
             ;;
         
         *)
             # 对于未知文件类型，使用默认的 WPS 打开程序
             echo "Unknown file type: $MIME_TYPE. Opening with default program: WPS."
-            $WPS_PROGRAM "$FILE" &
+            cd "$(dirname "$FILE")" && $WPS_PROGRAM "$(basename "$FILE")" &
             ;;
     esac
 done
