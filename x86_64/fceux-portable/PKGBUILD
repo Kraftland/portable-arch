@@ -23,7 +23,7 @@ source=(
 )
 
 
-sha256sums=('c4488329558680b70bc78dc7cff1b6da58ea42e91aefd4e768f20d748b2240c8'
+sha256sums=('ae5414c4eba2d5755ad2e6483426d33e8d081f16553d7a90f3c5391428ea26aa'
          '7b742a4ee4b5b0f99bc35533fd42112fe5695e487b7393284a493dfaed50faaa')
 
 function package() {

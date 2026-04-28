@@ -40,7 +40,7 @@ track = true
 # The system section controls general permission.
 [system]
 # Whether or not an application can call Inhibit Portal to prevent automatic suspend. Defaults to false.
-inhibitSuspend = false
+inhibitSuspend = true
 
 # Whether or not an application can call GlobalShortcuts Portal to request shortcuts registration. Defaults to false.
 globalShortcuts = false
