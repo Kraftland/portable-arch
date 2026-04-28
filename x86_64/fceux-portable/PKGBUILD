@@ -1,0 +1,44 @@
+# Maintainer: Kimiblock Moe
+
+pkgname=fceux-portable
+pkgver=2.6.6
+pkgrel=1
+pkgdesc="Fast and ultra-compatible NES/Famicom emulator"
+arch=('x86_64')
+url="https://fceux.com"
+license=('LicenseRef-fceux')
+provides=(fceux)
+options=('!emptydirs' '!debug')
+replaces+=(fceux)
+conflicts=("fceux")
+depends=('gd' 'libarchive' 'lua' 'minizip' 'qt6-base' 'sdl2' 'libglvnd' 'bash' 'sdl2-compat' 'libgcc' 'x264' 'libstdc++' 'x264' 'zlib')
+optdepends=('ffmpeg: for recording')
+
+makedepends+=(coreutils portable-packer)
+
+
+source=(
+	config.toml
+	com.fceux.FCEUX.desktop
+)
+
+
+sha256sums=('ae5414c4eba2d5755ad2e6483426d33e8d081f16553d7a90f3c5391428ea26aa'
+         '7b742a4ee4b5b0f99bc35533fd42112fe5695e487b7393284a493dfaed50faaa')
+
+function package() {
+	depends=("portable")
+	export pkgdir
+	export pkgname
+	export srcdir
+	portable-packer \
+		-v \
+		--distro arch \
+		--mode copy fceux \
+		--hash true \
+		--config-ng "${srcdir}/config.toml" \
+		--desktop-file "${srcdir}/com.fceux.FCEUX.desktop"
+
+	install -vDm755 /usr/bin/fceux -t "${pkgdir}/usr/lib/portable/overlay-usr"
+}
+
