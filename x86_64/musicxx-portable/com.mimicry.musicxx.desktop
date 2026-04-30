@@ -1,6 +1,6 @@
 [Desktop Entry]
 Type=Application
 Name=musicxx
-Exec=PORTABLE_CONF=com.mimicry.musicxx portable
+Exec=env PORTABLE_CONF=com.mimicry.musicxx portable
 Icon=/opt/musicxx/musicxx.png
 Categories=AudioVideo;
