@@ -24,7 +24,7 @@ source=(
 
 
 sha256sums=('ae5414c4eba2d5755ad2e6483426d33e8d081f16553d7a90f3c5391428ea26aa'
-         '7b742a4ee4b5b0f99bc35533fd42112fe5695e487b7393284a493dfaed50faaa')
+	'81984ce8305401fdfee3e55e8fc02e61f89e987df63c5bca0b2dbcd5b1ab9b91')
 
 function package() {
 	depends=("portable")
