@@ -11,7 +11,7 @@ GenericName[zh_CN]=Feishu
 Comment=Feishu is a next-generation office suite that integrates messaging, schedule management, collaborative documents, video meeting, and various apps in one platform.
 Comment[ja]=Feishu は、メッセージ、スケジュール管理、文書の共同編集、ビデオ会議などの様々な機能を統合し、仕事を効率化する新世代のビジネスツールです。
 Comment[zh_CN]=Feishu 整合即时沟通、云文档、音视频会议、工作台等功能于一体，助力个人与企业开启未来办公新模式！
-Exec=env _portableConfig="com.bytedance.feishu" portable --file-forwarding -- %U
+Exec=env PORTABLE_CONF=com.bytedance.feishu portable --file-forwarding -- %U
 StartupNotify=true
 StartupWMClass=feishu
 Terminal=false
@@ -29,17 +29,17 @@ X-Flatpak=com.bytedance.feishu;
 [Desktop Action opendir]
 Name=Open Feishu Home
 Name[zh_CN]=打开数据目录
-Exec=env _portableConfig="com.bytedance.feishu" portable --actions opendir
+Exec=env PORTABLE_CONF=com.bytedance.feishu portable --actions opendir
 Icon=go-home-symbolic
 
 [Desktop Action share]
 Name=Share files with Feishu
 Name[zh_CN]=向 Feishu 传输文件
-Exec=env _portableConfig="com.bytedance.feishu" portable --actions share-files
+Exec=env PORTABLE_CONF=com.bytedance.feishu portable --actions share-files
 Icon=insert-image-symbolic
 
 [Desktop Action quit]
 Name=Quit Feishu
 Name[zh_CN]=退出 Feishu
-Exec=env _portableConfig="com.bytedance.feishu" portable --actions quit
+Exec=env PORTABLE_CONF=com.bytedance.feishu portable --actions quit
 Icon=system-log-out-symbolic
