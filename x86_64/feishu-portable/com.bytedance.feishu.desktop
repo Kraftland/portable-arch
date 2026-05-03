@@ -18,7 +18,7 @@ Terminal=false
 Icon=bytedance-feishu
 Type=Application
 Categories=Office;
-MimeType=message/rfc822;x-scheme-handler/feishu;x-scheme-handler/feishu-open;x-scheme-handler/feishu;x-scheme-handler/x-feishu;
+MimeType=message/rfc822;x-scheme-handler/feishu;x-scheme-handler/feishu-open;x-scheme-handler/feishu;
 #X-KDE-DBUS-Restricted-Interfaces=org.kde.kwin.Screenshot,org.kde.KWin.ScreenShot2
 # Additional config to ensure portable works properly
 Actions=opendir;share;quit;
