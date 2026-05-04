@@ -37,7 +37,7 @@ pkgbase = wps-office-365-portable
 	source = wps365-open
 	source = cn.wps.wps_365.desktop
 	sha1sums = d94ecb5673a1e18a407410934eb2777076e8ef6d
-	sha1sums = 0cb27cb3a49735bab9314896980679a4b0eca54e
+	sha1sums = 60bebb1f5f1936027fff222fc0701e4fc33137fc
 	sha1sums = 583dc7fccccb735d8b7b86e97b97af642d58ee9a
 
 pkgname = wps-office-365-portable

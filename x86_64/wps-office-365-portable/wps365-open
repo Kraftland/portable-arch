@@ -59,7 +59,7 @@ for FILE in "$@"; do
             ;;
         
         "application/pdf")
-            echo "Opening PDF file with Evince: $FILE"
+            echo "Opening PDF file with WPS: $FILE"
             cd "$(dirname "$FILE")" && $PDF_PROGRAM "$(basename "$FILE")" &
             ;;
         
