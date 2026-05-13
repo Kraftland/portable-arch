@@ -59,3 +59,12 @@ jobs:
           pacman-key --init
           pacman -Sy --noconfirm archlinuxcn-keyring
           pacman -Syu --noconfirm stashpak
+      - name: Build delta
+        run: |
+          for pkg in $(cat $GITHUB_WORKSPACE/.updated); do
+            echo "Building package: $pkg"
+            if [[ -d ./"x86_64/${pkg}" ]]; then
+              echo "Building x86_64"
+              stashpak install-local
+            fi
+          done
