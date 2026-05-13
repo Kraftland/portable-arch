@@ -27,17 +27,16 @@ jobs:
       - uses: actions/checkout@v6
         with:
           fetch-depth: 0
-
-      - name: Determine updated package
+          ref: ${{ github.head_ref }}
+      - name: Update repo
         run: |
           git config --global --add safe.directory .
           git switch master
           git pull --all
           git switch -
+      - name: Determine updated package
+        run: |
           git status
-          
-          pwd
-          ls
           git diff master --name-only | cut -d '/' -f 2 | sort -u | xargs >$GITHUB_WORKSPACE/.updated
 
       - name: Print updated package
