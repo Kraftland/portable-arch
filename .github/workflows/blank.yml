@@ -56,5 +56,6 @@ jobs:
         run: |
           echo "[archlinuxcn]" >>/etc/pacman.conf
           echo 'Server = https://repo.archlinuxcn.org/$arch' >>/etc/pacman.conf
+          pacman-key --init
           pacman -Sy --noconfirm archlinuxcn-keyring
           pacman -Syu --noconfirm stashpak
