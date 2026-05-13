@@ -23,6 +23,9 @@ jobs:
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v4
+        with:
+          repository: Kraftland/portable-arch
+          path: repo
 
       - name: Install git
         run: pacman -Syu --noconfirm git
@@ -30,6 +33,7 @@ jobs:
       - name: Determine updated package
         run: |
           git diff master...HEAD --name-only | cut -d '/' -f 2 | sort -u | xargs >$GITHUB_WORKSPACE/.updated
+        working-directory: repo
 
       - name: Print updated package
         run: |
