@@ -26,14 +26,11 @@ jobs:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v6
         with:
-          repository: Kraftland/portable-arch
-          path: repo
           fetch-depth: 0
 
       - name: Determine updated package
         run: |
           git diff master --name-only | cut -d '/' -f 2 | sort -u | xargs >$GITHUB_WORKSPACE/.updated
-        working-directory: repo
 
       - name: Print updated package
         run: |
