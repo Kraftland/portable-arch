@@ -1,6 +1,6 @@
 #!/usr/bin/bash
 
-export _portableConfig="im.qq.app"
+export PORTABLE_CONF="im.qq.app"
 
 if [[ "$@" = "--actions opendir" ]]; then
 	portable --actions opendir
