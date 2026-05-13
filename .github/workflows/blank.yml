@@ -30,7 +30,9 @@ jobs:
 
       - name: Determine updated package
         run: |
+          git config --global --add safe.directory .
           git status
+          
           pwd
           ls
           git diff master --name-only | cut -d '/' -f 2 | sort -u | xargs >$GITHUB_WORKSPACE/.updated
