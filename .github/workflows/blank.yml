@@ -37,7 +37,17 @@ jobs:
       - name: Determine updated package
         run: |
           git status
-          git diff master --name-only | cut -d '/' -f 2 | sort -u | xargs >$GITHUB_WORKSPACE/.updated
+          changed_dirs=$(git diff origin/master...HEAD --name-only | grep '/' | cut -d '/' -f 1,2 | sort -u)
+          updated_pkgs=()
+          for dir in $changed_dirs; do
+            # Check if both required files exist in that directory
+            if [[ -f "$dir/stashpak.toml" ]] && [[ -f "$dir/PKGBUILD" ]]; then
+            # Extract just the pkgname (the second part of the path)
+            pkgname=$(echo "$dir" | cut -d '/' -f 2)
+            updated_pkgs+=("$pkgname")
+            fi
+          done
+          echo "${updated_pkgs[@]}" | xargs > $GITHUB_WORKSPACE/.updated
 
       - name: Print updated package
         run: |
