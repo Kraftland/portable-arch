@@ -31,6 +31,7 @@ jobs:
       - name: Determine updated package
         run: |
           git config --global --add safe.directory .
+          git pull
           git status
           
           pwd
