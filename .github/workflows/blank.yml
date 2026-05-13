@@ -62,10 +62,14 @@ jobs:
       - name: Build delta
         run: |
           export stashPakElevateProgram="sudo"
+          export XDG_RUNTIME_DIR=/tmp
+          currDir="$(pwd)"
           for pkg in $(cat $GITHUB_WORKSPACE/.updated); do
             echo "Building package: $pkg"
             if [[ -d ./"x86_64/${pkg}" ]]; then
               echo "Building x86_64"
+              cd ./"x86_64/${pkg}"
               stashpak install-local
+              cd "${currDir}"
             fi
           done
