@@ -52,3 +52,24 @@ jobs:
       - name: Print updated package
         run: |
           cat $GITHUB_WORKSPACE/.updated
+      - name: Add archlinuxcn repository and install StashPak
+        run: |
+          echo "[archlinuxcn]" >>/etc/pacman.conf
+          echo 'Server = https://repo.archlinuxcn.org/$arch' >>/etc/pacman.conf
+          pacman-key --init
+          pacman -Sy --noconfirm archlinuxcn-keyring
+          pacman -Syu --noconfirm stashpak sudo
+      - name: Build delta
+        run: |
+          export stashPakElevateProgram="sudo"
+          export XDG_RUNTIME_DIR=/tmp
+          currDir="$(pwd)"
+          for pkg in $(cat $GITHUB_WORKSPACE/.updated); do
+            echo "Building package: $pkg"
+            if [[ -d ./"x86_64/${pkg}" ]]; then
+              echo "Building x86_64"
+              cd ./"x86_64/${pkg}"
+              stashpak install-local
+              cd "${currDir}"
+            fi
+          done
