@@ -32,7 +32,7 @@ jobs:
 
       - name: Determine updated package
         run: |
-          git diff master...HEAD --name-only | cut -d '/' -f 2 | sort -u | xargs >$GITHUB_WORKSPACE/.updated
+          git diff master --name-only | cut -d '/' -f 2 | sort -u | xargs >$GITHUB_WORKSPACE/.updated
         working-directory: repo
 
       - name: Print updated package
