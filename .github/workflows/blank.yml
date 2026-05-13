@@ -52,9 +52,9 @@ jobs:
       - name: Print updated package
         run: |
           cat $GITHUB_WORKSPACE/.updated
-      - name: Add archlinuxcn repository
+      - name: Add archlinuxcn repository and install StashPak
         run: |
           echo "[archlinuxcn]" >>/etc/pacman.conf
           echo 'Server = https://repo.archlinuxcn.org/$arch' >>/etc/pacman.conf
-          sudo pacman -Sy archlinuxcn-keyring
-          sudo pacman -Syu
+          pacman -Sy archlinuxcn-keyring
+          pacman -Syu stashpak
