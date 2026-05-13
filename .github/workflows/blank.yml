@@ -28,6 +28,8 @@ jobs:
         with:
           repository: Kraftland/portable-arch
           path: repo
+      - name: Fetch repo
+        run: git fetch --all
 
       - name: Determine updated package
         run: |
