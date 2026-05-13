@@ -58,9 +58,10 @@ jobs:
           echo 'Server = https://repo.archlinuxcn.org/$arch' >>/etc/pacman.conf
           pacman-key --init
           pacman -Sy --noconfirm archlinuxcn-keyring
-          pacman -Syu --noconfirm stashpak
+          pacman -Syu --noconfirm stashpak sudo
       - name: Build delta
         run: |
+          export stashPakElevateProgram="sudo"
           for pkg in $(cat $GITHUB_WORKSPACE/.updated); do
             echo "Building package: $pkg"
             if [[ -d ./"x86_64/${pkg}" ]]; then
