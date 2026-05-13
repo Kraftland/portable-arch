@@ -1,0 +1,54 @@
+# This is a basic workflow to help you get started with Actions
+
+name: Builder for all packages
+
+# Controls when the workflow will run
+on:
+  pull_request:
+    branches: [ "master" ]
+
+  # Allows you to run this workflow manually from the Actions tab
+  workflow_dispatch:
+
+# A workflow run is made up of one or more jobs that can run sequentially or in parallel
+jobs:
+  # This workflow contains a single job called "build"
+  build:
+    # The type of runner that the job will run on
+    runs-on: ubuntu-latest
+    container:
+      image: archlinux:latest
+
+    # Steps represent a sequence of tasks that will be executed as part of the job
+    steps:
+      - name: Install git
+        run: pacman -Syu --noconfirm git
+      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
+      - uses: actions/checkout@v6
+        with:
+          fetch-depth: 0
+          ref: ${{ github.head_ref }}
+      - name: Update repo
+        run: |
+          git config --global --add safe.directory .
+          git switch master
+          git pull --all
+          git switch -
+      - name: Determine updated package
+        run: |
+          git status
+          changed_dirs=$(git diff origin/master...HEAD --name-only | grep '/' | cut -d '/' -f 1,2 | sort -u)
+          updated_pkgs=()
+          for dir in $changed_dirs; do
+            # Check if both required files exist in that directory
+            if [[ -f "$dir/stashpak.toml" ]] && [[ -f "$dir/PKGBUILD" ]]; then
+            # Extract just the pkgname (the second part of the path)
+            pkgname=$(echo "$dir" | cut -d '/' -f 2)
+            updated_pkgs+=("$pkgname")
+            fi
+          done
+          echo "${updated_pkgs[@]}" | xargs > $GITHUB_WORKSPACE/.updated
+
+      - name: Print updated package
+        run: |
+          cat $GITHUB_WORKSPACE/.updated
