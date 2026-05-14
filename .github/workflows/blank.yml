@@ -18,7 +18,7 @@ jobs:
     runs-on: ubuntu-latest
     container:
       image: archlinux:latest
-      options: --privileged --sysctl kernel.unprivileged_userns_clone=1
+      options: --privileged
 
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
@@ -62,6 +62,7 @@ jobs:
           pacman -Syu --noconfirm stashpak sudo
       - name: Build delta
         run: |
+          sysctl -w kernel.unprivileged_userns_clone=1
           export stashPakElevateProgram="sudo"
           export XDG_RUNTIME_DIR=/tmp
           currDir="$(pwd)"
