@@ -64,6 +64,7 @@ jobs:
           pacman -Syu --noconfirm stashpak sudo namcap
       - name: Check delta
         run: |
+          set -euo pipefail
           sysctl -w kernel.unprivileged_userns_clone=1
           export stashPakElevateProgram="sudo"
           export XDG_RUNTIME_DIR=/tmp
@@ -75,6 +76,7 @@ jobs:
               cd ./"x86_64/${pkg}"
               #stashpak install-local
               namcap PKGBUILD
+              makepkg -o
               cd "${currDir}"
             fi
           done
