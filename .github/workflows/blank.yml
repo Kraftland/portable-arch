@@ -66,7 +66,7 @@ jobs:
             if [[ -d ./"x86_64/${pkg}" ]]; then
               echo "Checking x86_64"
               cd ./"x86_64/${pkg}"
-              makepkg -o
+              makepkg --nobuild --nodeps
               cd "${currDir}"
             fi
           done
