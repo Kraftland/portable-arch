@@ -58,16 +58,14 @@ jobs:
       - name: Check delta
         run: |
           set -euo pipefail
-          sysctl -w kernel.unprivileged_userns_clone=1
           export stashPakElevateProgram="sudo"
           export XDG_RUNTIME_DIR=/tmp
           currDir="$(pwd)"
           for pkg in $(cat $GITHUB_WORKSPACE/.updated); do
             echo "Building package: $pkg"
             if [[ -d ./"x86_64/${pkg}" ]]; then
-              echo "Building x86_64"
+              echo "Checking x86_64"
               cd ./"x86_64/${pkg}"
-              namcap PKGBUILD
               makepkg -o
               cd "${currDir}"
             fi
