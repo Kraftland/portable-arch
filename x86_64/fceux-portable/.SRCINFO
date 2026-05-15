@@ -30,7 +30,7 @@ pkgbase = fceux-portable
 	source = config.toml
 	source = com.fceux.FCEUX.desktop
 	sha256sums = ae5414c4eba2d5755ad2e6483426d33e8d081f16553d7a90f3c5391428ea26aa
-	sha256sums = 81984ce8305401fdfee3e55e8fc02e61f89e987df63c5bca0b2dbcd5b1ab9b91
+	sha256sums = 02ce9ced7512dc3fc6b4121687ec458f5728e101d13a0c36400b9fcea7f1903c
 
 pkgname = fceux-portable
 	depends = portable
