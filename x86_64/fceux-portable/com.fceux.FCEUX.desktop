@@ -5,7 +5,7 @@ Name=Fceux
 GenericName=NES/Famicom emulator
 NoDisplay=false
 Comment=Emulate NES ROMs
-Exec=env PORTABLE_CONF=com.fceux.FCEUX portable --forward-files -- %f
+Exec=env PORTABLE_CONF=com.fceux.FCEUX portable --forward-file -- %f
 Icon=/usr/share/pixmaps/fceux1.png
 Terminal=false
 MimeType=application/x-nes-rom
