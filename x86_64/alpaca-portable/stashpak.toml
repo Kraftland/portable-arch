@@ -24,3 +24,16 @@ pkgname		= "alpaca-ai"
 sourceType	= "git"
 branch		= "alpaca-ai"
 source		= "https://github.com/archlinux/aur.git"
+
+[[depends.depends]]
+buildPrefix	= "extra-x86_64-build"
+pkgname		= "python-ollama"
+sourceType	= "git"
+branch		= "python-ollama"
+source		= "https://github.com/archlinux/aur.git"
+[[depends.depends]]
+buildPrefix	= "extra-x86_64-build"
+pkgname		= "python-markitdown"
+sourceType	= "git"
+branch		= "python-markitdown"
+source		= "https://github.com/archlinux/aur.git"
