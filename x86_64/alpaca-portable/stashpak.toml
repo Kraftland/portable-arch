@@ -48,6 +48,35 @@ sourceType	= "git"
 branch		= "python-mammoth"
 source		= "https://github.com/archlinux/aur.git"
 install		= true
+[[depends.depends.depends.depends]]
+buildPrefix	= "extra-x86_64-build"
+pkgname		= "python-cobble"
+sourceType	= "git"
+branch		= "python-cobble"
+source		= "https://github.com/archlinux/aur.git"
+install		= true
+[[depends.depends.depends.depends]]
+buildPrefix	= "extra-x86_64-build"
+pkgname		= "python-funk"
+sourceType	= "git"
+branch		= "python-funk"
+source		= "https://github.com/archlinux/aur.git"
+install		= true
+[[depends.depends.depends.depends]]
+buildPrefix	= "extra-x86_64-build"
+pkgname		= "python-precisely"
+sourceType	= "git"
+branch		= "python-precisely"
+source		= "https://github.com/archlinux/aur.git"
+install		= true
+[[depends.depends.depends.depends]]
+buildPrefix	= "extra-x86_64-build"
+pkgname		= "python-tempman"
+sourceType	= "git"
+branch		= "python-tempman"
+source		= "https://github.com/archlinux/aur.git"
+install		= true
+
 [[depends.depends.depends]]
 buildPrefix	= "extra-x86_64-build"
 pkgname		= "python-pptx"
