@@ -108,30 +108,9 @@ install		= true
 [[depends.depends.depends.depends]]
 buildPrefix	= "extra-x86_64-build"
 pkgname		= "python-pocketsphinx"
-sourceType	= "git"
+sourceType	= "repo"
 branch		= "python-pocketsphinx"
-source		= "https://github.com/archlinux/aur.git"
-install		= true
-[[depends.depends.depends.depends.depends]]
-buildPrefix	= "extra-x86_64-build"
-pkgname		= "python-setuptools"
-sourceType	= "repo"
-source		= "extra"
-install		= false
-[[depends.depends.depends.depends.depends]]
-buildPrefix	= "extra-x86_64-build"
-pkgname		= "python2-setuptools"
-
-# Source can be either a string of git URL (type git), or repo name (type repo) to download from locally defined repositories.
-sourceType	= "repo"
-source		= "archlinuxcn"
-install		= false
-[[depends.depends.depends.depends.depends]]
-buildPrefix	= "extra-x86_64-build"
-pkgname		= "python-sounddevice"
-sourceType	= "git"
-branch		= "python-sounddevice"
-source		= "https://github.com/archlinux/aur.git"
+source		= "archlinuxcn
 install		= true
 [[depends.depends.depends.depends]]
 buildPrefix	= "extra-x86_64-build"
