@@ -119,6 +119,16 @@ sourceType	= "repo"
 source		= "extra"
 install		= false
 [[depends.depends.depends.depends.depends]]
+# Optional
+#buildPrefix	= "extra-x86_64-build"
+# The package name of a dependency
+pkgname		= "python2-setuptools"
+
+# Source can be either a string of git URL (type git), or repo name (type repo) to download from locally defined repositories.
+sourceType	= "repo"
+source		= "archlinuxcn"
+install		= false
+[[depends.depends.depends.depends.depends]]
 buildPrefix	= "extra-x86_64-build"
 pkgname		= "python-sounddevice"
 sourceType	= "git"
