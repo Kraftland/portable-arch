@@ -31,9 +31,62 @@ pkgname		= "python-ollama"
 sourceType	= "git"
 branch		= "python-ollama"
 source		= "https://github.com/archlinux/aur.git"
+install		= true
+
 [[depends.depends]]
 buildPrefix	= "extra-x86_64-build"
 pkgname		= "python-markitdown"
 sourceType	= "git"
 branch		= "python-markitdown"
 source		= "https://github.com/archlinux/aur.git"
+install		= true
+
+[[depends.depends.depends]]
+buildPrefix	= "extra-x86_64-build"
+pkgname		= "python-mammoth"
+sourceType	= "git"
+branch		= "python-mammoth"
+source		= "https://github.com/archlinux/aur.git"
+install		= true
+[[depends.depends.depends]]
+buildPrefix	= "extra-x86_64-build"
+pkgname		= "python-pptx"
+sourceType	= "git"
+branch		= "python-pptx"
+source		= "https://github.com/archlinux/aur.git"
+install		= true
+[[depends.depends.depends]]
+buildPrefix	= "extra-x86_64-build"
+pkgname		= "python-youtube-transcript-api"
+sourceType	= "git"
+branch		= "python-youtube-transcript-api"
+source		= "https://github.com/archlinux/aur.git"
+install		= true
+[[depends.depends.depends]]
+buildPrefix	= "extra-x86_64-build"
+pkgname		= "python-speechrecognition"
+sourceType	= "git"
+branch		= "python-speechrecognition"
+source		= "https://github.com/archlinux/aur.git"
+install		= true
+[[depends.depends.depends]]
+buildPrefix	= "extra-x86_64-build"
+pkgname		= "python-pathvalidate"
+sourceType	= "git"
+branch		= "python-pathvalidate"
+source		= "https://github.com/archlinux/aur.git"
+install		= true
+[[depends.depends.depends]]
+buildPrefix	= "extra-x86_64-build"
+pkgname		= "python-cobble"
+sourceType	= "git"
+branch		= "python-cobble"
+source		= "https://github.com/archlinux/aur.git"
+install		= true
+[[depends.depends.depends]]
+buildPrefix	= "extra-x86_64-build"
+pkgname		= "python-magika"
+sourceType	= "git"
+branch		= "python-magika"
+source		= "https://github.com/archlinux/aur.git"
+install		= true
