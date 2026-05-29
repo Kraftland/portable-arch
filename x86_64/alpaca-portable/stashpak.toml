@@ -105,6 +105,27 @@ sourceType	= "git"
 branch		= "python-speechrecognition"
 source		= "https://github.com/archlinux/aur.git"
 install		= true
+[[depends.depends.depends.depends]]
+buildPrefix	= "extra-x86_64-build"
+pkgname		= "python-groq"
+sourceType	= "git"
+branch		= "python-groq"
+source		= "https://github.com/archlinux/aur.git"
+install		= true
+[[depends.depends.depends.depends]]
+buildPrefix	= "extra-x86_64-build"
+pkgname		= "python-pocketsphinx"
+sourceType	= "git"
+branch		= "python-pocketsphinx"
+source		= "https://github.com/archlinux/aur.git"
+install		= true
+[[depends.depends.depends.depends]]
+buildPrefix	= "extra-x86_64-build"
+pkgname		= "python-google-cloud-speech"
+sourceType	= "git"
+branch		= "python-google-cloud-speech"
+source		= "https://github.com/archlinux/aur.git"
+install		= true
 [[depends.depends.depends]]
 buildPrefix	= "extra-x86_64-build"
 pkgname		= "python-pathvalidate"
@@ -124,5 +145,12 @@ buildPrefix	= "extra-x86_64-build"
 pkgname		= "python-magika"
 sourceType	= "git"
 branch		= "python-magika"
+source		= "https://github.com/archlinux/aur.git"
+install		= true
+[[depends.depends.depends.depends]]
+buildPrefix	= "extra-x86_64-build"
+pkgname		= "python-dacite"
+sourceType	= "git"
+branch		= "python-dacite"
 source		= "https://github.com/archlinux/aur.git"
 install		= true
