@@ -136,9 +136,10 @@ install		= true
 [[depends.depends.depends]]
 buildPrefix	= "extra-x86_64-build"
 pkgname		= "python-pathvalidate"
-sourceType	= "git"
+sourceType	= "repo"
 branch		= "python-pathvalidate"
-source		= "https://github.com/archlinux/aur.git"
+#source		= "https://github.com/archlinux/aur.git"
+source		= "archlinuxcn"
 install		= true
 [[depends.depends.depends]]
 buildPrefix	= "extra-x86_64-build"
