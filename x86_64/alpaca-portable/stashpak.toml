@@ -114,6 +114,13 @@ source		= "https://github.com/archlinux/aur.git"
 install		= true
 [[depends.depends.depends.depends.depends]]
 buildPrefix	= "extra-x86_64-build"
+pkgname		= "python-setuptools"
+sourceType	= "git"
+branch		= "python-setuptools"
+source		= "https://github.com/archlinux/aur.git"
+install		= false
+[[depends.depends.depends.depends.depends]]
+buildPrefix	= "extra-x86_64-build"
 pkgname		= "python-sounddevice"
 sourceType	= "git"
 branch		= "python-sounddevice"
