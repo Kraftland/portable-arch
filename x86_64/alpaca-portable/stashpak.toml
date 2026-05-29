@@ -126,6 +126,20 @@ sourceType	= "git"
 branch		= "python-google-cloud-speech"
 source		= "https://github.com/archlinux/aur.git"
 install		= true
+[[depends.depends.depends.depends.depeends]]
+buildPrefix	= "extra-x86_64-build"
+pkgname		= "python-grpcio-status"
+sourceType	= "git"
+branch		= "python-grpcio-status"
+source		= "https://github.com/archlinux/aur.git"
+install		= true
+[[depends.depends.depends.depends.depeends]]
+buildPrefix	= "extra-x86_64-build"
+pkgname		= "python-proto-plus"
+sourceType	= "git"
+branch		= "python-proto-plus"
+source		= "https://github.com/archlinux/aur.git"
+install		= true
 [[depends.depends.depends]]
 buildPrefix	= "extra-x86_64-build"
 pkgname		= "python-pathvalidate"
