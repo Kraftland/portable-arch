@@ -119,6 +119,13 @@ sourceType	= "git"
 branch		= "python-pocketsphinx"
 source		= "https://github.com/archlinux/aur.git"
 install		= true
+[[depends.depends.depends.depends.depends]]
+buildPrefix	= "extra-x86_64-build"
+pkgname		= "python-sounddevice"
+sourceType	= "git"
+branch		= "python-sounddevice"
+source		= "https://github.com/archlinux/aur.git"
+install		= true
 [[depends.depends.depends.depends]]
 buildPrefix	= "extra-x86_64-build"
 pkgname		= "python-google-cloud-speech"
@@ -131,13 +138,6 @@ buildPrefix	= "extra-x86_64-build"
 pkgname		= "python-pathvalidate"
 sourceType	= "git"
 branch		= "python-pathvalidate"
-source		= "https://github.com/archlinux/aur.git"
-install		= true
-[[depends.depends.depends]]
-buildPrefix	= "extra-x86_64-build"
-pkgname		= "python-cobble"
-sourceType	= "git"
-branch		= "python-cobble"
 source		= "https://github.com/archlinux/aur.git"
 install		= true
 [[depends.depends.depends]]
