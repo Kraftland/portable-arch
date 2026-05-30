@@ -58,16 +58,14 @@ install		= true
 [[depends.depends.depends.depends]]
 buildPrefix	= "extra-x86_64-build"
 pkgname		= "python-funk"
-sourceType	= "git"
-branch		= "python-funk"
-source		= "https://github.com/archlinux/aur.git"
+sourceType	= "repo"
+source		= "archlinuxcn"
 install		= true
 [[depends.depends.depends.depends.depends]]
 buildPrefix	= "extra-x86_64-build"
 pkgname		= "python-precisely"
-sourceType	= "git"
-branch		= "python-precisely"
-source		= "https://github.com/archlinux/aur.git"
+sourceType	= "repo"
+source		= "archlinuxcn"
 install		= true
 [[depends.depends.depends.depends]]
 buildPrefix	= "extra-x86_64-build"
