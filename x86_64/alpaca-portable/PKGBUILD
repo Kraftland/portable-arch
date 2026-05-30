@@ -1,0 +1,65 @@
+# Maintainer: Kimiblock Moe
+
+pkgname=alpaca-portable
+pkgver=9.2.3
+pkgrel=1
+pkgdesc="An Ollama client sandboxed by portable"
+arch=('x86_64' 'aarch64')
+makedepends+=(portable-packer)
+provides=("alpaca-ai")
+conflicts=("alpaca-ai")
+url="https://github.com/Jeffser/Alpaca"
+license=("GPL-3.0-or-later")
+options=('!strip')
+
+source=(
+	config.toml
+	desktop.file
+)
+
+depends=(
+  'dconf'
+  'glib2'
+  'gst-plugin-pipewire'
+  'gtk4'
+  'gtksourceview5'
+  'hicolor-icon-theme'
+  'libadwaita'
+  'libportal'
+  'libspelling'
+  'pango'
+  'python'
+  'python-cairo'
+  'python-gobject'
+  'python-html2text'
+  'python-markitdown'
+  'python-matplotlib'
+  'python-odfpy'
+  'python-ollama'
+  'python-opencv'
+  'python-pillow'
+  'python-pyicu'
+  'python-pydbus'
+  'python-requests'
+  'python-zstandard'
+  'vte4'
+  'webkitgtk-6.0'
+)
+
+
+package() {
+	depends+=('portable')
+
+	export pkgdir
+	export pkgname
+	export srcdir
+	portable-packer \
+		-v \
+		--distro arch \
+		--mode copy alpaca-ai \
+		--hash true \
+		--config-ng "${srcdir}/config.toml" \
+		--desktop-file "${srcdir}/desktop.file"
+}
+sha256sums=('911d922361d18c5e4935533cd9f7bd84676c68594f71028c21ed7a3db4ecf993'
+            '3ec14cb7441d7e76d2195681d667970a7a3f8fed04b594abf66397be3716d1a0')
