@@ -74,7 +74,7 @@ filterDest = ["private"]
 x11 = true
 
 # When false, prevents application from connecting to legacy notifications endpoint. Defaults to true.
-classicNotifications = true
+classicNotifications = false
 
 # When true, exposes camera devices in the sandbox. Defaults to false.
 cameras = true
