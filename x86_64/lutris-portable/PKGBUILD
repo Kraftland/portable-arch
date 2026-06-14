@@ -39,6 +39,7 @@ function package() {
 	declare -x -g pkgdir
 	declare -x -g pkgname
 	declare -x -g srcdir
+        install -vDm755 /usr/bin/lutris -t "${pkgdir}/usr/lib/portable/overlay-usr"
 	portable-packer \
 		-v \
 		--distro arch \
