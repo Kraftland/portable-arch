@@ -15,7 +15,7 @@ conflicts=("lutris")
 
 optdepends=()
 
-makedepends+=(heroic-games-launcher-bin portable-packer)
+makedepends+=(lutris portable-packer)
 
 checkdepends=()
 
