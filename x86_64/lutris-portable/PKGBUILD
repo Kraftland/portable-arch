@@ -24,7 +24,7 @@ source=(
 	desktop.file
 )
 
-sha256sums=('93773eeac6e1600b551914b15bcbbaa543fb657938bfcca265aae1dc0713478e'
+sha256sums=('0dc4a0d4db81c2b17082a5b2fb4ce704b51954b432aeafc04a02f263f13ce397'
          '785c198258735b74e3a5a1c2c488acbd09ffc34bc943e90c7da57932e21946e4')
 
 function package() {

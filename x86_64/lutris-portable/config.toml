@@ -11,7 +11,7 @@ appID = "net.lutris.Lutris"
 friendlyName = "Lutris"
 
 # This is the state directory of your application, relative to "XDG_DATA_HOME".
-stateDirectory = "Lutris"
+stateDirectory = "Lutris_Data"
 
 # The exec section defines how the underlying process is started.
 [exec]
