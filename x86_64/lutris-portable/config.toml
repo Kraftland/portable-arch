@@ -19,7 +19,7 @@ stateDirectory = "Lutris"
 target = "/usr/bin/lutris"
 
 # arguments holds an array of arguments passed to the application, this is also used when starting secondary instances.
-arguments = [""]
+arguments = []
 
 # The processes section defines how Portable tracks tasks.
 [processes]

@@ -6,7 +6,7 @@ Comment=Video Game Preservation Platform
 Categories=Game;PackageManager;
 Keywords[zh_CN]=游戏;wine;模拟器;
 Keywords=gaming;wine;emulator;
-Exec=PORTABLE_CONF=net.lutris.Lutris portable -- %U
+Exec=env PORTABLE_CONF=net.lutris.Lutris portable -- %U
 Icon=net.lutris.Lutris
 Terminal=false
 Type=Application
