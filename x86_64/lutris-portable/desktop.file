@@ -1,0 +1,15 @@
+[Desktop Entry]
+Name=Lutris
+StartupWMClass=net.lutris.Lutris
+Comment[zh_CN]=电子游戏保存平台
+Comment=Video Game Preservation Platform
+Categories=Game;PackageManager;
+Keywords[zh_CN]=游戏;wine;模拟器;
+Keywords=gaming;wine;emulator;
+Exec=PORTABLE_CONF=net.lutris.Lutris portable -- %U
+Icon=net.lutris.Lutris
+Terminal=false
+Type=Application
+StartupNotify=true
+MimeType=x-scheme-handler/lutris;application/x-lutris;
+X-GNOME-UsesNotifications=true
