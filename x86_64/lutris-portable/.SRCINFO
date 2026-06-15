@@ -5,7 +5,7 @@ pkgbase = lutris-portable
 	epoch = 1
 	url = https://github.com/Kraftland/portable
 	arch = x86_64
-	license = GPL-3.0-or-later
+	license = GPL-3.0-only
 	makedepends = lutris
 	makedepends = portable-packer
 	provides = lutris
@@ -14,7 +14,7 @@ pkgbase = lutris-portable
 	options = !strip
 	source = config.toml
 	source = desktop.file
-	sha256sums = 0dc4a0d4db81c2b17082a5b2fb4ce704b51954b432aeafc04a02f263f13ce397
+	sha256sums = 81ee547e7cb4d33646fcf8e2a0cbe96c049fe122cb710dab49ba619055df83ff
 	sha256sums = 785c198258735b74e3a5a1c2c488acbd09ffc34bc943e90c7da57932e21946e4
 
 pkgname = lutris-portable

@@ -20,7 +20,7 @@ target = "/usr/bin/lutris"
 
 # arguments holds an array of arguments passed to the application, this is also used when starting secondary instances.
 arguments = []
-
+overlay = true
 # The processes section defines how Portable tracks tasks.
 [processes]
 # Watch for spawned commands. When all of them exits, automatically terminate the sandbox. Defaults to true.
@@ -30,9 +30,6 @@ track = true
 [system]
 # Whether or not an application can call Inhibit Portal to prevent automatic suspend. Defaults to false.
 inhibitSuspend = true
-
-# Whether or not an application can call GlobalShortcuts Portal to request shortcuts registration. Defaults to false.
-globalShortcuts = false
 
 # Whether or not to expose all GPUs and prefer discrete graphics card. By default, Portable blocks any GPU except the integrated one to improve user experience and power consumption on hybrid systems.
 gameMode = true
