@@ -7,9 +7,6 @@ Exec=discord-portable %U
 Icon=discord
 Type=Application
 Categories=Network;InstantMessaging;
-X-Flatpak-Tags=proprietary;
-X-Flatpak=com.discord.app
-X-Flatpak-RenamedFrom=discord.desktop;
 Actions=opendir;share;quit;
 MimeType=x-scheme-handler/discord;
 
