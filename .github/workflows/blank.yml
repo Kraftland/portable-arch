@@ -54,7 +54,7 @@ jobs:
           cat $GITHUB_WORKSPACE/.updated
       - name: Install dependencies
         run: |
-          sudo apt install -y makepkg pacman-package-manager build-essential
+          sudo apt install -y makepkg pacman-package-manager build-essential libarchive-tools
       - name: Check delta
         run: |
           set -euo pipefail
