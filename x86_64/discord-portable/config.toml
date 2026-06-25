@@ -15,7 +15,7 @@ stateDirectory = "Discord_Data"
 target = "discord"
 
 # arguments holds an array of arguments passed to the application, this is also used when starting secondary instances.
-arguments = []
+arguments = ["--ozone-platform-hint=auto"]
 overlay = true
 
 # The processes section defines how Portable tracks tasks.

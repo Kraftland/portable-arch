@@ -19,7 +19,7 @@ stateDirectory = "BaiduNetDisk_Data"
 target = "env"
 
 # arguments holds an array of arguments passed to the application, this is also used when starting secondary instances.
-arguments = ["LD_PRELOAD=/usr/lib/baidunetdisk/libbrowserengine.so:/usr/lib/baidunetdisk/libkernel.so", "/usr/lib/baidunetdisk/baidunetdisk"]
+arguments = ["LD_PRELOAD=/usr/lib/baidunetdisk/libbrowserengine.so:/usr/lib/baidunetdisk/libkernel.so", "/usr/lib/baidunetdisk/baidunetdisk", "--no-sandbox"]
 
 # D-Bus activation works by installing a service under /usr/share/dbus-1/services. It is used by UnifiedPush to process notifications without showing a window. You should modify the activation cmdline to call portable with "--dbus-activation".
 [busActivation]
@@ -37,19 +37,6 @@ arguments = ["--gapplication-service"]
 # Watch for spawned commands. When all of them exits, automatically terminate the sandbox. Defaults to true.
 track = true
 
-# The system section controls general permission.
-[system]
-# Whether or not an application can call Inhibit Portal to prevent automatic suspend. Defaults to false.
-inhibitSuspend = false
-
-# Whether or not an application can call GlobalShortcuts Portal to request shortcuts registration. Defaults to false.
-globalShortcuts = false
-
-# Whether or not to expose all GPUs and prefer discrete graphics card. By default, Portable blocks any GPU except the integrated one to improve user experience and power consumption on hybrid systems.
-gameMode = false
-
-# Inhibit suspend and idle on behalf of applications. Requires system.inhibitSuspend being true
-inhibitOnBehalf = false
 
 # The network section defines behaviour of Portable's network firewall. Requires netsock for filtering.
 [network]
@@ -67,17 +54,10 @@ filterDest = ["private"]
 # When false, prevents application from connecting to X server on Wayland. Defaults to true.
 x11 = true
 
+lockdown = true
+
 # When false, prevents application from connecting to legacy notifications endpoint. Defaults to true.
 classicNotifications = true
-
-# When true, exposes camera devices in the sandbox. Defaults to false.
-cameras = false
-
-# When true, allows application to connect to PipeWire server. Note that a proxy is set up to prevent privileged actions. Defaults to false.
-pipeWire = false
-
-# When true, allows application to receive Input events, particularly useful for Games. Defaults to false.
-input = false
 
 # Do not use. May break apps.
 [advanced]
@@ -87,6 +67,3 @@ mprisName = []
 trayWake = true
 kDEStatus = true
 flatpakInfo = true
-
-# Enables landlock for additional protection, breaks many apps.
-landlock = true
