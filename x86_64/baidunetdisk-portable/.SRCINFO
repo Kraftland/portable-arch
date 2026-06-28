@@ -1,7 +1,7 @@
 pkgbase = baidunetdisk-portable
 	pkgdesc = Baidu Netdisk sandboxed by portable
 	pkgver = 4.17.7
-	pkgrel = 1
+	pkgrel = 2
 	url = https://pan.baidu.com
 	arch = x86_64
 	license = LicenseRef-custom
@@ -11,7 +11,7 @@ pkgbase = baidunetdisk-portable
 	conflicts = baidunetdisk
 	options = !strip
 	source = config.toml
-	sha256sums = 120f0583feb8b30d5cfd683d15f7b3b033701be1f464e0bf04311607c68f3d0b
+	sha256sums = 78ae7e3db0cabab5d0cb804e162d186b480f305e8150e8945f9cd8a826b93612
 	source_x86_64 = baidunetdisk-portable-4.17.7.deb::http://wppkg.baidupcs.com/issue/netdisk/Linuxguanjia/4.17.7/baidunetdisk_4.17.7_amd64.deb
 	sha256sums_x86_64 = 50ec18f05626a13f57ef034630416d481682bc1018539f33397d5c71bc653b3d
 
