@@ -12,9 +12,9 @@ pkgbase = openbrowser-portable
 	source = https://download.scholar.edu.cn/openbrowser/ubuntu/openbrowser-cn-stable_1.1.1073.0-1_amd64.deb
 	source = config.toml
 	source = desktop.file
-	sha256sums = SKIP
-	sha256sums = SKIP
-	sha256sums = SKIP
+	sha256sums = acc48fada9568c89a15ed71b9f7ff5f7c03a98662c7a8039fcb0f65c15036d5d
+	sha256sums = 99ee3bc213089e654157167a30995aec977ecdc5228e7c6db24bf07ef8dbffed
+	sha256sums = 881535bae986298a3d00e117a1474c0920d438db6ed491339ee849dee3eda369
 
 pkgname = openbrowser-portable
 	depends = portable
