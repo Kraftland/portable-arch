@@ -39,17 +39,7 @@ track = true
 
 # The system section controls general permission.
 [system]
-# Whether or not an application can call Inhibit Portal to prevent automatic suspend. Defaults to false.
-inhibitSuspend = false
 
-# Whether or not an application can call GlobalShortcuts Portal to request shortcuts registration. Defaults to false.
-globalShortcuts = false
-
-# Whether or not to expose all GPUs and prefer discrete graphics card. By default, Portable blocks any GPU except the integrated one to improve user experience and power consumption on hybrid systems.
-gameMode = false
-
-# Inhibit suspend and idle on behalf of applications. Requires system.inhibitSuspend being true
-inhibitOnBehalf = false
 
 # The network section defines behaviour of Portable's network firewall. Requires netsock for filtering.
 [network]
@@ -70,14 +60,7 @@ x11 = false
 # When false, prevents application from connecting to legacy notifications endpoint. Defaults to true.
 classicNotifications = false
 
-# When true, exposes camera devices in the sandbox. Defaults to false.
-cameras = false
-
-# When true, allows application to connect to PipeWire server. Note that a proxy is set up to prevent privileged actions. Defaults to false.
-pipeWire = false
-
-# When true, allows application to receive Input events, particularly useful for Games. Defaults to false.
-input = false
+lockdown = true
 
 # Do not use. May break apps.
 [advanced]
@@ -85,8 +68,5 @@ zink = false
 qt5Compat = true
 mprisName = []
 trayWake = false
-kDEStatus = true
+kDEStatus = false
 flatpakInfo = true
-
-# Enables landlock for additional protection, breaks many apps.
-landlock = true
