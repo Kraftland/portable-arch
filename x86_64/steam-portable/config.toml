@@ -19,7 +19,7 @@ stateDirectory = "Steam_Data"
 target = "env"
 
 # arguments holds an array of arguments passed to the application, this is also used when starting secondary instances.
-arguments = ["SDL_VIDEO_DRIVER=x11", "steam"]
+arguments = ["DBUS_SYSTEM_BUS_ADDRESS=unix:path=/run/sessionBus", "steam"]
 
 overlay = true
 
