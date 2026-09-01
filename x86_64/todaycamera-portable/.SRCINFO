@@ -1,0 +1,22 @@
+pkgbase = todaycamera-portable
+	pkgdesc = 今日水印相机 sandboxed by portable
+	pkgver = 1.3.5
+	pkgrel = 1
+	url = https://www.5181688.com/
+	arch = any
+	license = GPL-3.0-or-later
+	makedepends = 7zip
+	makedepends = portable-packer
+	provides = todaycamera
+	conflicts = todaycamera
+	options = !strip
+	source = config.toml
+	source = desktop.file
+	source = windows.exe::https://static.xhey.top/desktop/release/%E4%BB%8A%E6%97%A5%E6%B0%B4%E5%8D%B0%E7%9B%B8%E6%9C%BA%20Setup%201.3.5.exe
+	sha256sums = SKIP
+	sha256sums = SKIP
+	sha256sums = SKIP
+
+pkgname = todaycamera-portable
+	depends = portable
+	depends = electron
