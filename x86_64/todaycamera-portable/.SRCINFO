@@ -6,6 +6,7 @@ pkgbase = todaycamera-portable
 	arch = any
 	license = GPL-3.0-or-later
 	makedepends = 7zip
+	makedepends = imagemagick
 	makedepends = portable-packer
 	provides = todaycamera
 	conflicts = todaycamera

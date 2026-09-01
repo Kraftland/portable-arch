@@ -21,6 +21,7 @@ source=(
 
 makedepends+=(
 	7zip
+	imagemagick
 	portable-packer
 )
 
