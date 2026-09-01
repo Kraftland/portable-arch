@@ -45,6 +45,13 @@ package() {
 		'$PLUGINSDIR/resources/assets/app.png' \
 		"${pkgdir}/usr/share/icons/hicolor/1024x1024/apps/com.xhey.xcamera.png"
 
+	install -d "${pkgdir}/usr/share/icons/hicolor/512x512/apps"
+
+	magick \
+		"${pkgdir}/usr/share/icons/hicolor/1024x1024/apps/com.xhey.xcamera.png" \
+		-resize 512x512 \
+		"${pkgdir}/usr/share/icons/hicolor/512x512/apps/com.xhey.xcamera.png"
+
 	export pkgdir
 	export pkgname
 	export srcdir
