@@ -12,7 +12,7 @@ license=('LicenseRef-DingTalk')
 conflicts=("dingtalk")
 provides=("dingtalk")
 source=("config.toml" "desktop.file")
-sha512sums=('f96ece3f401d45a95d919e26dd957260b6738b43e1ae3170921a5a9591d1de76a85b970ea96bb803872291c22dea30dbbf2c2891b3fe21d996eca889cedf028b'
+sha512sums=('acbe663efb776fe420509834a66c63fddcae3770877aac57f440e2e9b131993dc47eac5c885c78adf7809f401477092177caef6acbcab89ec0eb00a5ae7abc87'
             '2ecea1a3058138a1e830fe1943115251f07d671dfefbeea829fadd4bc643cd76344d26b11108ada8ac3cf8d3ccdbdd5dfdb7b8af218a84a86e86ec9d1deb3fb1')
 options=('!strip' '!debug')
 
