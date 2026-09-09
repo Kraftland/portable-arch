@@ -17,7 +17,7 @@ sha512sums=('f96ece3f401d45a95d919e26dd957260b6738b43e1ae3170921a5a9591d1de76a85
 options=('!strip' '!debug')
 
 package() {
-  depends+=("glu" 'gtk2' 'libxcrypt-compat' libxss qt5-wayland 'portable')
+  depends+=("glu" 'gtk2-compat' 'libxcrypt-compat' libxss qt5-wayland 'portable')
   declare -x -g pkgdir
   declare -x -g pkgname
   declare -x -g srcdir
