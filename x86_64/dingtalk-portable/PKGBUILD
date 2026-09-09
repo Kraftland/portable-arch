@@ -1,0 +1,31 @@
+# Maintainer: Kimiblock Moe
+
+pkgname=dingtalk-portable
+pkgver=8.2.8.260818002
+pkgrel=1
+epoch=1
+pkgdesc="DingTalk sandboxed by portable"
+makedepends+=(desktop-file-utils "dingtalk-bin" "portable-packer")
+arch=('x86_64')
+url="www.dingtalk.com"
+license=('LicenseRef-DingTalk')
+conflicts=("dingtalk")
+provides=("dingtalk")
+source=("config.toml" "desktop.file")
+sha512sums=('acbe663efb776fe420509834a66c63fddcae3770877aac57f440e2e9b131993dc47eac5c885c78adf7809f401477092177caef6acbcab89ec0eb00a5ae7abc87'
+            '2ecea1a3058138a1e830fe1943115251f07d671dfefbeea829fadd4bc643cd76344d26b11108ada8ac3cf8d3ccdbdd5dfdb7b8af218a84a86e86ec9d1deb3fb1')
+options=('!strip' '!debug')
+
+package() {
+  depends+=("glu" 'gtk2-compat' 'libxcrypt-compat' libxss qt5-wayland 'portable')
+  declare -x -g pkgdir
+  declare -x -g pkgname
+  declare -x -g srcdir
+  portable-packer \
+    -v \
+    --distro arch \
+    --mode copy dingtalk-bin \
+    --config-ng "${srcdir}/config.toml" \
+    --desktop-file "${srcdir}/desktop.file"
+
+}

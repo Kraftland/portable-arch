@@ -1,0 +1,27 @@
+pkgbase = dingtalk-portable
+	pkgdesc = DingTalk sandboxed by portable
+	pkgver = 8.2.8.260818002
+	pkgrel = 1
+	epoch = 1
+	url = www.dingtalk.com
+	arch = x86_64
+	license = LicenseRef-DingTalk
+	makedepends = desktop-file-utils
+	makedepends = dingtalk-bin
+	makedepends = portable-packer
+	provides = dingtalk
+	conflicts = dingtalk
+	options = !strip
+	options = !debug
+	source = config.toml
+	source = desktop.file
+	sha512sums = acbe663efb776fe420509834a66c63fddcae3770877aac57f440e2e9b131993dc47eac5c885c78adf7809f401477092177caef6acbcab89ec0eb00a5ae7abc87
+	sha512sums = 2ecea1a3058138a1e830fe1943115251f07d671dfefbeea829fadd4bc643cd76344d26b11108ada8ac3cf8d3ccdbdd5dfdb7b8af218a84a86e86ec9d1deb3fb1
+
+pkgname = dingtalk-portable
+	depends = glu
+	depends = gtk2-compat
+	depends = libxcrypt-compat
+	depends = libxss
+	depends = qt5-wayland
+	depends = portable
