@@ -24,3 +24,10 @@ pkgname		= "dingtalk-bin"
 sourceType	= "git"
 branch		= "dingtalk-bin"
 source		= "https://github.com/archlinux/aur.git"
+
+[[depends.depends]]
+# Optional
+buildPrefix	= "extra-x86_64-build"
+pkgname		= "gtk2"
+sourceType	= "repo"
+source		= "archlinuxcn"
