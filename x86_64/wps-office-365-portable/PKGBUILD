@@ -2,7 +2,7 @@
 
 pkgbase=wps-office-365-portable
 pkgname=wps-office-365-portable
-pkgver=12.1.2.25882.portable
+pkgver=12.1.2.28080.portable
 pkgrel=1
 pkgdesc="Kingsoft Office (WPS Office) CN version - an office productivity suite"
 makedepends+=(desktop-file-utils "wps-office-365" "portable-packer")
@@ -19,8 +19,8 @@ replaces+=(wps-office-cn-bwrap)
 conflicts=('kingsoft-office' 'wps-office' "wps-office-365" wps-office-cn-bwrap)
 provides=('kingsoft-office' 'wps-office' "wps-office-365" wps-office-cn-bwrap)
 
-source=(portable-config wps365-open cn.wps.wps_365.desktop)
-sha1sums=('d94ecb5673a1e18a407410934eb2777076e8ef6d'
+source=(config.toml wps365-open cn.wps.wps_365.desktop)
+sha1sums=('3edb56b77b55dedfde980edfe7c665ceca0a5f49'
           '60bebb1f5f1936027fff222fc0701e4fc33137fc'
           '583dc7fccccb735d8b7b86e97b97af642d58ee9a')
 
@@ -43,7 +43,7 @@ package() {
 		--distro arch \
 		--mode copy wps-office-365 \
 		--hash true \
-		--config-ng "${srcdir}/portable-config" \
+		--config-ng "${srcdir}/config.toml" \
 		--desktop-file "${srcdir}/cn.wps.wps_365.desktop"
 	rm "${pkgdir}/usr/share/mime/packages/custom-wps-office.xml"
 	install -vDm755 "${srcdir}/wps365-open" "${pkgdir}/usr/lib/portable/info/cn.wps.wps_365/wps365-open"
