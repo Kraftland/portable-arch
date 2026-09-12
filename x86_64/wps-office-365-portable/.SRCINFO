@@ -1,6 +1,6 @@
 pkgbase = wps-office-365-portable
 	pkgdesc = Kingsoft Office (WPS Office) CN version - an office productivity suite
-	pkgver = 12.1.2.25882.portable
+	pkgver = 12.1.2.28080.portable
 	pkgrel = 1
 	url = https://365.wps.cn/
 	arch = x86_64
@@ -33,10 +33,10 @@ pkgbase = wps-office-365-portable
 	replaces = wps-office-cn-bwrap
 	options = !emptydirs
 	options = !debug
-	source = portable-config
+	source = config.toml
 	source = wps365-open
 	source = cn.wps.wps_365.desktop
-	sha1sums = d94ecb5673a1e18a407410934eb2777076e8ef6d
+	sha1sums = 3edb56b77b55dedfde980edfe7c665ceca0a5f49
 	sha1sums = 60bebb1f5f1936027fff222fc0701e4fc33137fc
 	sha1sums = 583dc7fccccb735d8b7b86e97b97af642d58ee9a
 
