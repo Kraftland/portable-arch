@@ -1,6 +1,6 @@
 pkgbase = musicxx-portable
 	pkgdesc = Audio and video player
-	pkgver = 0.86.1
+	pkgver = 0.86.8
 	pkgrel = 1
 	url = https://github.com/coolight7/musicxx
 	arch = x86_64
