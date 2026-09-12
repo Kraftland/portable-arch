@@ -43,7 +43,7 @@ package() {
 		--distro arch \
 		--mode copy wps-office-365 \
 		--hash true \
-		--config-ng "${srcdir}/portable-config" \
+		--config-ng "${srcdir}/config.toml" \
 		--desktop-file "${srcdir}/cn.wps.wps_365.desktop"
 	rm "${pkgdir}/usr/share/mime/packages/custom-wps-office.xml"
 	install -vDm755 "${srcdir}/wps365-open" "${pkgdir}/usr/lib/portable/info/cn.wps.wps_365/wps365-open"
