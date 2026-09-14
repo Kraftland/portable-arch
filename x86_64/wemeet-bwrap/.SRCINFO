@@ -1,7 +1,7 @@
 pkgbase = wemeet-bwrap
 	pkgdesc = Sandboxed wemeet, supports screensharing on Wayland / 沙盒化腾讯会议, 支持 Wayland 屏幕共享
 	pkgver = 3.26.10.401
-	pkgrel = 3
+	pkgrel = 4
 	url = https://source.meeting.qq.com/download-center.html
 	arch = x86_64
 	arch = aarch64
@@ -21,8 +21,8 @@ pkgbase = wemeet-bwrap
 	source = config.toml
 	source = com.tencent.wemeet.desktop
 	sha512sums = 5fd275121faa76dcb4043034c1d0b2d48ae554848e069dfa2f2385b090dcedbee554ac5b233bcb500a3793d13427037bd74609f43dde935e75f601fce23d7758
-	sha512sums = 57c22110da07fe1c482e825c60a6667d9c4acbf97178d0a4d1facf3b8b6c583c661d881187e196141548631acbaca7fcd796012ce31f1fd2743ca1eaef1012e8
-	sha512sums = 1efed01fdca8513c216723cda0040a1c15802fae4d1ac5b75a49477818f4ab784ee68e53e75ed338addc4a960ec7c980f06e8066a4419050ec31d1f3fc3b3e2b
+	sha512sums = ba179bd536abd2f3fc1620456e1da4b64d80bf5a88173ad16e02d2faf5ef7b521a29b6dee8a6beffc2ceb5e6d6f8926c3768523b0efcc7a85ad76029d7aa3008
+	sha512sums = d006478076ac69068efb195fdda1ad066cfe4426e700de764073b07ada4ab771bcf96cedcc06076373996f27baa042c65fe00bd08f1a36df03bef177c107bf0c
 
 pkgname = wemeet-bwrap
 	depends = qt5-x11extras

@@ -39,17 +39,29 @@ track = true
 
 # The system section controls general permission.
 [system]
-# Whether or not an application can call Inhibit Portal to prevent automatic suspend. Defaults to false.
-inhibitSuspend = false
-
-# Whether or not an application can call GlobalShortcuts Portal to request shortcuts registration. Defaults to false.
-globalShortcuts = false
-
-# Whether or not to expose all GPUs and prefer discrete graphics card. By default, Portable blocks any GPU except the integrated one to improve user experience and power consumption on hybrid systems.
-gameMode = false
-
-# Inhibit suspend and idle on behalf of applications. Requires system.inhibitSuspend being true
-inhibitOnBehalf = false
+# A TOML slice that accepts string values.
+# Current possible values are: (dgpu, input, camera, kvm).
+#------------------------------------------------------------------------------#
+## dgpu (previously gamemode): Expose all GPUs and prefer discrete graphics card.
+## By default,
+## 	Portable blocks any GPU except the boot display
+## 	to improve user experience and power consumption on hybrid systems.
+## This is now available even when Power Profile is set to Power Saver.
+#------------------------------------------------------------------------------#
+## kvm: Enables access to the Kernel-based Virtual Machine (/dev/kvm), if any.
+#------------------------------------------------------------------------------#
+## camera: Enables access to physical camera devices. Modern applications should
+## 	talk with Portals instead, while legacy ones may still need device node
+## 	access.
+#------------------------------------------------------------------------------#
+## input: Allows applications to receive Input events.
+## In addition, the kernel uinput device is made available for Steam Input.
+## It is intended for Games to make use of Controllers,
+## 	but said permission might introduce input snooping if file permissions
+## 	for keyboards and mouses are messed up.
+#------------------------------------------------------------------------------#
+# Previously deviceAllow.
+device_allow = ["camera"]
 
 # The network section defines behaviour of Portable's network firewall. Requires netsock for filtering.
 [network]
@@ -59,9 +71,6 @@ enable = true
 # Whether or not to enable filtering on network packets. Defaults to false.
 filter = false
 
-# Destinations to deny. Only effective if netsock is running and listening on /run/netsock/control.sock. IP literals are resolved directly, while strings are mapped to IP addresses by the system resolver. A special string of "private" means private IPs. Note that :53 is allowed regardless to avoid breaking DNS. Defaults to none, meaning sandbox can connect to whatever address.
-filterDest = ["private"]
-
 # The privacy section defines several device exposure preference. By default, Portable does not allow apps to see physical devices. This includes discrete GPUs when gameMode is off, input devices, cameras, and all other PCI devices.
 [privacy]
 # When false, prevents application from connecting to X server on Wayland. Defaults to true.
@@ -69,15 +78,6 @@ x11 = true
 
 # When false, prevents application from connecting to legacy notifications endpoint. Defaults to true.
 classicNotifications = true
-
-# When true, exposes camera devices in the sandbox. Defaults to false.
-cameras = true
-
-# When true, allows application to connect to PipeWire server. Note that a proxy is set up to prevent privileged actions. Defaults to false.
-pipeWire = false
-
-# When true, allows application to receive Input events, particularly useful for Games. Defaults to false.
-input = false
 
 # Do not use. May break apps.
 [advanced]
