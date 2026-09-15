@@ -19,7 +19,7 @@ stateDirectory = "Feishu_Data"
 target = "env"
 
 # arguments holds an array of arguments passed to the application, this is also used when starting secondary instances.
-arguments = ["-u", "WAYLAND_DISPLAY", "/opt/bytedance/feishu/bytedance-feishu", "--enable-features=VaapiVideoDecodeLinuxGL,VaapiVideoDecoder,TouchpadOverscrollHistoryNavigation --no-sandbox --ozone-platform=wayland"]
+arguments = ["/opt/bytedance/feishu/bytedance-feishu", "--enable-features=VaapiVideoDecodeLinuxGL,VaapiVideoDecoder,TouchpadOverscrollHistoryNavigation --no-sandbox --ozone-platform=wayland", "--enable-wayland-ime", "--wayland-text-input-version=3"]
 
 # The processes section defines how Portable tracks tasks.
 [processes]
