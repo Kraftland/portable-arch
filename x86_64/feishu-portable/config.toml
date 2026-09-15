@@ -5,7 +5,7 @@
 [metadata]
 # This is your Application ID, avoid conflict. Should be a reversed DNS name.
 # If the author's DNS domain name contains hyphen/minus characters ('-'), which are not allowed in D-Bus interface names, they should be replaced by underscores. If the DNS domain name contains a digit immediately following a period ('.'), which is also not allowed in interface names), the interface name should add an underscore before that digit. For example, if the owner of 7-zip.org defined an interface for out-of-process plugins, it might be named org._7_zip.Plugin.
-appID = "com.bytedance.feishu"
+appID = "cn.feishu.Feishu"
 
 # This is a friendly name of an application. It should only contain ASCII characters and not spaces.
 friendlyName = "Feishu"
@@ -19,7 +19,7 @@ stateDirectory = "Feishu_Data"
 target = "env"
 
 # arguments holds an array of arguments passed to the application, this is also used when starting secondary instances.
-arguments = ["/opt/bytedance/feishu/bytedance-feishu", "--enable-features=VaapiVideoDecodeLinuxGL,VaapiVideoDecoder,TouchpadOverscrollHistoryNavigation --no-sandbox --ozone-platform=wayland", "--enable-wayland-ime", "--wayland-text-input-version=3"]
+arguments = ["/opt/bytedance/feishu/bytedance-feishu", "--enable-features=VaapiVideoDecodeLinuxGL,VaapiVideoDecoder,TouchpadOverscrollHistoryNavigation,WebRTCPipeWireCapturer,WebRtcPipeWireCamera", "--enable-wayland-ime", "--wayland-text-input-version=3", "--ozone-platform-hint=auto"]
 
 # The processes section defines how Portable tracks tasks.
 [processes]
