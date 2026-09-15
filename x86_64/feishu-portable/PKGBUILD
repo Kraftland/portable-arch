@@ -22,13 +22,36 @@ source=(
     config.toml
     com.bytedance.feishu.desktop
 )
-sha256sums=('941bae2e6cb0451dc86ced5bb31d9190c6d4a16dc5b821b43903b8cf77baf2bc'
-            'SKIP')
+sha256sums=('d97cf46c25ef9960d6cb19c82e8ccc91c0dd1d0467353724fa3c81c592b69efc'
+            '6242e6242f865fca9f78f5839e93c1ea7d795d09b8569252eb38f5a9c08686df')
 sha256sums_x86_64=('7c744ce101e29f50d8d0fc099788b64cb389dde3178178a7fce9ffcdbf296e13')
 sha256sums_aarch64=('8052d22189546438e24b3691d64871805961ecea7a45804c75a2960ed2b8710e')
 
 function package() {
-    depends+=(ca-certificates gtk3 nss xdg-utils dnsmasq portable libmfx libpulse alsa-lib)
+    depends+=(
+    ca-certificates
+    gtk3
+    nss
+    xdg-utils
+    portable
+    libmfx
+    libpulse
+    alsa-lib
+    bash
+    gnutls
+    dbus
+    expat
+    hicolor-icon-theme
+    libatomic
+    glib2
+    libgomp
+    libstdc++
+    glibc
+    libgcrypt
+    zlib
+    systemd-libs
+    libgcc
+    )
 
     tar -xpvf "${srcdir}/data.tar.xz" --xattrs-include='*' --numeric-owner -C "${pkgdir}"
 
