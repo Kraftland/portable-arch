@@ -62,21 +62,6 @@ package() {
     rm opt/kingsoft/wps-office/office6/libfreetype.so*
   fi
 
-  # fix menu category
-  sed -i 's|Categories=.*|&Office;|' usr/share/applications/*.desktop
-
-  # fix input method
-  sed -i '2i [[ "$XMODIFIERS" == "@im=fcitx" ]] && export QT_IM_MODULE=fcitx' \
-    usr/bin/{wps,wpp,et,wpspdf}
-
-  # allow custom fontconfig
-  sed -i '2i [[ -f ~/.config/Kingsoft/fonts/fonts.conf ]] && export FONTCONFIG_FILE=~/.config/Kingsoft/fonts/fonts.conf' \
-    usr/bin/{wps,wpp,et,wpspdf}
-
-  # disable force login
-  sed -i '2i sed -i "s/enableForceLogin=true/enableForceLogin=false/" $HOME/.config/Kingsoft/Office.conf' \
-    usr/bin/{wps,wpp,et,wpspdf}
-
   # fix bsdtar warning
   export LC_ALL=en_US.UTF-8
 
