@@ -40,13 +40,12 @@ _install() {
 }
 
 package() {
-  conflicts=('wps-office')
-  provides=('wps-office')
 
   _install --exclude ./usr/*xiezuo* \
           --exclude ./usr/share/fonts \
           --exclude ./usr/share/desktop-directories \
           --exclude ./usr/share/templates \
+	  --exclude ./usr/share/mime \
           ./opt/kingsoft/wps-office/office6 \
           ./usr
 
