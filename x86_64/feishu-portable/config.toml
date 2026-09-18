@@ -73,9 +73,6 @@ classicNotifications = true
 # When true, exposes camera devices in the sandbox. Defaults to false.
 cameras = true
 
-# When true, allows application to connect to PipeWire server. Note that a proxy is set up to prevent privileged actions. Defaults to false.
-pipeWire = false
-
 # When true, allows application to receive Input events, particularly useful for Games. Defaults to false.
 input = false
 
