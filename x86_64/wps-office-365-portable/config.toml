@@ -1,0 +1,70 @@
+# This is a Portable configuration, using TOML 1.1.0
+# For syntax, check https://toml.io/en/v1.1.0
+
+# The metadata section contains information of your sandbox.
+[metadata]
+# This is your Application ID, avoid conflict. Should be a reversed DNS name.
+# If the author's DNS domain name contains hyphen/minus characters ('-'), which are not allowed in D-Bus interface names, they should be replaced by underscores. If the DNS domain name contains a digit immediately following a period ('.'), which is also not allowed in interface names), the interface name should add an underscore before that digit. For example, if the owner of 7-zip.org defined an interface for out-of-process plugins, it might be named org._7_zip.Plugin.
+sandbox_id = "cn.wps.wps_365"
+
+# This is a friendly name of an application. It should only contain ASCII characters and not spaces.
+display_name = "wps-office-365"
+
+# This is the state directory of your application, relative to "XDG_DATA_HOME".
+state_directory = "WPS_Office_Data"
+
+# The exec section defines how the underlying process is started.
+[exec]
+# target defines the program to start.
+target = "bash"
+
+# arguments holds an array of arguments passed to the application, this is also used when starting secondary instances.
+arguments = ["/usr/lib64/portable/info/cn.wps.wps_365/wps365-open"]
+
+# D-Bus activation works by installing a service under /usr/share/dbus-1/services. It is used by UnifiedPush to process notifications without showing a window. You should modify the activation cmdline to call portable with "--dbus-activation".
+[busActivation]
+# Whether or not to enable D-Bus activation. Defaults to false.
+enable = false
+
+# target is the same as exec.target.
+target = ""
+
+# arguments is the same as exec.arguments.
+arguments = []
+
+[system]
+# Whether or not an application can call Inhibit Portal to prevent automatic suspend. Defaults to false.
+allow_inhibit = false
+conduct_inhibit = false
+
+uclamp_max = 100
+
+device_allow = []
+# The network section defines behaviour of Portable's network firewall. Requires netsock for filtering.
+[network]
+# Whether or not an application can use network interfaces. Defaults to true.
+enable = true
+
+[privacy]
+x11_compat = true
+
+classic_notif = false
+
+[privacy.lockdown_options]
+# System call filtering in whitelist rather than blacklist
+# 	prevents non-native system calls to be made
+# 	(e.g. X86 on X86_64 systems)
+seccomp_whitelist = true
+# Landlock as another layer of filesystem security,
+# 	blocks reparent of /, effectively prevents manipulation of mount points
+landlock = true
+# Do not use. May break apps.
+[advanced]
+use_zink = false
+qt5_compat = true
+mpris_names = []
+tray_wake = false
+allow_kde_status = true
+flatpak_env = true
+
+allow_debug = false
