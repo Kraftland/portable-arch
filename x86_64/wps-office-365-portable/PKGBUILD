@@ -18,7 +18,7 @@ depends=(
 optdepends=(
   'wps-office-365-fonts: FZ TTF fonts provided by wps office 365'
   'cups: for printing support')
-options=(!strip !zipman !debug)
+options=(strip !zipman !debug)
 source_base="https://pubwps-wps365-obs.wpscdn.cn/download/Linux/${pkgver: -5}/wps-office_${pkgver}.AK.preread.sw.365"
 source=(config.toml wps365-open cn.wps.wps_365.desktop)
 source_x86_64=("${source_base}_765469_amd64.deb")
