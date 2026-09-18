@@ -61,9 +61,6 @@ package() {
     rm opt/kingsoft/wps-office/office6/libfreetype.so*
   fi
 
-  # fix bsdtar warning
-  export LC_ALL=en_US.UTF-8
-
   declare -x -g pkgdir
   declare -x -g pkgname
   declare -x -g srcdir
