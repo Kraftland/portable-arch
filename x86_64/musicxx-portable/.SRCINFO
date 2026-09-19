@@ -1,7 +1,7 @@
 pkgbase = musicxx-portable
 	pkgdesc = Audio and video player
 	pkgver = 0.86.8
-	pkgrel = 1
+	pkgrel = 2
 	url = https://github.com/coolight7/musicxx
 	arch = x86_64
 	license = MIT
@@ -15,8 +15,8 @@ pkgbase = musicxx-portable
 	conflicts = musicxx
 	options = !debug
 	source = com.mimicry.musicxx.desktop
-	source = portable-config
+	source = config.toml
 	sha512sums = d798a4b5fac7adedf5372257e239a349ee4c87992903d61b62d10310cbb55586da7f2f207a35c8ab5acd5d9bd601cae60707f1faf1f0a92e611cbcf0ebb743c0
-	sha512sums = ad2bc9d5ce61f1bed19c0225a20a7f7895ae41b9e907c091a874a11473fe2ceae5c3b193081450ece96e3f1a6072019cee65fe95ee00d8d0425fb05e446edbb9
+	sha512sums = 67acd058f721c1d6940c158b8f66949c4f53ace2bab2d2c0a95023a0acbb17dc107d23a7a183fac519eb52b7aec1c381d2e0e90d976007a0c4529430d1363f93
 
 pkgname = musicxx-portable
