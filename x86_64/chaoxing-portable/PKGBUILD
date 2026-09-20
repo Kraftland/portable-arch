@@ -89,6 +89,6 @@ package() {
 		--desktop-file "${srcdir}/desktop.file"
 }
 sha256sums=('9a40af765e9b3312bb60fd1b5f027854485f5c9ec1cc579d7717a1a09ac510e6'
-            '4df29dc7d3f6caeae99593124f43a60b013a6408263b1a1ecd96d73f0846a9ac'
-            '98a9cdb346c2dc7d707e9e1c026dc32bede69f9dfc00e9e966305bc1b97a1bc0'
+            '4c5ba78308494a87c91f0171b723196517a768c3d29ccc8ddbe3d492c6e46601'
+            'e679eb2e73ef9876463d6d88abaff8a70c9db6948e972feba5d8fd79e5f9600d'
             '92b82f2d59ec99004842bffd0c916f1e3df3fea04840fe9685903e3cbc6d2775')
