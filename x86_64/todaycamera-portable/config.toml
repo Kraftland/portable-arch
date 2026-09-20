@@ -24,7 +24,7 @@ state_directory = "TodayCamera_Data"
 target = "electron"
 
 # arguments holds an array of arguments passed to the application, this is also used when starting secondary instances.
-arguments = ["/usr/lib/todaycamera/app.asar", "--no-sandbox"]
+arguments = ["/usr/lib/todaycamera/app.asar", "--enable-features=AcceleratedVideoDecodeLinuxGL,VaapiOnNvidiaGPUs", "--ignore-gpu-blocklist"]
 
 # When enabled, lays the app private binaries on top /usr/bin, see doc/packager/08-binaries.md for more details. Requires the specific overlay directory to exist.
 overlay = false

@@ -14,9 +14,9 @@ pkgbase = todaycamera-portable
 	source = config.toml
 	source = desktop.file
 	source = windows.exe::https://static.xhey.top/desktop/release/%E4%BB%8A%E6%97%A5%E6%B0%B4%E5%8D%B0%E7%9B%B8%E6%9C%BA%20Setup%201.3.5.exe
-	sha256sums = SKIP
-	sha256sums = SKIP
-	sha256sums = SKIP
+	sha256sums = 91c09c04b720f6e6490afe82d65a61cc5c8169bc80bb3e8617f6ea3237c95b28
+	sha256sums = 4df29dc7d3f6caeae99593124f43a60b013a6408263b1a1ecd96d73f0846a9ac
+	sha256sums = 51fd44238204103d489595f72334d3b610acc7503f85a0e3d03adb46912f5e65
 
 pkgname = todaycamera-portable
 	depends = portable
