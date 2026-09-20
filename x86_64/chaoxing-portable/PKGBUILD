@@ -1,0 +1,94 @@
+# Maintainer: Kimiblock Moe
+
+pkgname=chaoxing-portable
+pkgver=1.4.2
+pkgrel=1
+pkgdesc="超星学习通 sandboxed by portable"
+arch=('any')
+provides=("chaoxing")
+conflicts=("chaoxing")
+url="https://i.chaoxing.com"
+license=("LicenseRef-custom")
+options=('!strip')
+
+source=(
+	config.toml
+	desktop.file
+	patch.py
+	unpack.py
+)
+
+makedepends+=(
+	7zip
+	python-cryptography
+	imagemagick
+	portable-packer
+)
+
+prepare() {
+	download_url="$(curl \
+		-fsS \
+		-A 'Mozilla/5.0' \
+		-X POST \
+		'https://luban.m.qq.com/api/public/software-manager/softwareProxy' \
+		--data-urlencode 'cmdid=3318' \
+		--data-urlencode 'jprxReq={"req":{"soft_id_list":["36738"]}}' \
+		| python3 -c \
+		'import sys,json;print(json.load(sys.stdin)["resp"]["soft_list"][0]["download_https_url"])')"
+
+	curl -fL -A 'Mozilla/5.0' "${download_url}" -o chaoxing.exe
+}
+
+build() {
+	7z x chaoxing.exe
+
+	approot="$(find . -maxdepth 5 -type f -name 'cxstudy.exe' -printf '%h\n' | head -n1)"
+
+	asar="$approot/resources/app.asar"
+
+	mkdir app
+
+	python \
+		"${srcdir}/unpack.py" \
+		"${asar}" \
+		"${srcdir}/app"
+
+	python \
+		"${srcdir}/patch.py" \
+		"${srcdir}/app"
+}
+
+package() {
+	depends+=('portable' "electron" "openssl-1.1")
+
+	install \
+		-d \
+		"${pkgdir}/usr/share/chaoxing"
+
+	cp \
+		-a \
+		"${srcdir}/app/." \
+		"${pkgdir}/usr/share/chaoxing/app.asar"
+
+	install -d "${pkgdir}/usr/share/icons/hicolor/256x256/apps"
+
+	magick \
+		'$PLUGINSDIR/icon.ico' \
+		-resize 256x256 \
+		"${pkgdir}/usr/share/icons/hicolor/256x256/apps/com.chaoxing.cxstudy.png"
+
+	export pkgdir
+	export pkgname
+	export srcdir
+	portable-packer \
+		-v \
+		--distro arch \
+		--mode post \
+		--hash true \
+		--config-ng "${srcdir}/config.toml" \
+		--desktop-file "${srcdir}/desktop.file"
+}
+sha256sums=('841343a292706590347565cf669d09086fe2689692c07eb121942a52f32b2a52'
+            '19d45e8381704d27e10743d631d226e2bef82013285e9132859631b1ef567a25'
+            'e679eb2e73ef9876463d6d88abaff8a70c9db6948e972feba5d8fd79e5f9600d'
+            '92b82f2d59ec99004842bffd0c916f1e3df3fea04840fe9685903e3cbc6d2775')
