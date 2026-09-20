@@ -16,7 +16,7 @@ source=(
 	"config.toml"
         "obsidian.desktop"
 )
-sha256sums=('b7bbb8548102c76d4c79842c9323243df190e74f5c2a612a8afb91673f26af74'
+sha256sums=('bdd691c7785bbc1809d7a6c5f9a7e7d64ebaba01d462de831fd4267b8b32d32e'
             'e42c6a07f5fe11cbf917850050b579979c101727f2d995034df23cc3538f49d1')
 
 package() {
