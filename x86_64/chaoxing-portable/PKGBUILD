@@ -88,7 +88,7 @@ package() {
 		--config-ng "${srcdir}/config.toml" \
 		--desktop-file "${srcdir}/desktop.file"
 }
-sha256sums=('9a40af765e9b3312bb60fd1b5f027854485f5c9ec1cc579d7717a1a09ac510e6'
+sha256sums=('841343a292706590347565cf669d09086fe2689692c07eb121942a52f32b2a52'
             '19d45e8381704d27e10743d631d226e2bef82013285e9132859631b1ef567a25'
             'e679eb2e73ef9876463d6d88abaff8a70c9db6948e972feba5d8fd79e5f9600d'
             '92b82f2d59ec99004842bffd0c916f1e3df3fea04840fe9685903e3cbc6d2775')
