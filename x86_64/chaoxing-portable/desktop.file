@@ -1,6 +1,7 @@
 [Desktop Entry]
-Name=TodayCamera
-Exec=todaycamera-portable
-Icon=com.xhey.xcamera
+Name=Chaoxing
+Name[zh_CN]=超星学习通
+Exec=chaoxing-portable
+Icon=com.chaoxing.cxstudy
 Terminal=false
 Type=Application
