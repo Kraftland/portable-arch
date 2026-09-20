@@ -14,7 +14,6 @@ options=('!strip')
 source=(
 	config.toml
 	desktop.file
-	start.sh
 	patch.py
 	patch-fingerprint.py
 	unpack.py
@@ -66,12 +65,7 @@ build() {
 }
 
 package() {
-	depends+=('portable' "electron")
-
-	install \
-		-vDm755 \
-		start.sh \
-		"${pkgdir}/usr/bin/chaoxing"
+	depends+=('portable' "electron" "openssl-1.1")
 
 	install \
 		-d \
@@ -81,16 +75,6 @@ package() {
 		-a \
 		"${srcdir}/app/." \
 		"${pkgdir}/usr/share/chaoxing/app.asar"
-
-	install \
-		-d \
-		"${pkgdir}/usr/share/chaoxing/lib"
-
-	install \
-		-vDm755 \
-		"${srcdir}/assets/openssl11/libcrypto.so.1.1" \
-		"${srcdir}/assets/openssl11/libssl.so.1.1" \
-		-t "${pkgdir}/usr/share/chaoxing/lib/"
 
 	install -d "${pkgdir}/usr/share/icons/hicolor/256x256/apps"
 
@@ -111,7 +95,6 @@ package() {
 		--desktop-file "${srcdir}/desktop.file"
 }
 sha256sums=(
-	'SKIP'
 	'SKIP'
 	'SKIP'
 	'SKIP'

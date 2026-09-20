@@ -21,10 +21,10 @@ state_directory = "Chaoxing_Data"
 # target defines the executable to start.
 # It is recommended to not use the full path, as the Overlay feature will automatically merge
 # 	application binaries with the underlying OS /usr/bin.
-target = "chaoxing"
+target = "/usr/bin/electron"
 
 # arguments holds an array of arguments passed to the application, this is also used when starting secondary instances.
-arguments = []
+arguments = ["/usr/share/chaoxing/app.asar"]
 
 # When enabled, lays the app private binaries on top /usr/bin, see doc/packager/08-binaries.md for more details. Requires the specific overlay directory to exist.
 overlay = true
