@@ -27,7 +27,7 @@ target = "/usr/bin/electron"
 arguments = ["/usr/share/chaoxing/app.asar"]
 
 # When enabled, lays the app private binaries on top /usr/bin, see doc/packager/08-binaries.md for more details. Requires the specific overlay directory to exist.
-overlay = true
+overlay = false
 
 # The system section controls general system-level permission.
 [system]
