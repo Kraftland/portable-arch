@@ -1,0 +1,155 @@
+[metadata]
+# Optional
+# The command to build a package. Should be "extra-x86_64-build" or "archlinuxcn-x86_64-build"
+#buildPrefix	= "extra-x86_64-build"
+
+# Your GitHub user name
+maintainer	= "Kimiblock"
+
+[[depends]]
+# Optional
+#buildPrefix	= "extra-x86_64-build"
+
+# The package name of a dependency
+pkgname		= "portable-packer"
+
+# Source can be either a string of git URL (type git), or repo name (type repo) to download from locally defined repositories.
+sourceType	= "repo"
+source		= "archlinuxcn"
+
+[[depends]]
+# Optional
+buildPrefix	= "extra-x86_64-build"
+pkgname		= "alpaca-ai"
+sourceType	= "git"
+branch		= "alpaca-ai"
+source		= "https://github.com/archlinux/aur.git"
+
+[[depends.depends]]
+buildPrefix	= "extra-x86_64-build"
+pkgname		= "python-ollama"
+sourceType	= "git"
+branch		= "python-ollama"
+source		= "https://github.com/archlinux/aur.git"
+install		= true
+
+[[depends.depends]]
+buildPrefix	= "extra-x86_64-build"
+pkgname		= "python-markitdown"
+sourceType	= "git"
+branch		= "python-markitdown"
+source		= "https://github.com/archlinux/aur.git"
+install		= true
+
+[[depends.depends.depends]]
+buildPrefix	= "extra-x86_64-build"
+pkgname		= "python-mammoth"
+sourceType	= "git"
+branch		= "python-mammoth"
+source		= "https://github.com/archlinux/aur.git"
+install		= true
+[[depends.depends.depends.depends]]
+buildPrefix	= "extra-x86_64-build"
+pkgname		= "python-cobble"
+sourceType	= "git"
+branch		= "python-cobble"
+source		= "https://github.com/archlinux/aur.git"
+install		= true
+[[depends.depends.depends.depends]]
+buildPrefix	= "extra-x86_64-build"
+pkgname		= "python-funk"
+sourceType	= "repo"
+source		= "archlinuxcn"
+install		= true
+[[depends.depends.depends.depends.depends]]
+buildPrefix	= "extra-x86_64-build"
+pkgname		= "python-precisely"
+sourceType	= "repo"
+source		= "archlinuxcn"
+install		= true
+[[depends.depends.depends.depends]]
+buildPrefix	= "extra-x86_64-build"
+pkgname		= "python-tempman"
+sourceType	= "git"
+branch		= "python-tempman"
+source		= "https://github.com/archlinux/aur.git"
+install		= true
+
+[[depends.depends.depends]]
+buildPrefix	= "extra-x86_64-build"
+pkgname		= "python-pptx"
+sourceType	= "git"
+branch		= "python-pptx"
+source		= "https://github.com/archlinux/aur.git"
+install		= true
+[[depends.depends.depends]]
+buildPrefix	= "extra-x86_64-build"
+pkgname		= "python-youtube-transcript-api"
+sourceType	= "git"
+branch		= "python-youtube-transcript-api"
+source		= "https://github.com/archlinux/aur.git"
+install		= true
+[[depends.depends.depends]]
+buildPrefix	= "extra-x86_64-build"
+pkgname		= "python-speechrecognition"
+sourceType	= "git"
+branch		= "python-speechrecognition"
+source		= "https://github.com/archlinux/aur.git"
+install		= true
+[[depends.depends.depends.depends]]
+buildPrefix	= "extra-x86_64-build"
+pkgname		= "python-groq"
+sourceType	= "git"
+branch		= "python-groq"
+source		= "https://github.com/archlinux/aur.git"
+install		= true
+[[depends.depends.depends.depends]]
+buildPrefix	= "extra-x86_64-build"
+pkgname		= "python-pocketsphinx"
+sourceType	= "repo"
+branch		= "python-pocketsphinx"
+source		= "archlinuxcn"
+install		= true
+[[depends.depends.depends.depends]]
+buildPrefix	= "extra-x86_64-build"
+pkgname		= "python-google-cloud-speech"
+sourceType	= "git"
+branch		= "python-google-cloud-speech"
+source		= "https://github.com/archlinux/aur.git"
+install		= true
+[[depends.depends.depends.depends.depends]]
+buildPrefix	= "extra-x86_64-build"
+pkgname		= "python-grpcio-status"
+sourceType	= "git"
+branch		= "python-grpcio-status"
+source		= "https://github.com/archlinux/aur.git"
+install		= true
+[[depends.depends.depends.depends.depends.depends]]
+buildPrefix	= "extra-x86_64-build"
+pkgname		= "python-proto-plus"
+sourceType	= "git"
+branch		= "python-proto-plus"
+source		= "https://github.com/archlinux/aur.git"
+install		= true
+[[depends.depends.depends]]
+buildPrefix	= "extra-x86_64-build"
+pkgname		= "python-pathvalidate"
+sourceType	= "repo"
+branch		= "python-pathvalidate"
+#source		= "https://github.com/archlinux/aur.git"
+source		= "archlinuxcn"
+install		= true
+[[depends.depends.depends]]
+buildPrefix	= "extra-x86_64-build"
+pkgname		= "python-magika"
+sourceType	= "git"
+branch		= "python-magika"
+source		= "https://github.com/archlinux/aur.git"
+install		= true
+[[depends.depends.depends.depends]]
+buildPrefix	= "extra-x86_64-build"
+pkgname		= "python-dacite"
+sourceType	= "git"
+branch		= "python-dacite"
+source		= "https://github.com/archlinux/aur.git"
+install		= true

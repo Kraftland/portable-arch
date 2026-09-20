@@ -1,0 +1,6 @@
+[Desktop Entry]
+Name=TodayCamera
+Exec=todaycamera-portable
+Icon=com.xhey.xcamera
+Terminal=false
+Type=Application

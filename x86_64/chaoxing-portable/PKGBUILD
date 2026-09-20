@@ -1,0 +1,119 @@
+# Maintainer: Kimiblock Moe
+
+pkgname=chaoxing-portable
+pkgver=1.4.2
+pkgrel=1
+pkgdesc="超星学习通 sandboxed by portable"
+arch=('any')
+provides=("chaoxing")
+conflicts=("chaoxing")
+url="https://i.chaoxing.com"
+license=("LicenseRef-custom")
+options=('!strip')
+
+source=(
+	config.toml
+	desktop.file
+	start.sh
+	patch.py
+	patch-fingerprint.py
+	unpack.py
+)
+
+makedepends+=(
+	7zip
+	imagemagick
+	portable-packer
+)
+
+prepare() {
+	download_url="$(curl \
+		-fsS \
+		-A 'Mozilla/5.0' \
+		-X POST \
+		'https://luban.m.qq.com/api/public/software-manager/softwareProxy' \
+		--data-urlencode 'cmdid=3318' \
+		--data-urlencode 'jprxReq={"req":{"soft_id_list":["36738"]}}' \
+		| python3 -c \
+		'import sys,json;print(json.load(sys.stdin)["resp"]["soft_list"][0]["download_https_url"])')"
+
+	curl -fL -A 'Mozilla/5.0' "${download_url}" -o chaoxing.exe
+}
+
+build() {
+	7z x chaoxing.exe
+
+	approot="$(find . -maxdepth 5 -type f -name 'cxstudy.exe' -printf '%h\n' | head -n1)"
+
+	asar="$approot/resources/app.asar"
+
+	mkdir app
+
+	python \
+		"${srcdir}/unpack.py" \
+		"${asar}" \
+		"${srcdir}/app"
+
+	python \
+		"${srcdir}/patch.py" \
+		"${srcdir}/app" \
+		"${srcdir}/assets"
+
+	python \
+		"${srcdir}/patch-fingerprint.py" \
+		"${srcdir}/app"
+}
+
+package() {
+	depends+=('portable' "electron")
+
+	install \
+		-vDm755 \
+		start.sh \
+		"${pkgdir}/usr/bin/chaoxing"
+
+	install \
+		-d \
+		"${pkgdir}/usr/share/chaoxing"
+
+	cp \
+		-a \
+		"${srcdir}/app/." \
+		"${pkgdir}/usr/share/chaoxing/app.asar"
+
+	install \
+		-d \
+		"${pkgdir}/usr/share/chaoxing/lib"
+
+	install \
+		-vDm755 \
+		"${srcdir}/assets/openssl11/libcrypto.so.1.1" \
+		"${srcdir}/assets/openssl11/libssl.so.1.1" \
+		-t "${pkgdir}/usr/share/chaoxing/lib/"
+
+	install -d "${pkgdir}/usr/share/icons/hicolor/256x256/apps"
+
+	magick \
+		'$PLUGINSDIR/icon.ico' \
+		-resize 256x256 \
+		"${pkgdir}/usr/share/icons/hicolor/256x256/apps/com.chaoxing.cxstudy.png"
+
+	export pkgdir
+	export pkgname
+	export srcdir
+	portable-packer \
+		-v \
+		--distro arch \
+		--mode post \
+		--hash true \
+		--config-ng "${srcdir}/config.toml" \
+		--desktop-file "${srcdir}/desktop.file"
+}
+sha256sums=(
+	'SKIP'
+	'SKIP'
+	'SKIP'
+	'SKIP'
+	'SKIP'
+	'SKIP'
+)
