@@ -94,10 +94,8 @@ package() {
 		--config-ng "${srcdir}/config.toml" \
 		--desktop-file "${srcdir}/desktop.file"
 }
-sha256sums=(
-	'SKIP'
-	'SKIP'
-	'SKIP'
-	'SKIP'
-	'SKIP'
-)
+sha256sums=('6a56429217bf8052634e3bc6e275451f6e4d3af2f33960669362c9be1d392cd2'
+            '4df29dc7d3f6caeae99593124f43a60b013a6408263b1a1ecd96d73f0846a9ac'
+            '98b065a95c1b28fb6ad4ec0e2dfad7de574e2d7592976f9d5799f5aac18d8147'
+            'bbf762821ffe1cbb5bdefd85f00f3f2fcfdb5594958b8889ef669344fc85a642'
+            '92b82f2d59ec99004842bffd0c916f1e3df3fea04840fe9685903e3cbc6d2775')
