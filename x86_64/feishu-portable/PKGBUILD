@@ -6,7 +6,7 @@ pkgname=feishu-portable
 pkgver=7.72.23
 _pkghash_x64=fc38d53a
 _pkghash_arm64=8d668c7a
-pkgrel=1
+pkgrel=2
 epoch=1
 pkgdesc="Linux client of Feishu (Lark) from Bytedance. Sandboxed by portable."
 arch=('x86_64' 'aarch64')
@@ -22,7 +22,7 @@ source=(
     config.toml
     com.bytedance.feishu.desktop
 )
-sha256sums=('d97cf46c25ef9960d6cb19c82e8ccc91c0dd1d0467353724fa3c81c592b69efc'
+sha256sums=('13535da13c937e2732b4b4e3d1f233b5e749c529175a6c87af2dac4b9027a125'
             '6242e6242f865fca9f78f5839e93c1ea7d795d09b8569252eb38f5a9c08686df')
 sha256sums_x86_64=('7c744ce101e29f50d8d0fc099788b64cb389dde3178178a7fce9ffcdbf296e13')
 sha256sums_aarch64=('8052d22189546438e24b3691d64871805961ecea7a45804c75a2960ed2b8710e')
