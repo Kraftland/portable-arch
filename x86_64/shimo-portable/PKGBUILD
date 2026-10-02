@@ -12,6 +12,7 @@ source_x86_64=("https://oas.shimonote.com/panther/shimo/release/linux/x64/shimo_
 source_aarch64=("https://oas.shimonote.com/panther/shimo/release/linux/arm64/shimo_v${pkgver}-release.7b94ae8.shimo_linux-arm64.deb")
 sha512sums_x86_64=('SKIP')
 sha512sums_aarch64=('SKIP')
+options=(!debug)
 
 source=(
 	config.toml
@@ -29,6 +30,9 @@ package() {
 	# License
 	install -Dm644 "${pkgdir}/opt/shimo/LICENSE.electron.txt" -t "${pkgdir}/usr/share/licenses/${pkgname}/"
 	install -Dm644 "${pkgdir}/opt/shimo/LICENSES.chromium.html" -t "${pkgdir}/usr/share/licenses/${pkgname}/"
+
+	# Fix broken permissions
+	chmod 755 -R "${pkgdir}/usr"
 
 	declare -x -g pkgdir
 	declare -x -g pkgname
