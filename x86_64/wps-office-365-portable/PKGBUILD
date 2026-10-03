@@ -10,7 +10,7 @@ arch=('x86_64' 'aarch64' 'loong64')
 url="https://365.wps.cn/"
 license=('LicenseRef-WPS-EULA')
 makedepends=(
-  'tar')
+  'tar' 'portable-packer')
 depends=(
   'fontconfig' 'libxrender' 'xdg-utils' 'glu'
   'libpulse' 'libxss' 'sqlite' 'libtool' 'libtiff'
