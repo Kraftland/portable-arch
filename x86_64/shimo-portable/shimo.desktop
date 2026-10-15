@@ -1,0 +1,11 @@
+[Desktop Entry]
+Name=石墨文档
+Exec=shimo-portable %U %F
+Terminal=false
+Type=Application
+Icon=shimo
+StartupWMClass=shimo
+Name[zh_CN]=石墨文档
+MimeType=application/msword;application/vnd.openxmlformats-officedocument.wordprocessingml.document;application/vnd.ms-works;application/vnd.ms-excel;application/vnd.openxmlformats-officedocument.spreadsheetml.sheet;text/csv;application/vnd.ms-powerpoint;application/vnd.openxmlformats-officedocument.presentationml.presentation;application/pdf;application/ofd;x-scheme-handler/shimo;
+Comment=石墨文档
+Categories=Office;
