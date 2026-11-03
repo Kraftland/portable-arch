@@ -1,6 +1,6 @@
 pkgbase = obsidian-bwrap
 	pkgdesc = A powerful knowledge base that works on top of a local folder of plain text Markdown files. Sandboxed by portable for privacy.
-	pkgver = 1.13.7
+	pkgver = 1.15.0
 	pkgrel = 1
 	url = https://obsidian.md
 	arch = x86_64
@@ -11,7 +11,7 @@ pkgbase = obsidian-bwrap
 	options = !debug
 	source = config.toml
 	source = obsidian.desktop
-	sha256sums = b7bbb8548102c76d4c79842c9323243df190e74f5c2a612a8afb91673f26af74
+	sha256sums = 5feedfb2cdc74e2270fe4d8b06d04eb100e41e4bc221948877a4098ac3edec2f
 	sha256sums = e42c6a07f5fe11cbf917850050b579979c101727f2d995034df23cc3538f49d1
 
 pkgname = obsidian-bwrap
