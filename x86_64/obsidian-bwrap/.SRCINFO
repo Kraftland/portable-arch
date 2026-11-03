@@ -4,6 +4,7 @@ pkgbase = obsidian-bwrap
 	pkgrel = 1
 	url = https://obsidian.md
 	arch = x86_64
+	arch = aarch64
 	license = custom:Commercial
 	makedepends = portable-packer
 	makedepends = obsidian
