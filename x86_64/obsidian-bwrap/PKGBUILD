@@ -4,7 +4,7 @@
 # Contributor: Xuanwo <xuanwo@archlinuxcn.org>
 
 pkgname=obsidian-bwrap
-pkgver=1.13.7
+pkgver=1.15.0
 pkgrel=1
 pkgdesc="A powerful knowledge base that works on top of a local folder of plain text Markdown files. Sandboxed by portable for privacy."
 arch=('x86_64')
@@ -16,7 +16,7 @@ source=(
 	"config.toml"
         "obsidian.desktop"
 )
-sha256sums=('bdd691c7785bbc1809d7a6c5f9a7e7d64ebaba01d462de831fd4267b8b32d32e'
+sha256sums=('5feedfb2cdc74e2270fe4d8b06d04eb100e41e4bc221948877a4098ac3edec2f'
             'e42c6a07f5fe11cbf917850050b579979c101727f2d995034df23cc3538f49d1')
 
 package() {

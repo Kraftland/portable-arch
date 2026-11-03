@@ -21,12 +21,6 @@ target = "electron"
 # arguments holds an array of arguments passed to the application, this is also used when starting secondary instances.
 arguments = ["/usr/lib/obsidian/app.asar", "--enable-features=AcceleratedVideoDecodeLinuxGL,VaapiOnNvidiaGPUs", "--ignore-gpu-blocklist"]
 
-
-# The processes section defines how Portable tracks tasks.
-[processes]
-# Watch for spawned commands. When all of them exits, automatically terminate the sandbox. Defaults to true.
-track = true
-
 # The network section defines behaviour of Portable's network firewall. Requires netsock for filtering.
 [network]
 # Whether or not an application can use network interfaces. Defaults to true.
@@ -60,8 +54,8 @@ landlock = true
 # Do not use. May break apps.
 [advanced]
 zink = false
-qt5Compat = true
+qt5Compat = false
 mprisName = []
 trayWake = false
-kDEStatus = true
+kDEStatus = false
 flatpakInfo = true
