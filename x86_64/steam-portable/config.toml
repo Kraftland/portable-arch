@@ -20,10 +20,10 @@ state_directory = "Steam_Data"
 # The exec section defines how the underlying process is started.
 [exec]
 # target defines the program to start.
-target = "env"
+target = "dbus-run-session"
 
 # arguments holds an array of arguments passed to the application, this is also used when starting secondary instances.
-arguments = ["DBUS_SYSTEM_BUS_ADDRESS=unix:path=/run/sessionBus", "steam"]
+arguments = ["steam"]
 
 overlay = true
 
