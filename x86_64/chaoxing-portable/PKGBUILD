@@ -40,7 +40,7 @@ prepare() {
 }
 
 build() {
-	7z x -y -oext "$installer"
+	7z x -y -oext chaoxing.exe
 
 	approot="$(find . -maxdepth 5 -type f -name 'cxstudy.exe' -printf '%h\n' | head -n1)"
 
