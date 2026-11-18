@@ -1,7 +1,7 @@
 # Maintainer: Kimiblock Moe
 
 pkgname=chaoxing-portable
-pkgver=1.4.2
+pkgver=1.4.5
 pkgrel=1
 pkgdesc="超星学习通 sandboxed by portable"
 arch=('any')
@@ -40,7 +40,7 @@ prepare() {
 }
 
 build() {
-	7z x chaoxing.exe
+	7z x -y -oext "$installer"
 
 	approot="$(find . -maxdepth 5 -type f -name 'cxstudy.exe' -printf '%h\n' | head -n1)"
 

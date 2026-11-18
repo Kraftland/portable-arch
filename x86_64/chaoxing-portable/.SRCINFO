@@ -1,6 +1,6 @@
 pkgbase = chaoxing-portable
 	pkgdesc = 超星学习通 sandboxed by portable
-	pkgver = 1.4.2
+	pkgver = 1.4.5
 	pkgrel = 1
 	url = https://i.chaoxing.com
 	arch = any
