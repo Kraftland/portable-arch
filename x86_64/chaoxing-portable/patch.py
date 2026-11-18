@@ -32,6 +32,11 @@ What it does:
     declared inside an `if` block was still referenced outside it) and broke
     whenever the compiler changed its output formatting.
 
+ 5. Ozone backend on Linux
+    Removes the vendor's forced X11 switch. In a Wayland-only sandbox, the
+    main process re-execs Electron with an explicit Wayland flag if Chromium
+    picked X11 before the app's JavaScript ran.
+
 Usage: patch.py <app-root>
 """
 from __future__ import annotations
@@ -485,6 +490,27 @@ const cp = require("child_process");
 const { EventEmitter } = require("events");
 const { PassThrough } = require("stream");
 
+// Chromium can select X11 before loading this entry point, even with a
+// Wayland socket available. Changing app.commandLine here is too late.
+// Re-exec in place so the sandbox still tracks the same main process.
+if (process.platform === "linux" && process.type === "browser" &&
+    process.env.WAYLAND_DISPLAY && !process.env.DISPLAY) {
+    const args = process.argv.slice(1);
+    const separator = args.indexOf("--");
+    const options = separator < 0 ? args : args.slice(0, separator);
+    const explicit = options.some(arg =>
+        arg === "--ozone-platform" || arg.startsWith("--ozone-platform="));
+    const { app } = require("electron");
+    if (!explicit && app.commandLine.getSwitchValue("ozone-platform") !== "wayland") {
+        if (typeof process.execve === "function") {
+            process.execve(process.execPath,
+                [process.execPath, "--ozone-platform=wayland", ...args], process.env);
+        } else {
+            console.warn("[cx-linux] Pass --ozone-platform=wayland to Electron in a Wayland-only sandbox");
+        }
+    }
+}
+
 process.env.CX_LINUX_SHIM = __filename;
 
 const MARK = Symbol.for("cx.linux.wmicShim");
@@ -691,6 +717,29 @@ def install_shim_preloads(app_root: str) -> int:
         with open(path, "w", encoding="utf-8") as fh:
             fh.write(inject_js_statement(source, SHIM_PRELOAD))
         count += 1
+    return count
+
+
+# --------------------------------------------------------------------------
+# Display backend
+# --------------------------------------------------------------------------
+FORCED_X11 = re.compile(
+    r'''(?m)^[ \t]*[\w$]+\.app\.commandLine\.appendSwitch\(\s*'''
+    r'''(["'])ozone-platform\1\s*,\s*(["'])x11\2\s*\);[ \t]*\n?'''
+)
+
+
+def remove_forced_x11(app_root: str) -> int:
+    """Keep the vendor code from overriding the launcher-selected backend."""
+    path = safe_join(app_root, "electron", "main", "main.js")
+    if not os.path.isfile(path):
+        return 0
+    with open(path, encoding="utf-8") as fh:
+        source = fh.read()
+    updated, count = FORCED_X11.subn("", source)
+    if count:
+        with open(path, "w", encoding="utf-8") as fh:
+            fh.write(updated)
     return count
 
 
@@ -1009,6 +1058,9 @@ def main() -> int:
     shim_ok, entry = install_shim(app_root)
     if shim_ok:
         print(f"  wmic shim injected into {os.path.relpath(entry, app_root)}")
+
+    display_patches = remove_forced_x11(app_root)
+    print(f"  removed {display_patches} forced X11 setting(s)")
 
     shim_preloads = install_shim_preloads(app_root)
     print(f"  wmic shim preloaded in {shim_preloads} machine-id module(s)")
