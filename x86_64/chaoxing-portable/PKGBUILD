@@ -72,28 +72,14 @@ package() {
 
 	install -d "${pkgdir}/usr/share/icons/hicolor/256x256/apps"
 
-	local icon
-	# Prefer the installer's .ico
-	icon="$(find ext -type f -iname '*.ico' -printf '%s %p\n' \
-		| sort -nr \
-		| head -n1 \
-		| cut -d' ' -f2-)"
-	if [[ -z "${icon}" ]]; then
-		icon="$(find ext -type f -iname '*.png' -printf '%s %p\n' \
-			| sort -nr \
-			| head -n1 \
-			| cut -d' ' -f2-)"
-	fi
-	if [[ -n "${icon}" && -f "${icon}" ]]; then
-		# An .ico contains several frames; without [0] ImageMagick writes
-		# out-0.png ... out-5.png and the requested filename never appears.
-		magick "${icon}[0]" -resize 256x256 \
-			"${pkgdir}/usr/share/icons/hicolor/256x256/apps/com.chaoxing.cxstudy.png"
-	else
-		warning "no installer icon found; using a placeholder"
-		magick -size 256x256 xc:'#1e88e5' \
-			"${pkgdir}/usr/share/icons/hicolor/256x256/apps/com.chaoxing.cxstudy.png"
-	fi
+	for size in "512x512"; do
+		install \
+			-vDm644 \
+			"${srcdir}/app/${size}.png" \
+			"${pkgdir}/usr/share/icons/hicolor/${size}/apps/com.chaoxing.cxstudy.png"
+	done
+
+
 
 	export pkgdir
 	export pkgname
