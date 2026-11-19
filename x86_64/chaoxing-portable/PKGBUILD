@@ -72,10 +72,10 @@ package() {
 
 	install -d "${pkgdir}/usr/share/icons/hicolor/256x256/apps"
 
-	for size in "512x512" "256x256"; do
+	for size in "512x512" "256x256" "128x128"; do
 		install \
 			-vDm644 \
-			"${srcdir}/app/${size}.png" \
+			"${srcdir}/app/icons/${size}.png" \
 			"${pkgdir}/usr/share/icons/hicolor/${size}/apps/com.chaoxing.cxstudy.png"
 	done
 
