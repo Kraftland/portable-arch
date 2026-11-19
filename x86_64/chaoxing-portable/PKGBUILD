@@ -1,7 +1,7 @@
 # Maintainer: Kimiblock Moe
 
 pkgname=chaoxing-portable
-pkgver=1.4.2
+pkgver=1.4.5
 pkgrel=1
 pkgdesc="超星学习通 sandboxed by portable"
 arch=('any')
@@ -40,7 +40,7 @@ prepare() {
 }
 
 build() {
-	7z x chaoxing.exe
+	7z x -y -oext chaoxing.exe
 
 	approot="$(find . -maxdepth 5 -type f -name 'cxstudy.exe' -printf '%h\n' | head -n1)"
 
@@ -72,10 +72,14 @@ package() {
 
 	install -d "${pkgdir}/usr/share/icons/hicolor/256x256/apps"
 
-	magick \
-		'$PLUGINSDIR/icon.ico' \
-		-resize 256x256 \
-		"${pkgdir}/usr/share/icons/hicolor/256x256/apps/com.chaoxing.cxstudy.png"
+	for size in "512x512" "256x256" "128x128"; do
+		install \
+			-vDm644 \
+			"${srcdir}/app/icons/${size}.png" \
+			"${pkgdir}/usr/share/icons/hicolor/${size}/apps/com.chaoxing.cxstudy.png"
+	done
+
+
 
 	export pkgdir
 	export pkgname
@@ -89,6 +93,6 @@ package() {
 		--desktop-file "${srcdir}/desktop.file"
 }
 sha256sums=('841343a292706590347565cf669d09086fe2689692c07eb121942a52f32b2a52'
-            '19d45e8381704d27e10743d631d226e2bef82013285e9132859631b1ef567a25'
-            'e679eb2e73ef9876463d6d88abaff8a70c9db6948e972feba5d8fd79e5f9600d'
-            '92b82f2d59ec99004842bffd0c916f1e3df3fea04840fe9685903e3cbc6d2775')
+            '4c5ba78308494a87c91f0171b723196517a768c3d29ccc8ddbe3d492c6e46601'
+            '5ff8f5138323bd1bcbe47fa11b120f8a8cb165ca283cc145b380be1fea37ec66'
+            '926c1b43a5e6505a9686aa3f07edff17521880e8f608457a0000e369ebd7fb62')
