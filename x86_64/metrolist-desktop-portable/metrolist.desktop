@@ -1,0 +1,11 @@
+[Desktop Entry]
+Type=Application
+Name=Metrolist
+Exec=env PORTABLE_CONF=com.metrolist.desktop portable
+Icon=metrolist
+StartupWMClass=Metrolist
+Comment=Metrolist music client
+Terminal=false
+Categories=AudioVideo;Audio;Player;
+StartupNotify=true
+MimeType=x-scheme-handler/metrolist;x-scheme-handler/metrolist-auth;
