@@ -1,0 +1,96 @@
+pkgname=metrolist-desktop-portable
+pkgver=14.0.1
+pkgrel=1
+pkgdesc="YouTube Music client for desktop"
+arch=('x86_64')
+url="https://github.com/MetrolistGroup/Metrolist"
+license=('GPL-3.0-or-later')
+
+provides=(metrolist-desktop)
+conflicts=(metrolist-desktop metrolist-desktop-bin)
+
+makedepends=(portable-packer)
+
+options=('!strip' '!debug')
+
+_appimage="metrolist-desktop-linux-x64-${pkgver}.AppImage"
+
+source=(
+  "${_appimage}::https://github.com/MetrolistGroup/Metrolist/releases/download/v${pkgver}/${_appimage}"
+  'config.toml'
+  'metrolist.desktop'
+  'aplay.conf'
+  'LICENSE'
+  'metrolist.png'
+)
+
+noextract=("${_appimage}")
+
+sha256sums=(
+  'b3c363a95e391be4e26a52bf95ae07a69f59639cdc63edb1f34183c5ebca4230'
+  '2bdd9a5f454855295e6a49dbc6b757681fccbe522dd302be283f6dfe4b26575d'
+  'f7b362b3a700139f7a27db2c384aa22625c56dfcececd14a16d282ab9989492a'
+  '1ea53f4707e4cece3e98f7aade7604e1d49c561650307f8da964c8c04b70910e'
+  '3972dc9744f6499f0f9b2dbf76696f2ae7ad8af9b23dde66d6af86c9dfb36986'
+  'f0d70d56d2362c5f567ae732ffcd67a7376f7902b79ca2b60f95e08166ffa367'
+)
+
+prepare() {
+  cd "${srcdir}"
+
+  chmod u+x "${_appimage}"
+
+  # Extract the AppImage filesystem without mounting it through FUSE.
+  "./${_appimage}" --appimage-extract
+
+  test -x "${srcdir}/squashfs-root/AppRun" ||
+    {
+      error "AppImage extraction did not produce an executable AppRun"
+      return 1
+    }
+}
+
+package() {
+  depends=(portable)
+
+  local appdir="${pkgdir}/usr/lib/metrolist-portable"
+
+  install -d -m755 "${appdir}"
+
+  cp -a "${srcdir}/squashfs-root/." "${appdir}/"
+
+  chmod 755 "${appdir}"
+
+  find "${appdir}" -type d -exec chmod 755 {} +
+  find "${appdir}" -type f -executable -exec chmod 755 {} +
+  find "${appdir}" -type f ! -executable -exec chmod 644 {} +
+
+  install -Dm644 "${srcdir}/aplay.conf" "${appdir}/aplay.conf"
+
+  install -Dm755 /dev/stdin "${appdir}/portable-helper" <<'EOF'
+#!/bin/sh
+export APPDIR=/usr/lib/metrolist-portable
+export ALSA_CONFIG_PATH="${APPDIR}/aplay.conf"
+exec "${APPDIR}/AppRun" "$@"
+EOF
+
+  install -Dm644 "${srcdir}/LICENSE" \
+    "${pkgdir}/usr/share/licenses/${pkgname}/LICENSE"
+
+  install -Dm644 "${srcdir}/metrolist.png" \
+    "${pkgdir}/usr/share/icons/hicolor/512x512/apps/metrolist.png"
+
+	declare -x -g pkgdir srcdir pkgname
+
+	portable-packer \
+		-v \
+		--distro arch \
+		--mode post \
+		--hash true \
+		--config-ng "${srcdir}/config.toml" \
+		--desktop-file "${srcdir}/metrolist.desktop"
+
+  mv "${pkgdir}/usr/share/applications/com.metrolist.desktop.desktop" \
+    "${pkgdir}/usr/share/applications/metrolist.desktop"
+}
+

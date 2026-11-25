@@ -1,0 +1,34 @@
+[metadata]
+sandbox_id = "com.metrolist.desktop"
+display_name = "Metrolist"
+state_directory = "Metrolist"
+
+[exec]
+target = "/usr/lib/metrolist-portable/portable-helper"
+overlay = false
+
+[dbus_activation]
+enable = false
+
+[system]
+allow_inhibit = true
+device_allow = []
+
+[network]
+enable = true
+
+[privacy]
+x11_compat = true
+classic_notif = false
+
+[privacy.lockdown_options]
+seccomp_whitelist = false
+landlock = false
+
+[advanced]
+mpris_names = ["metrolist"]
+tray_wake = true
+allow_kde_status = true
+flatpak_env = true
+allow_debug = true
+qt5_compat = true
