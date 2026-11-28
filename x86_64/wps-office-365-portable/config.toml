@@ -37,8 +37,6 @@ arguments = []
 allow_inhibit = false
 conduct_inhibit = false
 
-uclamp_max = 100
-
 device_allow = []
 # The network section defines behaviour of Portable's network firewall. Requires netsock for filtering.
 [network]
@@ -46,6 +44,8 @@ device_allow = []
 enable = true
 
 [privacy]
+file_forwarding = true
+
 x11_compat = true
 
 classic_notif = false

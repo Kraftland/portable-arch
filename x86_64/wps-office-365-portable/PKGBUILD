@@ -24,7 +24,7 @@ source=(config.toml wps365-open cn.wps.wps_365.desktop)
 source_x86_64=("${source_base}_807309_amd64.deb")
 source_aarch64=("${source_base}_807310_arm64.deb")
 source_loong64=("${source_base}_807316_loongarch64.deb")
-sha1sums=('3edb56b77b55dedfde980edfe7c665ceca0a5f49'
+sha1sums=('SKIP'
           '60bebb1f5f1936027fff222fc0701e4fc33137fc'
           '583dc7fccccb735d8b7b86e97b97af642d58ee9a')
 sha256sums_x86_64=('10c5107e63aa99a725eff881a7e36760df80077984a252e054db5aac71bc6cfc')
